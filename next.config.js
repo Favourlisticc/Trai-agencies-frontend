@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
 
-module.exports = nextConfig
+
+module.exports = {
+  // other configurations...
+  outDir: './build', // or the desired output directory
+};
+

@@ -77,134 +77,14 @@ export default function Navbar() {
 
 
           <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
-            <div id="dropdown" class="px-5 w-auto">
-              <div
-                id="dropdown-btn"
-                class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center"
-              >
-                About
 
-              </div>
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 xl:w-52 absolute h-auto"
-              >
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/about-us"
-                >
-                  <span>About Us</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/careers"
-                >
-                  <span>Careers</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/press"
-                >
-                  <span>Press</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/contact-us"
-                >
-                  <span>Contact</span>
-                </Link>
-              </div>
-            </div>
-            <div id="dropdown" class="px-5 w-auto">
-              <div
-                id="dropdown-btn"
-                class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center"
-              >
-                Learn
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 pl-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 xl:w-52 absolute h-auto"
-              >
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/blog"
-                >
-                  <span>Blog</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="https://www.youtube.com/channel/UC1RYZVRvKBaA_Oc6kEr5MWQ"
-                >
-                  <span>Youtube</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/about-us"
-                >
-                  <span>Help</span>
-                </Link>
-              </div>
-            </div>
-            <Link
-              href="/features"
-              class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700"
-            >
-              Plans
-            </Link>
-            <div id="dropdown" class="px-5 w-auto">
-              <div
-                id="dropdown-btn"
-                class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center"
-              >
-                Resources
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 pl-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 xl:w-52 absolute h-auto"
-              >
-                <a class="py-3 px-3 hover:text-blue-700 underline" href="/images/HAZMICK1.pdf" download>
-                <span>Whitepaper</span>
-              </a>
-              </div>
-            </div>
-            <Link
-              href="/prices"
-              class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700"
-            >
-              Price Chart
-            </Link>
+          <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Home</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
+
+
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > company</Link>
+
           </div>
 
 
@@ -259,140 +139,13 @@ export default function Navbar() {
 
         <div id="smald" class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
 
-{/* about dropdown */}
-          <div id="dropdown" class="px-5 w-auto h-full">
-
-              <div id="dropdown-btn" class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center">
-                About
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 pl-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 left-20 xl:w-52 absolute h-auto"
-              >
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/about-us"
-                >
-                  <span>About Us</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/careers"
-                >
-                  <span>Careers</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/press"
-                >
-                  <span>Press</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/contact-us"
-                >
-                  <span>Contact</span>
-                </Link>
-              </div>
-          </div>
-
-{/* learn dropdown */}
-            <div id="dropdown" class="px-5 w-auto h-full">
-              <div id="dropdown-btn" class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center">
-                Learn
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 pl-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 left-20 xl:w-52 absolute h-auto"
-              >
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/blog"
-                >
-                  <span>Blog</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="https://www.youtube.com/channel/UC1RYZVRvKBaA_Oc6kEr5MWQ"
-                >
-                  <span>Youtube</span>
-                </Link>
-                <Link
-                  class="py-3 px-3  hover:text-blue-700 underline"
-                  href="/about-us"
-                >
-                  <span>Help</span>
-                </Link>
-              </div>
-            </div>
+        <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Home</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
 
 
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Plans</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > company</Link>
 
-{/* resources dropdown */}
-
-            <div id="dropdown" class="px-5 w-auto h-full">
-              <div id="dropdown-btn" class="relative py-5 xl:py-6 hover:text-blue-700 cursor-pointer w-full xl:w-auto flex justify-center items-center">
-
-                Resources
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 pl-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-              <div
-                id="dropdown-cont"
-                style={{ zIndex: 999989 }}
-                class="hidden rounded flex-col py-3 text-black bg-white w-64 left-20 xl:w-52 absolute h-auto"
-              >
-                <a class="py-3 px-3 hover:text-blue-700 underline" href="/images/HAZMICK1.pdf" download>
-                <span>Whitepaper</span>
-              </a>
-              </div>
-            </div>
-
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Price Chart</Link>
         </div>
 
 
