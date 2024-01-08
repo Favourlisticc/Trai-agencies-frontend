@@ -10,10 +10,10 @@ export default function Home() {
   return (
    <>
    <Head>
-        <title>HomePage | Hazmick</title>
-        <meta name="description" content="Hazmick - World Class Automated Crypto Trading Bot. Copy traders, manage all your exchange accounts, use market-making and exchange/market arbitrage and simulate or backtest your trading. Trading, Portfolio, Arbitrage, Signals, Bots - everything you need to easily manage crypto assets, within one interface." />
+        <title>HomePage | Trai</title>
+        <meta name="description" content="Trai - World Class Recruitment Agency Index" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="../public/Logo.png" />
       </Head>
     <Navbar />
     <main
