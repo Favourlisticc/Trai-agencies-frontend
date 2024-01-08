@@ -1,10 +1,21 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import Head from 'next/head'
+
+import Navbar from '@/components/navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
+   <>
+   <Head>
+        <title>HomePage | Hazmick</title>
+        <meta name="description" content="Hazmick - World Class Automated Crypto Trading Bot. Copy traders, manage all your exchange accounts, use market-making and exchange/market arbitrage and simulate or backtest your trading. Trading, Portfolio, Arbitrage, Signals, Bots - everything you need to easily manage crypto assets, within one interface." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+    <Navbar />
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
@@ -114,5 +125,6 @@ export default function Home() {
         </a>
       </div>
     </main>
+   </>
   )
 }
