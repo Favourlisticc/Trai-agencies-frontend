@@ -71,27 +71,12 @@ export default function Navbar() {
               <Image src={logo} alt="Hazmick" />
             </Link>
 
-            <div onClick={showHide} class="block xl:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 text-blue-600 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 10h16M4 14h16M4 18h16"
-                />
-              </svg>
-            </div>
+
           </div>
 
 
 
-          {/* <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
             <div id="dropdown" class="px-5 w-auto">
               <div
                 id="dropdown-btn"
@@ -220,10 +205,10 @@ export default function Navbar() {
             >
               Price Chart
             </Link>
-          </div> */}
+          </div>
 
 
-          {/* <div class="hidden xl:flex flex-col xl:flex-row py-5 xl:py-6 items-center justify-between">
+          <div class="flex py-5 xl:py-6">
           <div class=" mb-8 xl:mb-0 xl:mr-6 hover:text-blue-700">
             <Link href="/auth/login">Login</Link>
           </div>
@@ -235,8 +220,13 @@ export default function Navbar() {
               Sign Up
             </Link>
           </div>
-        </div> */}
         </div>
+        </div>
+
+
+
+
+
 
 
 
