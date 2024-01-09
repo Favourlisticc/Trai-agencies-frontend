@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from "react";
 
-import logo from "../public/Logo.png";
+import logo from "../public/svgs/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg"
 
 
 export default function Navbar() {
@@ -65,10 +65,10 @@ export default function Navbar() {
             <Link
               href="/"
               id="had-img"
-              style={{ marginLeft: "-80px" }}
-              class="xl:w-72 w-64 h-10 flex justify-center items-center overflow-hidden"
+              style={{ marginLeft: "-70px" }}
+              className="w-68  h-10 flex justify-center items-center"
             >
-              <Image src={logo} alt="Hazmick" />
+              <Image src={logo} alt="Hazmick" className=''/>
             </Link>
 
 
