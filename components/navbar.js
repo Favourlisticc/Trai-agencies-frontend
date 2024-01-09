@@ -83,21 +83,19 @@ export default function Navbar() {
 
 
             <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > company</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Company</Link>
 
           </div>
 
 
           <div class="flex py-5 xl:py-6">
-          <div class=" mb-8 xl:mb-0 xl:mr-6 hover:text-blue-700">
-            <Link href="/auth/login">Login</Link>
-          </div>
+
           <div>
             <Link
               class=" bg-blue-700 text-white rounded-md px-8 py-3 outline-none hover:bg-blue-800"
               href="/auth/register"
             >
-              Sign Up
+              View Available Agencies
             </Link>
           </div>
         </div>
@@ -144,7 +142,7 @@ export default function Navbar() {
 
 
             <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > company</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Company</Link>
 
         </div>
 
@@ -152,17 +150,11 @@ export default function Navbar() {
 {/* login and signuo */}
         <div id="smalx" class="hidden xl:flex flex-col xl:flex-row pt-6 pb-16 xl:py-6 items-center justify-between">
 
-          <div class=" mb-8 mt-3 hover:text-blue-700">
 
-            <Link onClick={showHide} href="/auth/login">
-              Login
-            </Link>
-
-          </div>
 
           <div>
 
-            <Link onClick={showHide} class=" bg-blue-700 text-white rounded-md px-8 py-3 outline-none hover:bg-blue-800" href="/auth/register">Sign Up</Link>
+            <Link onClick={showHide} class=" bg-blue-700 text-white rounded-md px-8 py-3 outline-none hover:bg-blue-800" href="/auth/register">View Available Agencies</Link>
 
           </div>
 
