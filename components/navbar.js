@@ -66,7 +66,7 @@ export default function Navbar() {
               href="/"
               id="had-img"
               style={{ marginLeft: "-70px" }}
-              className="w-68  h-10 flex justify-center items-center"
+              className="w-52 h-10 flex justify-center items-center"
             >
               <Image src={logo} alt="Hazmick" className=''/>
             </Link>
@@ -112,8 +112,8 @@ export default function Navbar() {
         <div id="small-screen" style={{ zIndex: 99999 }} class=" flex lg:hidden flex-col bg-white xl:flex-row justify-between pl-4 pr-5 xl:px-20">
 
           <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" class="xl:w-72 w-64 h-10 flex justify-center items-center overflow-hidden">
-              <Image src={logo} alt="Hazmick" style={{ marginLeft: "-120px" }} />
+            <Link href="/" id="had-img" class="xl:w-72 w-52 h-10 flex justify-center items-center">
+              <Image src={logo} alt="Hazmick" style={{ marginLeft: "-90px" }} />
             </Link>
 
             <div onClick={showHide} class="block xl:hidden">
