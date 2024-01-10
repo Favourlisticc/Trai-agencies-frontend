@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from "react";
 
-import logo from "../public/svgs/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg"
+import logo from "../public/Screenshot (33)_prev_ui.png"
+import arrowright from "../public/icon/arrow-right.png"
 
 
 export default function Navbar() {
@@ -65,8 +66,8 @@ export default function Navbar() {
             <Link
               href="/"
               id="had-img"
-              style={{ marginLeft: "-70px" }}
-              className="w-52 h-10 flex justify-center items-center"
+              style={{ marginLeft: "-30px" }}
+              className="w-36 h-10 flex justify-center items-center"
             >
               <Image src={logo} alt="Hazmick" className=''/>
             </Link>
@@ -92,10 +93,11 @@ export default function Navbar() {
 
           <div>
             <Link
-              class=" bg-blue-700 text-white rounded-md px-8 py-3 outline-none hover:bg-blue-800"
+              class=" bg-blue-700 text-white rounded-md flex px-8 py-3 outline-none hover:bg-blue-800"
               href="/auth/register"
             >
               View Available Agencies
+              <Image src={arrowright} alt=''  className='ml-3'/>
             </Link>
           </div>
         </div>
