@@ -128,8 +128,8 @@ export default function Navbar() {
         <div id="small-screen" style={{ zIndex: 99999 }} class=" flex lg:hidden flex-col bg-white xl:flex-row justify-between pl-4 pr-5 xl:px-20">
 
           <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" class="xl:w-72 w-52 h-10 flex justify-center items-center">
-              <Image src={logo} alt="Hazmick" style={{ marginLeft: "-90px" }} />
+            <Link href="/" id="had-img" class="xl:w-72 w-28 h-10 flex justify-center items-center">
+              <Image src={logo} alt="Hazmick" style={{ marginLeft: "-10px", marginTop: "8px" }} />
             </Link>
 
             <div onClick={showHide} class="block xl:hidden">
@@ -168,11 +168,17 @@ export default function Navbar() {
 
 
 
-          <div>
-
-            <Link onClick={showHide} class=" bg-blue-700 text-white rounded-md px-8 py-3 outline-none hover:bg-blue-800" href="/auth/register">View Available Agencies</Link>
-
-          </div>
+        <Link
+              class=" bg-blue-700 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
+              href="/auth/register"
+            >
+              <p className='hover:mr-5'>View Available Agencies</p>
+              <FontAwesomeIcon
+                icon={faPersonWalkingArrowRight}
+                className="w-7 ml-2"
+                onClick={handleClick}
+              />
+            </Link>
 
 
         </div>
