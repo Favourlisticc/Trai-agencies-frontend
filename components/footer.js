@@ -48,18 +48,18 @@ export default function Footer() {
           <div className="flex flex-col py-3 lg:py-0 mr-12">
 
             <div>
-              <h2 className=" text-base font-bold tracking-wide ">About</h2>
+              <h2 className="text-black font-bold tracking-wide">About</h2>
             </div>
 
             <div className="py-4 font-medium tracking-wider leading-9 text-sm">
-            <Link className="block" href="/"> Home</Link>
-              <Link className="block" href="/"> Features</Link>
+            <Link className="block text-black" href="/"> Home</Link>
+              <Link className="block text-black" href="/"> Features</Link>
 
-              <Link className="block" href="/about-us"> Company</Link>
+              <Link className="block text-black" href="/about-us"> Company</Link>
 
-              <Link className="block" href="/careers"> Careers</Link>
+              <Link className="block text-black" href="/careers"> Careers</Link>
 
-              <Link className="block" href="/press">Press</Link>
+              <Link className="block text-black" href="/press">Press</Link>
 
             </div>
           </div>
