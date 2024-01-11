@@ -64,13 +64,13 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col py-3 lg:py-0">
+          <div className="flex flex-col py-3 lg:py-0 mr-12">
             <div>
               <h2 className=" text-base font-bold tracking-wide ">Learn</h2>
             </div>
             <div className="py-4 font-medium tracking-wider leading-9 text-sm">
 
-              <Link className="block text-black font-bold" href="/">Blog</Link>
+              <Link className="block text-black" href="/">Blog</Link>
               <Link className="block" href="/">Youtube</Link>
               <Link className="block" href="/">Help</Link>
             </div>
