@@ -14,7 +14,7 @@ export default function Home() {
         <title>HomePage | Trai</title>
         <meta name="description" content="Trai - World Class Recruitment Agency Index" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/Screenshot (33)_prev_ui.png" />
+        <link rel="icon" href="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
       </Head>
     <Navbar />
     <main
@@ -65,7 +65,7 @@ export default function Home() {
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
             Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+            <span className="inline-block transition-transform group-hover:translate-x-1 ">
               -&gt;
             </span>
           </h2>

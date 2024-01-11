@@ -1,9 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from "react";
+import { useState } from 'react';
 
 import logo from "../public/Screenshot (33)_prev_ui.png"
-import arrowright from "../public/icon/arrow-right.png"
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonWalkingArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Navbar() {
@@ -45,6 +49,12 @@ export default function Navbar() {
     scrollFunction();
   }
   }
+
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(true);
+  };
 
 
   return (
@@ -93,11 +103,15 @@ export default function Navbar() {
 
           <div>
             <Link
-              class=" bg-blue-700 text-white rounded-md flex px-8 py-3 outline-none hover:bg-blue-800"
+              class=" bg-blue-700 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
-              View Available Agencies
-              <Image src={arrowright} alt=''  className='ml-3'/>
+              <p className='hover:mr-5'>View Available Agencies</p>
+              <FontAwesomeIcon
+                icon={faPersonWalkingArrowRight}
+                className="w-7 ml-2"
+                onClick={handleClick}
+              />
             </Link>
           </div>
         </div>
