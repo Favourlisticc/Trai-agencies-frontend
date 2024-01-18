@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@1&display=swap');
+@import "leaflet/dist/leaflet.css";
+@import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+@import "leaflet-defaulticon-compatibility";
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,3 +31,16 @@ body {
   background: white;
     font-family: 'IBM Plex Sans', sans-serif;
 }
+
+/* styles.css */
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: red;
+  color: #fff;
+}
+

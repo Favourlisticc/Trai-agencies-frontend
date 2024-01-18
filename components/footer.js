@@ -53,7 +53,7 @@ export default function Footer() {
 
             <div className="py-4 font-medium tracking-wider leading-9 text-sm">
             <Link className="block text-black" href="/"> Home</Link>
-              <Link className="block text-black" href="/"> Features</Link>uewyofgguu  ogfui
+              <Link className="block text-black" href="/"> Features</Link>
 
               <Link className="block text-black" href="/about-us"> Company</Link>
 
