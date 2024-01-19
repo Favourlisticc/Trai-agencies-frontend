@@ -26,7 +26,7 @@ const Map = () => {
     };
 
     return (
-      <div className="get-my-location">
+      <div className="get-my-location mt-20">
         <button onClick={getMyLocation}>Get My Location</button>
       </div>
     );
@@ -39,10 +39,10 @@ const Map = () => {
       <MapContainer
         style={{
           height: '100vh',
-          width: '100vw',
+          width: '100%',
         }}
         center={coord}
-        zoom={13}
+        zoom={2}
         scrollWheelZoom={false}
       >
         <TileLayer
