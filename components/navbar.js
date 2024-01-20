@@ -58,18 +58,11 @@ export default function Navbar() {
 
 
   return (
-    <div
-      id="popup"
-      style={{
-        backgroundColor: "rgba(26,26,26, .5)",
-        zIndex: "999999",
-      }}
-      class="w-0 h-0 justify-center px-4 py-8 xl:py-8 xl:px-0 items-center flex-col flex fixed top-0 left-0 bottom-0 right-0"
-    >
+    <div id="popup" class="w-0 h-0 justify-center items-center flex-col flex fixed top-0 left-0 bottom-0 right-0 b box shadow-2xl" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
     <div id="head-nav" class="fixed bg-white left-0 right-0 w-full z-50 top-0">
       <div >
-        <div id="big screen" class=" hidden lg:flex flex-col xl:flex-row justify-between pl-3 pr-4 lg:pr-20 lg:pl-12">
+        <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
 {/* LOGO */}
           <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
@@ -77,7 +70,7 @@ export default function Navbar() {
               href="/"
               id="had-img"
               style={{ marginLeft: "-30px" }}
-              className="w-36 h-10 flex justify-center items-center"
+              className="w-36 h-10 flex justify-center items-center mt"
             >
               <Image src={logo} alt="Hazmick" className=''/>
             </Link>
@@ -89,7 +82,7 @@ export default function Navbar() {
 
           <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
 
-          <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Home</Link>
+          <Link href="/" class=" cursor-pointer hover:text-blue-700">Home</Link>
             <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
 
 
@@ -99,7 +92,7 @@ export default function Navbar() {
           </div>
 
 
-          <div class="flex py-5 xl:py-6">
+          <div class="flex py-3">
 
           <div>
             <Link

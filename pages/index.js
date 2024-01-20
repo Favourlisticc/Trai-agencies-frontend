@@ -21,8 +21,7 @@ export default function Home() {
         <link rel="icon" href="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
       </Head>
     <Navbar />
-    <main
-          >
+    <main className='bg bg'>
     <MapComponent />
     </main>
 <Footer />
