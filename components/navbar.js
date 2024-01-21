@@ -58,9 +58,9 @@ export default function Navbar() {
 
 
   return (
-    <div id="popup" class="w-0 h-0 justify-center items-center flex-col flex fixed top-0 left-0 bottom-0 right-0 b box shadow-2xl" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
+    <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" class="fixed bg-white left-0 right-0 w-full z-50 top-0">
+    <div id="head-nav" class="fixed bg-white left-0 right-0 w-full border-b top-0 shadow-xl">
       <div >
         <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
@@ -70,7 +70,7 @@ export default function Navbar() {
               href="/"
               id="had-img"
               style={{ marginLeft: "-30px" }}
-              className="w-36 h-10 flex justify-center items-center mt"
+              className="w-36 h-10 flex justify-center items-center"
             >
               <Image src={logo} alt="Hazmick" className=''/>
             </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
 
 
 
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-32">
 
           <Link href="/" class=" cursor-pointer hover:text-blue-700">Home</Link>
             <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
 
           <div>
             <Link
-              class=" bg-blue-700 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
+              class=" bg-blue-600 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
               <p className='hover:mr-5'>View Available Agencies</p>

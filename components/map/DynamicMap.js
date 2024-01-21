@@ -12,35 +12,10 @@ const Map = () => {
     { id: 2, name: 'Lagos', lat: 6.5244, lon: 3.3792 },
   ]);
 
-  const GetMyLocation = () => {
-    const getMyLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          setMarkers([
-            ...markers,
-            {
-              id: markers.length + 1,
-              name: 'My Location',
-              lat: position.coords.latitude,
-              lon: position.coords.longitude,
-            },
-          ]);
-        });
-      } else {
-        console.log('Geolocation is not supported by this browser.');
-      }
-    };
-
-    return (
-      <div className="get-my-location mt-10">
-        <button onClick={getMyLocation}>Get My Location</button>
-      </div>
-    );
-  };
 
   return (
     <div>
-      <GetMyLocation />
+
       <MapContainer
         style={{
           height: '100vh',
@@ -69,7 +44,7 @@ const Map = () => {
                 iconAnchor: [12.5, 41],
                 popupAnchor: [0, -41],
                 shadowUrl: '/icon/maker-shadow.png',
-                shadowSize: [41, 41],
+                shadowSize: [51, 45],
               })
             }
           >
