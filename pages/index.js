@@ -34,10 +34,13 @@ export default function Home() {
       </div>
     <MapComponent />
 
-    <div id="targetDiv" className='mt-20 mb-20 flex justify-center max-sm:flex-col'>
+    <div id="targetDiv" className='mt-20 mb-20 flex justify-center max-sm:flex-col skewed'>
 
       <input type="email" name="email" id="" placeholder='Email' className='py-2 border-2 border-blue-600 rounded-md w-80 pl-2 focus:border-blue-500 max-sm:ml-7'/>
       <button className='ml-8 px-2 rounded-md bg-blue-600 text-white active:bg-blue-300 active:text-black max-sm:mt-5 max-sm:ml-20 max-sm:w-52 max-sm:py-2'>Join waitList</button>
+
+
+
    </div>
 
 
