@@ -20,6 +20,7 @@ const Map = () => {
         style={{
           height: '100vh',
           width: '100%',
+          borderRadius: '15px'
         }}
         center={[6, 10]}
         zoom={2}

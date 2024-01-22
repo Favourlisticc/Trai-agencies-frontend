@@ -10,6 +10,7 @@ import MapComponent from "@/components/map/map"
 
 
 
+
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
@@ -20,19 +21,64 @@ export default function Home() {
         <meta name="description" content="Trai - World Class Recruitment Agency Index" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
+
+         {/* Google / Search Engine Tags  */}
+            <meta itemprop="name" content="Trai - Recuiter Page" />
+            <meta itemprop="description" content="Trai - World Class Recruitment Agency Index" />
+            <meta itemprop="image" content="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg"/>
+
+            {/* Facebook Meta Tags */}
+            <meta property="og:url" content="https://simonfavoursunday.tech" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Trai - Recuiter Page" />
+            <meta property="og:description" content="Trai - World Class Recruitment Agency Index" />
+            <meta property="og:image" content="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
+
+            {/* Twitter Meta Tags  */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Trai - Recuiter Page" />
+            <meta name="twitter:description" content="Trai - World Class Recruitment Agency Index" />
+            <meta name="twitter:image" content="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
+
       </Head>
     <Navbar />
-    <main className="bg bg">
-      <div className="mt-28 mb-12">
-          <h1 className="text-4xl text-center mx-52 font-medium max-sm:text-sm max-sm:mx-0">Creating Global Connections And Building Trust For Companies And Job Recruiters</h1>
+    <main className="">
+      <div className="mt-32 mb-12 flex justify-between">
+        <div className="">
+         <h1 className="text-center text-4xl ml-16 mt-5">The Recruitment Agency Index</h1>
 
-        <div className="flex justify-center">
+         <p className="w-96 text-center ml-28 mt-5 font-semibold text-xl text-gray-700">Our Mission is to have a simple, easy-to-use platform that displays
+         <p className="text-orange-500 font-semibold">every single recruitment organisation in the world.</p>
+         We aim to increase the visibility of these agencies for
+         two key audiences:</p>
+
+         <div className="flex mt-16 ml-5">
+             <div className="w-72">
+              <p className="ml-32 text-4xl mb-10">🧑‍💼</p>
+                 <p className="text-center">Job-Seekers seeking alternatives to traditional job boards.</p>
+             </div>
+
+             <div className="w-72">
+              <p className="ml-32 text-4xl mb-10">🏢</p>
+                 <p className="text-center">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
+             </div>
+         </div>
+
           <Link to="targetDiv" smooth={true} duration={1000} offset={70}>
             <button className="mt-5 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2">Join Our Waiting List</button>
           </Link>
         </div>
+
+
+
+        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2">
+
+          <MapComponent />
+        </div>
+
+
       </div>
-    <MapComponent />
+
 
     <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed container ">
       <h2 className=" text-white text-center text-4xl font-bold mb-5 underline">Join Waitlist</h2>
