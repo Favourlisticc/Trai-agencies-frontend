@@ -18,10 +18,11 @@ const Map = () => {
 
       <MapContainer
         style={{
-          height: '100vh',
+          height: '70vh',
           width: '100%',
           borderRadius: '15px'
         }}
+        className=''
         center={[6, 10]}
         zoom={2}
         scrollWheelZoom={false}

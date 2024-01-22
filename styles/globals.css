@@ -45,6 +45,11 @@ body {
   color: #fff;
 }
 
+.gradirrt{
+  background: #FFFFFF;
+  background: radial-gradient(ellipse farthest-corner at bottom left, #FFFFFF 47%, #3874FF 74%, #FFFFFF 100%);
+}
+
 .skewed {
   margin-top: 0px;
   background: #2c3e50;

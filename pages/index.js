@@ -10,7 +10,6 @@ import MapComponent from "@/components/map/map"
 
 
 
-
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
@@ -43,44 +42,50 @@ export default function Home() {
       </Head>
     <Navbar />
     <main className="">
-      <div className="mt-32 mb-12 flex justify-between">
+      <div className="mt-0 flex justify-between max-sm:flex-col pt-28 mb-12">
         <div className="">
-         <h1 className="text-center text-4xl ml-16 mt-5">The Recruitment Agency Index</h1>
+         <h1 className="text-center text-4xl ml-16 mt-5 font-semibold max-sm:ml-0 max-sm:text-3xl ">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
 
-         <p className="w-96 text-center ml-28 mt-5 font-semibold text-xl text-gray-700">Our Mission is to have a simple, easy-to-use platform that displays
-         <p className="text-orange-500 font-semibold">every single recruitment organisation in the world.</p>
+         <p className="w-96 text-center ml-28 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0">Our Mission is to have a simple, easy-to-use platform that displays
+         <span className="text-orange-500 font-semibold"> every single recruitment organisation in the world. </span>
          We aim to increase the visibility of these agencies for
          two key audiences:</p>
 
-         <div className="flex mt-16 ml-5">
-             <div className="w-72">
-              <p className="ml-32 text-4xl mb-10">🧑‍💼</p>
-                 <p className="text-center">Job-Seekers seeking alternatives to traditional job boards.</p>
+         <div className="flex mt-16 ml-5 max-sm:flex-col max-sm:ml-0">
+             <div className="w-72 text-center max-sm:w-full">
+              <p className="text-4xl mb-10 max-sm:ml-0">🧑‍💼</p>
+                 <p className="text-center max-sm:ml-0">Job-Seekers seeking alternatives to traditional job boards.</p>
              </div>
 
-             <div className="w-72">
-              <p className="ml-32 text-4xl mb-10">🏢</p>
+             <div className="w-72 max-sm:w-full text-center max-sm:mt-10">
+              <p className="text-4xl mb-10 max-sm:ml-0">🏢</p>
                  <p className="text-center">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
              </div>
          </div>
 
           <Link to="targetDiv" smooth={true} duration={1000} offset={70}>
-            <button className="mt-5 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2">Join Our Waiting List</button>
+            <button className="mt-16 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2 ml-52 max-sm:ml-20">Want to add your Agency?</button>
           </Link>
         </div>
 
 
 
-        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2">
+        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0">
 
           <MapComponent />
+
+          <button className="bg-blue-600 text-white mt-5 rounded-lg px-5 py-2">View the Index</button>
         </div>
 
 
       </div>
 
+      <div className="">
 
-    <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed container ">
+      </div>
+
+
+    <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed">
       <h2 className=" text-white text-center text-4xl font-bold mb-5 underline">Join Waitlist</h2>
       <p className="text-white text-center mb-5 px-20 max-sm:px-0 max-sm:text-sm">🚀 Ready to supercharge your career? Join our exclusive waitlist now and be the first to access exciting job opportunities, career tips, and more! 🌟 Simply drop your email below to stay ahead in your professional journey. Let`s build your future together! 🚀</p>
 

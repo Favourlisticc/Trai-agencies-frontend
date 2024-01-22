@@ -69,7 +69,7 @@ export default function Navbar() {
             <Link
               href="/"
               id="had-img"
-              style={{ marginLeft: "-30px" }}
+              style={{ marginLeft: "-20px" }}
               className="w-36 h-10 flex justify-center items-center"
             >
               <Image src={logo} alt="Hazmick" className=''/>
@@ -80,14 +80,14 @@ export default function Navbar() {
 
 
 
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-32">
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-40">
 
-          <Link href="/" class=" cursor-pointer hover:text-blue-700">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
+          <Link href="/" class=" cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
 
 
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Company</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
 
           </div>
 
@@ -148,12 +148,12 @@ export default function Navbar() {
 
         <div id="smald" class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
 
-        <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700">Pricing</Link>
+        <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
 
 
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Services</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700" > Company</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
 
         </div>
 
