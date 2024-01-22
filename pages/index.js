@@ -52,12 +52,12 @@ export default function Home() {
          two key audiences:</p>
 
          <div className="flex mt-16 ml-5 max-sm:flex-col max-sm:ml-0 max-sm:container">
-             <div className="w-72 text-center max-sm:w-full border-2 rounded-md">
+             <div className="w-72 text-center max-sm:w-full border-2 rounded-md px-5 py-5">
               <p className="text-4xl mb-10 max-sm:ml-0">🧑‍💼</p>
                  <p className="text-center max-sm:ml-0 font-semibold text-gray-500">Job-Seekers seeking alternatives to traditional job boards.</p>
              </div>
 
-             <div className="w-72 max-sm:w-full text-center max-sm:mt-10 border-2 rounded-md">
+             <div className="w-72 max-sm:w-full text-center max-sm:mt-10 border-2 rounded-md px-5 py-5">
               <p className="text-4xl mb-10 max-sm:ml-0 ">🏢</p>
                  <p className="text-center font-semibold text-gray-500">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
              </div>
