@@ -51,20 +51,20 @@ export default function Home() {
          We aim to increase the visibility of these agencies for
          two key audiences:</p>
 
-         <div className="flex mt-16 ml-5 max-sm:flex-col max-sm:ml-0">
-             <div className="w-72 text-center max-sm:w-full">
+         <div className="flex mt-16 ml-5 max-sm:flex-col max-sm:ml-0 max-sm:container">
+             <div className="w-72 text-center max-sm:w-full border-2 rounded-md">
               <p className="text-4xl mb-10 max-sm:ml-0">🧑‍💼</p>
-                 <p className="text-center max-sm:ml-0">Job-Seekers seeking alternatives to traditional job boards.</p>
+                 <p className="text-center max-sm:ml-0 font-semibold text-gray-500">Job-Seekers seeking alternatives to traditional job boards.</p>
              </div>
 
-             <div className="w-72 max-sm:w-full text-center max-sm:mt-10">
-              <p className="text-4xl mb-10 max-sm:ml-0">🏢</p>
-                 <p className="text-center">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
+             <div className="w-72 max-sm:w-full text-center max-sm:mt-10 border-2 rounded-md">
+              <p className="text-4xl mb-10 max-sm:ml-0 ">🏢</p>
+                 <p className="text-center font-semibold text-gray-500">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
              </div>
          </div>
 
           <Link to="targetDiv" smooth={true} duration={1000} offset={70}>
-            <button className="mt-16 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2 ml-52 max-sm:ml-20">Want to add your Agency?</button>
+            <button className="mt-16 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2 ml-52 max-sm:ml-20 max-sm:mb-10">Want to add your Agency?</button>
           </Link>
         </div>
 
