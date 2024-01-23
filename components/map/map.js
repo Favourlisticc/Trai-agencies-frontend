@@ -7,10 +7,10 @@ const DynamicMap = dynamic(() => import('./DynamicMap'), {
   ssr: false, // Disable server-side rendering
 });
 
-const MapPage = () => (
+const MapPage = (props) => (
   <div>
     {/* Other components or content */}
-    <DynamicMap />
+    <DynamicMap {...props}/>
   </div>
 );
 

@@ -1,4 +1,4 @@
-export const activitiesdata = [
+export const london = [
     {
         id: 1,
         companyName: "Cromwell Medical",
@@ -152,4 +152,66 @@ export const activitiesdata = [
 
     },
 
-];export default activitiesdata;
+];export default london;
+
+export const Lagos = [
+    {
+        id: 1,
+        companyName: "Cromwell Medical",
+        logo: "https://www.cromwellmedical.com/gfx/sec_logo.svg",
+        Address: "3 More London Riverside",
+
+        Website: "https://www.cromwellmedical.com/",
+                socialmedia :[
+            linkedin= "https://www.linkedin.com/company/cromwell-medical-staffing/",
+            youtube= "https://www.youtube.com/@cromwellmedicalstaffing",
+            facebook= "",
+            instagram= "",
+            twitter =""
+
+        ],
+        contactemail: "info@cromwellmedical.com",
+
+
+
+        section: "Healthcare"
+    },
+    {
+        id: 2,
+        companyName: "Daniel Owen",
+        logo: "https://www.danielowen.co.uk/uploads/do-logo.svg",
+        Address: "1st Floor Genesis House 17 Godliman Street London",
+
+        Website: "https://www.danielowen.co.uk/",
+        socialmedia :[
+            linkedin= "https://www.linkedin.com/company/daniel-owen/",
+            youtube= "",
+            facebook= "https://www.facebook.com/danielowenltd",
+            instagram= "https://www.instagram.com/danielowen_construction/",
+            twitter ="https://twitter.com/DanielOwen_DO"
+
+        ],
+        contactemail: "london.office@danielowen.co.uk",
+        section: "Construction, Engineering, Property Services, Design & consultancy"
+    },
+
+    {
+        id: 3,
+        companyName: "In 2 Ed Education",
+        logo: "https://static.wixstatic.com/media/39a349_34d97c2709484f5ca5a8428b2565aecf~mv2.png/v1/crop/x_758,y_0,w_3561,h_3740/fill/w_94,h_98,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Original%20on%20Transparent.png",
+        Address: "181 Holloway Rd, London N7 8LX, United Kingdom",
+    
+        Website: "https://www.in2ed.net/",
+        socialmedia :[
+            linkedin= "https://www.linkedin.com/company/in-2-ed-education/",
+            youtube= "",
+            facebook= "",
+            instagram= "https://www.instagram.com/in2education/",
+            twitter =""
+
+        ],
+        contactemail: "",
+        section: "Education"
+    },
+
+];

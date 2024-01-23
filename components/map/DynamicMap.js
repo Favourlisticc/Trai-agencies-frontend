@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
+// MapComponent.js
+
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { falocationdot } from '@fortawesome/free-solid-svg-icons';
+const MapComponent = ({ onMarkerClick }) => {
+  const markers = [
+    { id: 1, name: 'London', lat: 51.509865, lon: -0.118092, things: ['Thing 1', 'Thing 2'] },
+    { id: 2, name: 'Lagos', lat: 6.5244, lon: 3.3792, things: ['Thing A', 'Thing B'] },
+  ];
 
-const Map = () => {
-  const [markers, setMarkers] = useState([
-    { id: 1, name: 'London', lat: 51.509865, lon: -0.118092 },
-    { id: 2, name: 'Lagos', lat: 6.5244, lon: 3.3792 },
-  ]);
-
+  const handleMarkerClick = (marker) => {
+    onMarkerClick(marker);
+  };
 
   return (
-    <div>
-
+    <div className="flex">
       <MapContainer
         style={{
           height: '70vh',
           width: '100%',
-          borderRadius: '15px'
+          borderRadius: '15px',
         }}
-        className=''
         center={[6, 10]}
         zoom={2}
         scrollWheelZoom={false}
@@ -41,7 +41,7 @@ const Map = () => {
             icon={
               new L.Icon({
                 iconUrl: "/icon/map-icon.png",
-                iconRetinaUrl: '/icon/map-icon.png',
+                iconRetinaUrl: "/icon/map-icon.png",
                 iconSize: [25, 41],
                 iconAnchor: [12.5, 41],
                 popupAnchor: [0, -41],
@@ -49,8 +49,18 @@ const Map = () => {
                 shadowSize: [51, 45],
               })
             }
+            eventHandlers={{ click: () => handleMarkerClick(marker) }}
           >
-            <Popup>{marker.name}</Popup>
+            <Popup>
+              <div>
+                <h3>{marker.name}</h3>
+                <ul>
+                  {marker.things.map((thing, index) => (
+                    <li key={index}>{thing}</li>
+                  ))}
+                </ul>
+              </div>
+            </Popup>
           </Marker>
         ))}
       </MapContainer>
@@ -58,4 +68,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapComponent;
