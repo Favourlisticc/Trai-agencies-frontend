@@ -7,29 +7,36 @@ export const activitiesdata = [
 
         Website: "https://www.cromwellmedical.com/",
                 socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/cromwell-medical-staffing/",
+            youtube= "https://www.youtube.com/@cromwellmedicalstaffing",
+            facebook= "",
+            instagram= "",
+            twitter =""
+
+        ],
+        contactemail: "info@cromwellmedical.com",
 
 
+
+        section: "Healthcare"
     },
     {
         id: 2,
         companyName: "Daniel Owen",
         logo: "https://www.danielowen.co.uk/uploads/do-logo.svg",
         Address: "1st Floor Genesis House 17 Godliman Street London",
-        
+
         Website: "https://www.danielowen.co.uk/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/daniel-owen/",
+            youtube= "",
+            facebook= "https://www.facebook.com/danielowenltd",
+            instagram= "https://www.instagram.com/danielowen_construction/",
+            twitter ="https://twitter.com/DanielOwen_DO"
+
+        ],
+        contactemail: "london.office@danielowen.co.uk",
+        section: "Construction, Engineering, Property Services, Design & consultancy"
     },
 
     {
@@ -40,10 +47,15 @@ export const activitiesdata = [
     
         Website: "https://www.in2ed.net/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/in-2-ed-education/",
+            youtube= "",
+            facebook= "",
+            instagram= "https://www.instagram.com/in2education/",
+            twitter =""
+
+        ],
+        contactemail: "",
+        section: "Education"
     },
     {
         id: 4,
@@ -52,11 +64,16 @@ export const activitiesdata = [
         Address: "No 1 Poultry, London, EC2R 8EJ",
         Website: "https://www.mcgconstruction.co.uk/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
+            linkedin= "https://www.linkedin.com/company/constructionmcg/",
+            youtube= "",
+            facebook= "https://www.facebook.com/constructionmcg",
+            instagram= "https://www.instagram.com/constructionmcg/",
+            twitter ="https://twitter.com/constructionmcg"
 
+        ],
+        contactemail: "hello@mcgconstruction.co.uk",
 
+        section: "Construction"
     },
     {
         id: 5,
@@ -67,10 +84,15 @@ export const activitiesdata = [
 
         Website: "https://www.weareorbis.com/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/weareorbis/",
+            youtube= "",
+            facebook= "",
+            instagram= "",
+            twitter =""
+
+        ],
+        contactemail: "info@weareorbis.com",
+        section: "Technology"
     },
     {
         id: 6,
@@ -80,12 +102,17 @@ export const activitiesdata = [
         
         Website: "https://www.prospect-health.com/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/prospect-health/",
+            youtube= "",
+            facebook= "https://www.facebook.com/prospecthealthrecruitment/",
+            instagram= "",
+            twitter ="https://twitter.com/prospect_health"
+
+        ],
+        contactemail: "info@prospect-health.com",
 
 
+        section: "Healthcare"
     },
     {
         id: 7,
@@ -95,11 +122,16 @@ export const activitiesdata = [
         
         Website: "https://www.psrsolutions.co.uk/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
-    
+            linkedin= "https://www.linkedin.com/company/prospect-health/",
+            youtube= "",
+            facebook= "https://www.facebook.com/prospecthealthrecruitment/",
+            instagram= "",
+            twitter ="https://twitter.com/prospect_health"
+
+        ],
+        contactemail: "",
+
+        section: "Construction"
     },
     {
         id: 8,
@@ -109,11 +141,15 @@ export const activitiesdata = [
 
         Website: "https://www.randstad.com/",
         socialmedia :[
-            linkedin= "",
-            youtube= ""
-        ]
-        
+            linkedin= "https://www.linkedin.com/company/randstad/",
+            youtube= "",
+            facebook= "",
+            instagram= "",
+            twitter =""
+
+        ],
+        contactemail: "",
 
     },
-]
-;export default activitiesdata;
+
+];export default activitiesdata;
