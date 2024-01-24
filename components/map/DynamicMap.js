@@ -59,7 +59,18 @@ const MapComponent = ({ onMarkerClick }) => {
             <Popup>
               <div>
                 <h3>{marker.name}</h3>
-                {/* Add more details based on your marker data */}
+                <ul>
+                  {marker.things.map((location) => (
+                    <li key={location.id}>
+                      <strong>{location.companyName}</strong>
+                      <p>{location.Address}</p>
+                      {/* Uncomment and customize the following lines as needed */}
+                      {/* <p>Website: {location.Website}</p> */}
+                      {/* <p>Email: {location.contactemail}</p> */}
+                      {/* Add more details as needed */}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Popup>
           </Marker>

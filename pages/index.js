@@ -42,7 +42,7 @@ export default function Home() {
             <meta itemprop="image" content="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg"/>
 
             {/* Facebook Meta Tags */}
-            <meta property="og:url" content="https://simonfavoursunday.tech" />
+            <meta property="og:url" content="https://trai.onrender.com/" />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Trai - Recuiter Page" />
             <meta property="og:description" content="Trai - World Class Recruitment Agency Index" />
