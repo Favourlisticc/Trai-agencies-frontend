@@ -5,6 +5,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { london, Lagos } from "../../Data";  // Import your data arrays
 
+import Image from 'next/image';
+
 const MapComponent = ({ onMarkerClick }) => {
   const markers = [
     ...london.map(location => ({
@@ -12,7 +14,14 @@ const MapComponent = ({ onMarkerClick }) => {
       name: location.companyName,
       lat: location.Latitude,
       lon: location.Longitude,
-      things: location.things,
+
+      Logo: location.logo,
+      Address: location.Address,
+      Website: location.Website,
+      contactemail: location.contactemail,
+      section: location.section
+
+
     }))
   ];
 
@@ -58,19 +67,13 @@ const MapComponent = ({ onMarkerClick }) => {
           >
           <Popup>
   <div>
+    <Image src={marker.Logo} alt="Company-logo" width={20} height={20} className='border-2 rounded-full px-5 py-5'/>
     <h3>{marker.name}</h3>
-    <ul>
-      {marker.things && marker.things.map((location) => (
-        <li key={location.id}>
-          <strong>{location.companyName}</strong>
-          <p>{location.Address}</p>
-          {/* Uncomment and customize the following lines as needed */}
-          {/* <p>Website: {location.Website}</p> */}
-          {/* <p>Email: {location.contactemail}</p> */}
-          {/* Add more details as needed */}
-        </li>
-      ))}
-    </ul>
+    <p>{marker.name}</p>
+    <p>{marker.name}</p>
+    <p>{marker.name}</p>
+
+
   </div>
 </Popup>
 

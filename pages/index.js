@@ -7,25 +7,49 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import MapComponent from "@/components/map/map"
 
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 
-
+export const metadata = {
+  title: {
+    default: "Homepage | IBK",
+    template: "%s | IBK",
+  },
+  description:
+    "Hi, my name is Ibukun Abejide, a passionate product designer on a mission to build successful products for millions of users across the world. I have experience working in the Fintech, E-commerce, EdTech and AI sectors and have also helped more than 100 people get into tech.",
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  openGraph: {
+    images: [
+      {
+        url: process.env.NEXT_PUBLIC_BASE_URL + "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 // const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
 
-  // const [selectedMarker, setSelectedMarker] = useState(null);
+  const [selectedMarker, setSelectedMarker] = useState(null);
 
-  // const handleMarkerClick = (marker) => {
-  //   setSelectedMarker(marker);
-  // };
+  const handleMarkerClick = (marker) => {
+    setSelectedMarker(marker);
+  };
 
-  // const handleClose = () => {
-  //   // Your logic to handle closing the details
-  //   setSelectedMarker(null); // Assuming selectedMarker is a state variable
-  // };
+  const handleClose = () => {
+    // Your logic to handle closing the details
+    setSelectedMarker(null); // Assuming selectedMarker is a state variable
+  };
+
+
 
 
   return (
@@ -87,7 +111,7 @@ export default function Home() {
 
         <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0">
         <MapComponent
-        // onMarkerClick={handleMarkerClick}
+        onMarkerClick={handleMarkerClick}
         />
             <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button>
           </div>

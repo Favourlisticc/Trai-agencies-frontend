@@ -60,7 +60,7 @@ export default function Navbar() {
   return (
     <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" class="fixed bg-white left-0 right-0 w-full top-0">
+    <div id="head-nav" class="fixed bg-white left-0 right-0 w-full border-b top-0 shadow-xl">
       <div >
         <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
@@ -69,7 +69,7 @@ export default function Navbar() {
             <Link
               href="/"
               id="had-img"
-              style={{ marginLeft: "-20px" }}
+              style={{ marginLeft: "-30px" }}
               className="w-36 h-10 flex justify-center items-center"
             >
               <Image src={logo} alt="Hazmick" className=''/>
@@ -80,7 +80,7 @@ export default function Navbar() {
 
 
 
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-40">
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-32">
 
           <Link href="/" class=" cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
             <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
@@ -88,13 +88,12 @@ export default function Navbar() {
 
             <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
             <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
-
           </div>
 
 
           <div class="flex py-3">
 
-          {/* <div>
+          <div>
             <Link
               class=" bg-blue-600 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
@@ -106,10 +105,8 @@ export default function Navbar() {
                 onClick={handleClick}
               />
             </Link>
-          </div> */}
+          </div>
         </div>
-
-
         </div>
 
 
@@ -159,7 +156,7 @@ export default function Navbar() {
 
 
 {/* login and signuo */}
-        {/* <div id="smalx" class="hidden xl:flex flex-col xl:flex-row pt-6 pb-16 xl:py-6 items-center justify-between">
+        <div id="smalx" class="hidden xl:flex flex-col xl:flex-row pt-6 pb-16 xl:py-6 items-center justify-between">
 
 
 
@@ -176,7 +173,7 @@ export default function Navbar() {
             </Link>
 
 
-        </div> */}
+        </div>
 
 
         </div>
