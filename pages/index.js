@@ -44,9 +44,9 @@ export default function Home() {
             {/* Facebook Meta Tags */}
             <meta property="og:url" content="https://trai.onrender.com/" />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="Trai - Recuiter Page" />
+            <meta property="og:title" content="Trai - Home Page" />
             <meta property="og:description" content="Trai - World Class Recruitment Agency Index" />
-            <meta property="og:image" content="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
+            <link rel="icon" name="og:image" href="/svg/Copy_of_Black_Simple_Clothing_Brand_Logo_-_2.svg" />
 
             {/* Twitter Meta Tags  */}
             <meta name="twitter:card" content="summary_large_image" />
