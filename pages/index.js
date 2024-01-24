@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { Inter } from "next/font/google"
+// import Image from "next/image"
+// import { Inter } from "next/font/google"
 import Head from "next/head"
 import { Link } from "react-scroll";
 
@@ -7,25 +7,25 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import MapComponent from "@/components/map/map"
 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 
 
 
-const inter = Inter({ subsets: ["latin"] })
+// const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
 
-  const [selectedMarker, setSelectedMarker] = useState(null);
+  // const [selectedMarker, setSelectedMarker] = useState(null);
 
-  const handleMarkerClick = (marker) => {
-    setSelectedMarker(marker);
-  };
+  // const handleMarkerClick = (marker) => {
+  //   setSelectedMarker(marker);
+  // };
 
-  const handleClose = () => {
-    // Your logic to handle closing the details
-    setSelectedMarker(null); // Assuming selectedMarker is a state variable
-  };
+  // const handleClose = () => {
+  //   // Your logic to handle closing the details
+  //   setSelectedMarker(null); // Assuming selectedMarker is a state variable
+  // };
 
 
   return (
@@ -86,7 +86,9 @@ export default function Home() {
 
 
         <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0">
-        <MapComponent onMarkerClick={handleMarkerClick} />
+        <MapComponent
+        // onMarkerClick={handleMarkerClick}
+        />
             <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button>
           </div>
 
