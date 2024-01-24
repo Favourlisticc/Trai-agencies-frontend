@@ -5,6 +5,13 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { london, Lagos } from "../../Data";  // Import your data arrays
 
+import facebook from "../../public/icon/facebook.png"
+import twitter from "../../public/icon/twitter.png"
+import instagram from "../../public/icon/instagram.png"
+import youtube from "../../public/icon/youTube.png"
+import Linkedin from "../../public/icon/linedinl.png"
+import checked from "../../public/icon/checked.png"
+
 import Image from 'next/image';
 
 const MapComponent = ({ onMarkerClick }) => {
@@ -19,7 +26,12 @@ const MapComponent = ({ onMarkerClick }) => {
       Address: location.Address,
       Website: location.Website,
       contactemail: location.contactemail,
-      section: location.section
+      section: location.section,
+      linkedin: location.linkedin,
+      youtube: location.youtube,
+      facebook: location.facebook,
+      instagram: location.instagram,
+      twitter : location.twitter,
 
 
     }))
@@ -38,10 +50,10 @@ const MapComponent = ({ onMarkerClick }) => {
           borderRadius: '15px',
         }}
         center={[51.53, -0.1]}
-        zoom={12}
+        zoom={10}
         scrollWheelZoom={false}
         doubleClickZoom={false}
-        zoomControl={false}
+        zoomControl={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
@@ -67,13 +79,50 @@ const MapComponent = ({ onMarkerClick }) => {
           >
           <Popup>
   <div>
-    <Image src={marker.Logo} alt="Company-logo" width={20} height={20} className='border-2 rounded-full px-5 py-5'/>
-    <h3>{marker.name}</h3>
-    <p>{marker.Address}</p>
-    <p>{marker.Website}</p>
-    <p>{marker.contactemail}</p>
-    <p>{marker.section}</p>
-    <p>{marker.contactemail}</p>
+    <div className='flex'>
+      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-full w-20 h-20'/>
+      <h3 className='mt-5 ml-5 font-semibold'>{marker.name}</h3>
+      <Image src={checked} alt="" width={30} height={5} className='h-7 ml-28 mt-5'/>
+
+    </div>
+
+
+      <p className='text-blue-500 font-bold'>{marker.section}</p>
+      <p>{marker.Address}</p>
+
+
+  <a href={marker.Website}  className='underline font-semibold ' style={{color: "red", marginBottom: "20px"}}>
+        Website
+  </a><br/>
+
+  <a href={marker.contactemail} target="_blank"  className='underline font-semibold' style={{color: "red"}}>
+        Email.com
+  </a>
+
+
+
+  <div className='flex justify-between mt-7'>
+
+        <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
+         <Image src={Linkedin} alt="" className="h-5 w-5"/>
+        </a>
+
+        <a href={marker.facebook} target="_blank" rel="noopener noreferrer">
+        <Image src={facebook} alt="" className="h-5 w-5"/>
+        </a>
+
+        <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
+        <Image src={youtube} alt="" className="h-5 w-5"/>
+        </a>
+
+        <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
+         <Image src={instagram} alt="" className="h-5 w-5"/>
+        </a>
+
+        <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
+         <Image src={twitter} alt="" className="h-5 w-5"/>
+        </a>
+  </div>
 
 
   </div>

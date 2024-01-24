@@ -7,7 +7,8 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import MapComponent from "@/components/map/map"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 
 export const metadata = {
@@ -39,6 +40,7 @@ export const metadata = {
 export default function Home() {
 
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const [count, setCount] = useState(0);
 
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
@@ -49,8 +51,20 @@ export default function Home() {
     setSelectedMarker(null); // Assuming selectedMarker is a state variable
   };
 
+  useEffect(() => {
+    // Function to increment the count
+    const incrementCount = () => {
+      if (count < 7) {
+        setCount((prevCount) => prevCount + 1);
+      }
+    };
 
+    // Set up a timer to increment the count every second
+    const timer = setInterval(incrementCount, 1000);
 
+    // Clean up the timer when the component unmounts
+    return () => clearInterval(timer);
+  }, [count]);
 
   return (
    <>
@@ -83,28 +97,25 @@ export default function Home() {
     <main className="">
       <div className="mt-0 flex justify-between max-sm:flex-col pt-28 mb-12">
         <div className="">
-         <h1 className="text-center text-4xl ml-16 mt-5 font-semibold max-sm:ml-0 max-sm:text-3xl ">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
+         <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-3xl ">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
 
-         <p className="w-96 text-center ml-28 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0">Our Mission is to have a simple, easy-to-use platform that displays
-         <span className="text-orange-500 font-semibold"> every single recruitment organisation in the world. </span>
-         We aim to increase the visibility of these agencies for
-         two key audiences:</p>
+         <p className="w-96 text-start ml-10 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0">Our Mission is Simple.
 
-         <div className="flex mt-16 ml-5 max-sm:flex-col max-sm:ml-0 max-sm:container">
-             <div className="w-72 text-center max-sm:w-full border-2 rounded-md px-5 py-5">
-              <p className="text-4xl mb-10 max-sm:ml-0">🧑‍💼</p>
-                 <p className="text-center max-sm:ml-0 font-semibold text-gray-500">Job-Seekers seeking alternatives to traditional job boards.</p>
-             </div>
+Every single Recruitment Agency in the World.
 
-             <div className="w-72 max-sm:w-full text-center max-sm:mt-10 border-2 rounded-md px-5 py-5">
-              <p className="text-4xl mb-10 max-sm:ml-0 ">🏢</p>
-                 <p className="text-center font-semibold text-gray-500">Companies with vacancies seeking reliable recruiters to partner with; we connect talent with opportunity.</p>
-             </div>
-         </div>
+All accessible from our Index.
 
-          <Link to="targetDiv" smooth={true} duration={1000} offset={70}>
-            <button className="mt-16 bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-500 active:bg-white active:text-black active:border-2 ml-52 max-sm:ml-20 max-sm:mb-10">Want to add your Agency?</button>
-          </Link>
+Starting with the UK.</p>
+        <div className="t text-center mt-16">
+            <p className="text-2xl mb-5 font-semibold">PHASE 1: UK</p>
+
+             <h1 className="text-5xl mb-5 text-orange-500 font-semibold">{count}</h1>
+
+            <p className="t text-3xl font-semibold ">AGENCIES</p>
+        </div>
+
+
+
         </div>
 
 
@@ -122,7 +133,7 @@ export default function Home() {
 
 
 
-    <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed">
+    {/* <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed">
       <h2 className=" text-white text-center text-4xl font-bold mb-5 underline">Join Waitlist</h2>
       <p className="text-white text-center mb-5 px-20 max-sm:px-0 max-sm:text-sm">🚀 Ready to supercharge your career? Join our exclusive waitlist now and be the first to access exciting job opportunities, career tips, and more! 🌟 Simply drop your email below to stay ahead in your professional journey. Let`s build your future together! 🚀</p>
 
@@ -130,7 +141,7 @@ export default function Home() {
         <input type="email" name="email" id="" placeholder="Email" className="py-2 border-2 border-blue-600 rounded-md w-80 pl-2 active:border-blue-500 max-sm:ml-7 h-10"/>
         <button className="ml-8 px-2 rounded-md bg-blue-600 text-white  hover:bg-blue-500 active:bg-blue-300 active:text-black max-sm:mt-5 max-sm:ml-20 max-sm:w-52 max-sm:py-2 h-10">Join waitList</button>
       </div>
-   </div>
+   </div> */}
 
 
     </main>

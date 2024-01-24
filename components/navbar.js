@@ -98,7 +98,7 @@ export default function Navbar() {
               class=" bg-blue-600 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
-              <p className='hover:mr-5'>View Available Agencies</p>
+              <p className='hover:mr-5'>Add your Agency</p>
               <FontAwesomeIcon
                 icon={faPersonWalkingArrowRight}
                 className="w-7 ml-2"
@@ -164,7 +164,7 @@ export default function Navbar() {
               class=" bg-blue-700 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
-              <p className='hover:mr-5'>View Available Agencies</p>
+              <p className='hover:mr-5'>Add your Agency</p>
               <FontAwesomeIcon
                 icon={faPersonWalkingArrowRight}
                 className="w-7 ml-2"
