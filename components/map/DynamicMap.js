@@ -69,9 +69,11 @@ const MapComponent = ({ onMarkerClick }) => {
   <div>
     <Image src={marker.Logo} alt="Company-logo" width={20} height={20} className='border-2 rounded-full px-5 py-5'/>
     <h3>{marker.name}</h3>
-    <p>{marker.name}</p>
-    <p>{marker.name}</p>
-    <p>{marker.name}</p>
+    <p>{marker.Address}</p>
+    <p>{marker.Website}</p>
+    <p>{marker.contactemail}</p>
+    <p>{marker.section}</p>
+    <p>{marker.contactemail}</p>
 
 
   </div>
