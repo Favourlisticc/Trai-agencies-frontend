@@ -15,10 +15,10 @@ export const london = [
 
         // ],
         contactemail: "info@cromwellmedical.com",
+        Latitude: "51.5042385219317",
+        Longitude: "-0.0797658000074061",
+        section: "Healthcare",
 
-
-
-        section: "Healthcare"
     },
     {
         id: 2,
@@ -36,6 +36,8 @@ export const london = [
 
         // ],
         contactemail: "london.office@danielowen.co.uk",
+        Latitude: "51.5125431435153",
+        Longitude: "-0.0988261302993947",
         section: "Construction, Engineering, Property Services, Design & consultancy"
     },
 
@@ -55,6 +57,8 @@ export const london = [
 
         // ],
         contactemail: "",
+        Latitude: "51.550207015906516",
+        Longitude: "-0.109261774474218",
         section: "Education"
     },
     {
@@ -73,6 +77,8 @@ export const london = [
         // ],
         contactemail: "hello@mcgconstruction.co.uk",
 
+        Latitude: "51.51338",
+        Longitude: "-0.09054",
         section: "Construction"
     },
     {
@@ -92,6 +98,8 @@ export const london = [
 
         // ],
         contactemail: "info@weareorbis.com",
+        Latitude: "",
+        Longitude: "",
         section: "Technology"
     },
     {
@@ -112,6 +120,8 @@ export const london = [
         contactemail: "info@prospect-health.com",
 
 
+        Latitude: "51.5135037633774",
+        Longitude: "-0.0778395884424423",
         section: "Healthcare"
     },
     {
@@ -131,6 +141,8 @@ export const london = [
         // ],
         contactemail: "",
 
+        Latitude: "53.9927013505412",
+        Longitude: "-1.54007965429427",
         section: "Construction"
     },
     {
@@ -150,69 +162,9 @@ export const london = [
         // ],
         contactemail: "",
 
+        Latitude: "51.520286958395",
+        Longitude: "-0.100557261455871",
+
     },
 
 ];export default london;
-
-export const Lagos = [
-    {
-        id: 1,
-        companyName: "Cromwell Medical",
-        logo: "https://www.cromwellmedical.com/gfx/sec_logo.svg",
-        Address: "3 More London Riverside",
-
-        // Website: "https://www.cromwellmedical.com/",
-        //         socialmedia :[
-        //     linkedin= "https://www.linkedin.com/company/cromwell-medical-staffing/",
-        //     youtube= "https://www.youtube.com/@cromwellmedicalstaffing",
-        //     facebook= "",
-        //     instagram= "",
-        //     twitter =""
-
-        // ],
-        contactemail: "info@cromwellmedical.com",
-
-
-
-        section: "Healthcare"
-    },
-    {
-        id: 2,
-        companyName: "Daniel Owen",
-        logo: "https://www.danielowen.co.uk/uploads/do-logo.svg",
-        Address: "1st Floor Genesis House 17 Godliman Street London",
-
-        // Website: "https://www.danielowen.co.uk/",
-        // socialmedia :[
-        //     linkedin= "https://www.linkedin.com/company/daniel-owen/",
-        //     youtube= "",
-        //     facebook= "https://www.facebook.com/danielowenltd",
-        //     instagram= "https://www.instagram.com/danielowen_construction/",
-        //     twitter ="https://twitter.com/DanielOwen_DO"
-
-        // ],
-        contactemail: "london.office@danielowen.co.uk",
-        section: "Construction, Engineering, Property Services, Design & consultancy"
-    },
-
-    {
-        id: 3,
-        companyName: "In 2 Ed Education",
-        logo: "https://static.wixstatic.com/media/39a349_34d97c2709484f5ca5a8428b2565aecf~mv2.png/v1/crop/x_758,y_0,w_3561,h_3740/fill/w_94,h_98,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Original%20on%20Transparent.png",
-        Address: "181 Holloway Rd, London N7 8LX, United Kingdom",
-    
-        // Website: "https://www.in2ed.net/",
-        // socialmedia :[
-        //     linkedin= "https://www.linkedin.com/company/in-2-ed-education/",
-        //     youtube= "",
-        //     facebook= "",
-        //     instagram= "https://www.instagram.com/in2education/",
-        //     twitter =""
-
-        // ],
-        contactemail: "",
-        section: "Education"
-    },
-
-
-];

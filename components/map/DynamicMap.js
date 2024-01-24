@@ -1,5 +1,4 @@
 // MapComponent.js
-
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -8,8 +7,13 @@ import { london, Lagos } from "../../Data";  // Import your data arrays
 
 const MapComponent = ({ onMarkerClick }) => {
   const markers = [
-    { id: 1, name: 'London', lat: 51.509865, lon: -0.118092, things: london },
-    { id: 2, name: 'Lagos', lat: 6.5244, lon: 3.3792, things: Lagos },
+    ...london.map(location => ({
+      id: location.id,
+      name: location.companyName,
+      lat: location.Latitude,
+      lon: location.Longitude,
+      things: location.things,
+    }))
   ];
 
   const handleMarkerClick = (marker) => {
@@ -24,8 +28,8 @@ const MapComponent = ({ onMarkerClick }) => {
           width: '100%',
           borderRadius: '15px',
         }}
-        center={[6, 10]}
-        zoom={2}
+        center={[51.53, -0.1]}
+        zoom={12}
         scrollWheelZoom={false}
         doubleClickZoom={false}
         zoomControl={false}
@@ -55,6 +59,7 @@ const MapComponent = ({ onMarkerClick }) => {
             <Popup>
               <div>
                 <h3>{marker.name}</h3>
+                {/* Add more details based on your marker data */}
               </div>
             </Popup>
           </Marker>

@@ -22,6 +22,11 @@ export default function Home() {
     setSelectedMarker(marker);
   };
 
+  const handleClose = () => {
+    // Your logic to handle closing the details
+    setSelectedMarker(null); // Assuming selectedMarker is a state variable
+  };
+
 
   return (
    <>
@@ -88,41 +93,7 @@ export default function Home() {
 
       </div>
 
-    <div>
-    {selectedMarker && (
-  <div>
-    <h3>{selectedMarker.name}</h3>
-    {/* Add other details as needed */}
-    <table id="customers" className="container">
-      <thead>
-        <tr>
-          <th>Company Name</th>
-          <th>Logo</th>
-          <th>Address</th>
-          <th>Website</th>
-          <th>contactemail</th>
-          <th>section</th>
-        </tr>
-      </thead>
-      <tbody>
-        {selectedMarker.things.map((location) => (
-          <tr key={location.id}>
-            <td>{location.companyName}</td>
-            <td>
-             <Image src={location.logo} alt="Logo" width={30} height={30}/>
-            </td>
-            <td>{location.Address}</td>
-            <td>{location.Website}</td>
-            <td>{location.contactemail}</td>
-            <td>{location.section}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)}
 
-    </div>
 
 
     <div id="targetDiv" className="mt-20 mb-20 flex-col justify-center max-sm:flex-col skewed">
