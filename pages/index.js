@@ -97,16 +97,16 @@ export default function Home() {
     <main className="">
       <div className="mt-0 flex justify-between max-sm:flex-col pt-28 mb-12">
         <div className="">
-         <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-3xl ">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
+         <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
 
-         <p className="w-96 text-start ml-10 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0">Our Mission is Simple.
+         <p className="w-96 text-start ml-10 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0 max-sm:text-center">Our Mission is Simple.
 
 Every single Recruitment Agency in the World.
 
 All accessible from our Index.
 
 Starting with the UK.</p>
-        <div className="t text-center mt-16">
+        <div className="t text-center mt-16 mb-10">
             <p className="text-2xl mb-5 font-semibold">PHASE 1: UK</p>
 
              <h1 className="text-5xl mb-5 text-orange-500 font-semibold">{count}</h1>

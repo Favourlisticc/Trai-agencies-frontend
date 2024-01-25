@@ -79,10 +79,10 @@ const MapComponent = ({ onMarkerClick }) => {
           >
           <Popup>
   <div>
-    <div className='flex'>
-      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-full w-20 h-20'/>
-      <h3 className='mt-5 ml-5 font-semibold'>{marker.name}</h3>
-      <Image src={checked} alt="" width={30} height={5} className='h-7 ml-28 mt-5'/>
+    <div className='flex' style={{width: "100%"}}>
+      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-lg w-20 h-10'/>
+      <h3 className='mt-5 ml-5 font-semibold' style={{marginLeft: "5%"}}>{marker.name}</h3>
+      <Image src={checked} alt="" width={30} height={5} className='h-7 ml-2 mt-3'/>
 
     </div>
 
