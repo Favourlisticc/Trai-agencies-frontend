@@ -99,13 +99,13 @@ export default function Home() {
         <div className="">
          <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
 
-         <p className="w-96 text-start ml-10 mt-5 font-semibold text-xl text-gray-700 max-sm:ml-0 max-sm:text-center">Our Mission is Simple.
+         <p className="w-96 text-center ml-24 mt-5 font-semibold text-2xl text-gray-600 max-sm:ml-0 max-sm:text-center">Our Mission is Simple.
 
 Every single Recruitment Agency in the World.
 
 All accessible from our Index.
 
-Starting with the UK.</p>
+Starting with the UK:</p>
         <div className="t text-center mt-16 mb-10">
             <p className="text-2xl mb-5 font-semibold">PHASE 1: UK</p>
 
