@@ -41,6 +41,20 @@ export default function Home() {
 
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // useEffect to persist dark mode state (optional)
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode) {
+      setDarkMode(savedDarkMode === 'true');
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save dark mode state to localStorage
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
 
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
@@ -66,8 +80,13 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [count]);
 
+  const toggleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
+
   return (
-   <>
+   <div className={darkMode ? 'dark-navbar' : 'light-navbar'}>
    <Head>
         <title>HomePage | Trai</title>
         <meta name="description" content="Trai - World Class Recruitment Agency Index" />
@@ -94,7 +113,7 @@ export default function Home() {
 
       </Head>
     <Navbar />
-    <main className="">
+    <main >
       <div className="mt-0 flex justify-between max-sm:flex-col pt-28 mb-12">
         <div className="">
          <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
@@ -125,6 +144,8 @@ Starting with the UK:</p>
         onMarkerClick={handleMarkerClick}
         />
             <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button>
+            <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+
           </div>
 
 
@@ -145,7 +166,7 @@ Starting with the UK:</p>
 
 
     </main>
-<Footer />
-   </>
+{/* <Footer /> */}
+   </div>
   )
 }
