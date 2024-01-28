@@ -45,7 +45,7 @@ const MapComponent = ({ onMarkerClick }) => {
     <div className="flex">
       <MapContainer
         style={{
-          height: '70vh',
+          height: '100vh',
           width: '100%',
           borderRadius: '15px',
         }}

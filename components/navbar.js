@@ -69,14 +69,14 @@ export default function Navbar() {
 
 
 
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-10">
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-0">
 
-          <Link href="/" class=" cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
+          <Link href="/" class=" cursor-pointer hover:text-orange-500 font-semibold underline">Index</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline">Pricing</Link>
 
 
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Story</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
           </div>
 
           {/* LOGO */}
@@ -84,7 +84,7 @@ export default function Navbar() {
             <Link
               href="/"
               id="had-img"
-              style={{ marginLeft: "-30px" }}
+              style={{ marginLeft: "-100px" }}
               className="w-36 h-10 flex justify-center items-center"
             >
               <Image src={logo2} alt="Logo" className=''/>
@@ -99,7 +99,7 @@ export default function Navbar() {
           <div>
 
             <Link
-              class=" bg-blue-600 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
+              class=" bg-orange-500 text-white rounded-md flex px-8 py-3  outline-none hover:bg-white font-bold hover:text-orange-500 hover:justify-between"
               href="/auth/register"
             >
               <p className='hover:mr-5'>Add your Agency</p>
@@ -165,7 +165,7 @@ export default function Navbar() {
 
 
         <Link
-              class=" bg-blue-700 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
+              class=" bg-orange-500 text-white  rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
               <p className='hover:mr-5'>Add your Agency</p>

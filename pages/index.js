@@ -100,17 +100,14 @@ export default function Home() {
       </Head>
     <Navbar />
     <main >
-      <div className="mt-0 flex justify-between max-sm:flex-col pt-28">
+      <div className="mt-0 flex-col justify-between max-sm:flex-col pt-28 w-full pb-32">
         <div className="">
-         <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
+         <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The Recruitment Agency Index</h1>
+        <p className="text-center text-orange-500">Every Recruitment Agency in the UK at your fingertips</p>
 
-         <p className="w-96 text-center ml-24 mt-5 font-semibold text-2xl text-gray-600 max-sm:ml-0 max-sm:text-center">Our Mission is Simple.
+        <input type="search" name="searchbar" id="" />
 
-Every single Recruitment Agency in the World.
 
-All accessible from our Index.
-
-Starting with the UK:</p>
         <div className="t text-center mt-16 mb-10">
             <p className="text-2xl mb-5 font-semibold">PHASE 1: UK</p>
 
@@ -125,13 +122,13 @@ Starting with the UK:</p>
 
 
 
-        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0 mb-10">
+        <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0">
         <MapComponent
         onMarkerClick={handleMarkerClick}
         />
 
 
-            <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button>
+            {/* <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button> */}
 
 
 
