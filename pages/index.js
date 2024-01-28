@@ -100,7 +100,7 @@ export default function Home() {
       </Head>
     <Navbar />
     <main >
-      <div className="mt-0 flex justify-between max-sm:flex-col pt-28 mb-12">
+      <div className="mt-0 flex justify-between max-sm:flex-col pt-28">
         <div className="">
          <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The <span className="text-orange-500 ">Recruitment Agency</span> Index</h1>
 
@@ -125,7 +125,7 @@ Starting with the UK:</p>
 
 
 
-        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0">
+        <div className="container border-2 px-3 py-3  mr-5 rounded-2xl w-1/2 max-sm:w-full max-sm:mx-0 max-sm:mr-0 mb-10">
         <MapComponent
         onMarkerClick={handleMarkerClick}
         />

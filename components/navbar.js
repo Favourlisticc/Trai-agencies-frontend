@@ -61,11 +61,25 @@ export default function Navbar() {
   return (
     <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" class="fixed bg-black left-0 right-0 w-full border-b top-0 shadow-xl">
+    <div id="head-nav" class="fixed bg-black left-0 right-0 w-full top-0 ">
       <div >
         <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
-{/* LOGO */}
+
+
+
+
+          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-10">
+
+          <Link href="/" class=" cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
+            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
+
+
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
+            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
+          </div>
+
+          {/* LOGO */}
           <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
             <Link
               href="/"
@@ -77,18 +91,6 @@ export default function Navbar() {
             </Link>
 
 
-          </div>
-
-
-
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-32">
-
-          <Link href="/" class=" cursor-pointer hover:text-blue-700 font-semibold">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold">Pricing</Link>
-
-
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Story</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-blue-700 font-semibold" > Contact</Link>
           </div>
 
 
