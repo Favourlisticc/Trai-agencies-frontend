@@ -103,9 +103,11 @@ export default function Home() {
       <div className="mt-0 flex-col justify-between max-sm:flex-col pt-28 w-full pb-32">
         <div className="">
          <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The Recruitment Agency Index</h1>
-        <p className="text-center text-orange-500">Every Recruitment Agency in the UK at your fingertips</p>
+        <p className="text-center text-orange-500 font-semibold py-3 text-xl">Every Recruitment Agency in the UK at your fingertips</p>
 
-        <input type="search" name="searchbar" id="" />
+        <div className="flex justify-center">
+          <input type="search" name="searchbar" id="" />
+        </div>
 
 
         <div className="t text-center mt-16 mb-10">
