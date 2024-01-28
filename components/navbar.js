@@ -61,7 +61,7 @@ export default function Navbar() {
   return (
     <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" class="fixed bg-white left-0 right-0 w-full border-b top-0 shadow-xl">
+    <div id="head-nav" class="fixed bg-black left-0 right-0 w-full border-b top-0 shadow-xl">
       <div >
         <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
