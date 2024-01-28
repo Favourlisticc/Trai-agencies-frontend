@@ -4,7 +4,9 @@ import { useEffect } from "react";
 import { useState } from 'react';
 
 import logo from "../public/Screenshot (33)_prev_ui.png"
+import logo2 from "../public/icon/photo_2024-01-28_16-43-22_prev_ui.png"
 
+// import { ThemeSwitcher } from './ThemeSwitch';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonWalkingArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -56,7 +58,6 @@ export default function Navbar() {
     setClicked(true);
   };
 
-
   return (
     <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
@@ -72,7 +73,7 @@ export default function Navbar() {
               style={{ marginLeft: "-30px" }}
               className="w-36 h-10 flex justify-center items-center"
             >
-              <Image src={logo} alt="Hazmick" className=''/>
+              <Image src={logo2} alt="Logo" className=''/>
             </Link>
 
 
@@ -92,8 +93,9 @@ export default function Navbar() {
 
 
           <div class="flex py-3">
-
+          {/* <ThemeSwitcher /> */}
           <div>
+
             <Link
               class=" bg-blue-600 text-white rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
@@ -121,7 +123,7 @@ export default function Navbar() {
 
           <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
             <Link href="/" id="had-img" class="xl:w-72 w-28 h-10 flex justify-center items-center">
-              <Image src={logo} alt="Hazmick" style={{ marginLeft: "-10px", marginTop: "8px" }} />
+              <Image src={logo2} alt="Hazmick" style={{ marginLeft: "-10px", marginTop: "8px" }} />
             </Link>
 
             <div onClick={showHide} class="block xl:hidden">

@@ -11,6 +11,7 @@ import React, { useState, useEffect } from 'react';
 
 
 
+
 export const metadata = {
   title: {
     default: "Homepage | IBK",
@@ -41,20 +42,7 @@ export default function Home() {
 
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [count, setCount] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
 
-  // useEffect to persist dark mode state (optional)
-  useEffect(() => {
-    const savedDarkMode = localStorage.getItem('darkMode');
-    if (savedDarkMode) {
-      setDarkMode(savedDarkMode === 'true');
-    }
-  }, []);
-
-  useEffect(() => {
-    // Save dark mode state to localStorage
-    localStorage.setItem('darkMode', darkMode);
-  }, [darkMode]);
 
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
@@ -80,13 +68,11 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [count]);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
-  };
+
 
 
   return (
-   <div className={darkMode ? 'dark-navbar' : 'light-navbar'}>
+   <div >
    <Head>
         <title>HomePage | Trai</title>
         <meta name="description" content="Trai - World Class Recruitment Agency Index" />
@@ -143,8 +129,11 @@ Starting with the UK:</p>
         <MapComponent
         onMarkerClick={handleMarkerClick}
         />
+
+
             <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button>
-            <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+
+
 
           </div>
 
