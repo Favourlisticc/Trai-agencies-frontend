@@ -12,6 +12,8 @@ import youtube from "../../public/icon/youTube.png"
 import Linkedin from "../../public/icon/linedinl.png"
 import checked from "../../public/icon/checked.png"
 
+import oramgemapicon from "../../public/icon/orange-map-icon.png"
+
 import Image from 'next/image';
 
 const MapComponent = ({ onMarkerClick }) => {
@@ -66,8 +68,8 @@ const MapComponent = ({ onMarkerClick }) => {
             position={[marker.lat, marker.lon]}
             icon={
               new L.Icon({
-                iconUrl: "/icon/map-icon.png",
-                iconRetinaUrl: "/icon/map-icon.png",
+                iconUrl: "/icon/orange-map-icon.png",
+                iconRetinaUrl: "/icon/orange-map-icon.png",
                 iconSize: [25, 41],
                 iconAnchor: [12.5, 41],
                 popupAnchor: [0, -41],

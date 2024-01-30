@@ -129,7 +129,7 @@ export default function Home() {
 
 
 
-        <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0">
+        <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
         <MapComponent
         onMarkerClick={handleMarkerClick}
         />
