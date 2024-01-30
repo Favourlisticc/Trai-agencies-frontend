@@ -63,8 +63,8 @@ body {
 
 .leaflet-popup-content {
 
-  margin-left: 0px !important;
-  margin-right: 0px !important;
+  margin-left: 3px !important;
+  margin-right: 10px !important;
 }
 
 .leaflet-popup-content p {

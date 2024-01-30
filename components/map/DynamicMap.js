@@ -83,23 +83,23 @@ const MapComponent = ({ onMarkerClick }) => {
 
             eventHandlers={{ click: () => handleMarkerClick(marker) }}
           >
-          <Popup className='ml-0'>
-  <div className='flex' style={{marginleft: "0px !important"}}>
-    <div >
-      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-lg w-32 h-32'/>
+          <Popup >
+  <div className='flex '>
+    <div className='w-96'>
+      <Image src={marker.Logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32'/>
 
     </div>
 
-   <div>
-      <h3 className=' font-semibold'>{marker.name}</h3>
+   <div className='ml-3'>
+      <h3 className='font-semibold text-2xl text-nowrap'>{marker.name}</h3>
 
 
 
-      <p className='text-blue-500 font-bold'>{marker.section}</p>
-      <p>{marker.Address}</p>
+      <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{marker.section}</p>
+      {/* <p>{marker.Address}</p> */}
 
 
-     <div className='flex'>
+     <div className='flex mt-3'>
       <a href={marker.Website}  className=''>
           <Image src={globalweb} alt=''/>
         </a><br/>
@@ -111,14 +111,14 @@ const MapComponent = ({ onMarkerClick }) => {
 
 
 
-      <div className='flex justify-between mt-7'>
+      <div className='flex mt-3'>
 
             <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
-            <Image src={Linkedin} alt="" className="h-5 w-5"/>
+            <Image src={Linkedin} alt="" className="h-5 w-5 mr-2"/>
             </a>
 
             <a href={marker.facebook} target="_blank" rel="noopener noreferrer">
-            <Image src={facebook} alt="" className="h-5 w-5"/>
+            <Image src={facebook} alt="" className="h-5 w-5 mr-2"/>
             </a>
 
             {/* <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
@@ -130,7 +130,7 @@ const MapComponent = ({ onMarkerClick }) => {
             </a> */}
 
             <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
-            <Image src={twitter} alt="" className="h-5 w-5"/>
+            <Image src={twitter} alt="" className="h-5 w-5 mr-2"/>
             </a>
       </div>
    </div>
