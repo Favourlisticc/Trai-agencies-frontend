@@ -80,51 +80,54 @@ const MapComponent = ({ onMarkerClick }) => {
             eventHandlers={{ click: () => handleMarkerClick(marker) }}
           >
           <Popup>
-  <div>
+  <div className='flex'>
     <div className='flex' style={{width: "100%"}}>
       <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-lg w-20 h-10'/>
-      <h3 className='mt-5 ml-5 font-semibold' style={{marginLeft: "5%"}}>{marker.name}</h3>
-      <Image src={checked} alt="" width={30} height={5} className='h-7 ml-2 mt-3'/>
 
     </div>
 
-
-      <p className='text-blue-500 font-bold'>{marker.section}</p>
-      <p>{marker.Address}</p>
-
-
-  <a href={marker.Website}  className='underline font-semibold ' style={{color: "red", marginBottom: "20px"}}>
-        Website
-  </a><br/>
-
-  <a href={marker.contactemail} target="_blank"  className='underline font-semibold' style={{color: "red"}}>
-        Email.com
-  </a>
+   <div>
+      <h3 className='mt-5 ml-5 font-semibold' style={{marginLeft: "5%"}}>{marker.name}</h3>
+        
 
 
+          <p className='text-blue-500 font-bold'>{marker.section}</p>
+          <p>{marker.Address}</p>
 
-  <div className='flex justify-between mt-7'>
 
-        <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
-         <Image src={Linkedin} alt="" className="h-5 w-5"/>
-        </a>
+      <a href={marker.Website}  className='underline font-semibold ' style={{color: "red", marginBottom: "20px"}}>
+            Website
+      </a><br/>
 
-        <a href={marker.facebook} target="_blank" rel="noopener noreferrer">
-        <Image src={facebook} alt="" className="h-5 w-5"/>
-        </a>
+      <a href={marker.contactemail} target="_blank"  className='underline font-semibold' style={{color: "red"}}>
+            Email.com
+      </a>
 
-        <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
-        <Image src={youtube} alt="" className="h-5 w-5"/>
-        </a>
 
-        <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
-         <Image src={instagram} alt="" className="h-5 w-5"/>
-        </a>
 
-        <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
-         <Image src={twitter} alt="" className="h-5 w-5"/>
-        </a>
-  </div>
+      <div className='flex justify-between mt-7'>
+
+            <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
+            <Image src={Linkedin} alt="" className="h-5 w-5"/>
+            </a>
+
+            <a href={marker.facebook} target="_blank" rel="noopener noreferrer">
+            <Image src={facebook} alt="" className="h-5 w-5"/>
+            </a>
+
+            {/* <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
+            <Image src={youtube} alt="" className="h-5 w-5"/>
+            </a> */}
+
+            {/* <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
+            <Image src={instagram} alt="" className="h-5 w-5"/>
+            </a> */}
+
+            <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
+            <Image src={twitter} alt="" className="h-5 w-5"/>
+            </a>
+      </div>
+   </div>
 
 
   </div>
