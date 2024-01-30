@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { useEffect } from "react";
 import { useState } from 'react';
 
-import logo from "../public/Screenshot (33)_prev_ui.png"
-import logo2 from "../public/icon/photo_2024-01-28_16-43-22_prev_ui.png"
+
+import logo2 from "../public/icon/trai-logo.png";
+
 
 // import { ThemeSwitcher } from './ThemeSwitch';
 
@@ -28,8 +29,8 @@ export default function Navbar() {
     } else {
       document.getElementById("smalx").style.display = "none";
       document.getElementById("smald").style.display = "none";
-      document.getElementById("popup").style.width = 0;
-      document.getElementById("popup").style.height = 0;
+      document.getElementById("popup").style.width = "0";
+      document.getElementById("popup").style.height = "0";
       document.getElementById("head-nav").style.bottom = "auto";
     }
   }}
@@ -59,28 +60,28 @@ export default function Navbar() {
   };
 
   return (
-    <div id="popup" class="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
+    <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" class="fixed bg-black left-0 right-0 w-full top-0 ">
+    <div id="head-nav" className="fixed bg-black left-0 right-0 w-full top-0 ">
       <div >
-        <div id="big screen" class="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
+        <div id="big screen" className="hidden lg:flex flex-col xl:flex-row justify-between pr-5 pl-8">
 
 
 
 
 
-          <div class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-0">
+          <div className="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide ml-0">
 
-          <Link href="/" class=" cursor-pointer hover:text-orange-500 font-semibold underline">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline">Pricing</Link>
+          <Link href="/" className=" cursor-pointer hover:text-orange-500 font-semibold underline">Index</Link>
+            <Link href="/features" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline">Pricing</Link>
 
 
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Story</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
+            <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Story</Link>
+            <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
           </div>
 
           {/* LOGO */}
-          <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
+          <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
             <Link
               href="/"
               id="had-img"
@@ -94,12 +95,12 @@ export default function Navbar() {
           </div>
 
 
-          <div class="flex py-3">
+          <div className="flex py-3">
           {/* <ThemeSwitcher /> */}
           <div>
 
             <Link
-              class=" bg-orange-500 text-white rounded-md flex px-8 py-3  outline-none hover:bg-white font-bold hover:text-orange-500 hover:justify-between"
+              className=" bg-orange-500 text-white rounded-md flex px-8 py-3  outline-none hover:bg-white font-bold hover:text-orange-500 hover:justify-between"
               href="/auth/register"
             >
               <p className='hover:mr-5'>Add your Agency</p>
@@ -121,17 +122,17 @@ export default function Navbar() {
 
 
 {/* mobile dropdown */}
-        <div id="small-screen" style={{ zIndex: 99999 }} class=" flex lg:hidden flex-col bg-black xl:flex-row justify-between pl-4 pr-5 xl:px-20">
+        <div id="small-screen" style={{ zIndex: 99999 }} className=" flex lg:hidden flex-col bg-black xl:flex-row justify-between pl-4 pr-5 xl:px-20">
 
-          <div class="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" class="xl:w-72 w-28 h-10 flex justify-center items-center">
+          <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
+            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
               <Image src={logo2} alt="Hazmick" style={{ marginLeft: "-10px", marginTop: "8px" }} />
             </Link>
 
-            <div onClick={showHide} class="block xl:hidden">
+            <div onClick={showHide} className="block xl:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-7 text-blue-600 w-7"
+                className="h-7 text-blue-600 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -147,25 +148,25 @@ export default function Navbar() {
             </div>
           </div>
 
-        <div id="smald" class="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
+        <div id="smald" className="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
 
-        <Link href="/" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 underline font-semibold">Index</Link>
-            <Link href="/features" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500  underline font-semibold">Pricing</Link>
+        <Link href="/" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 underline font-semibold">Index</Link>
+            <Link href="/features" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500  underline font-semibold">Pricing</Link>
 
 
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline " > Story</Link>
-            <Link href="/prices" class="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
+            <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline " > Story</Link>
+            <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
 
         </div>
 
 
 {/* login and signuo */}
-        <div id="smalx" class="hidden xl:flex flex-col xl:flex-row pt-6 pb-16 xl:py-6 items-center justify-between">
+        <div id="smalx" className="hidden xl:flex flex-col xl:flex-row pt-6 pb-16 xl:py-6 items-center justify-between">
 
 
 
         <Link
-              class=" bg-orange-500 text-white  rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
+              className=" bg-orange-500 text-white  rounded-md flex px-8 py-3  outline-none hover:bg-blue-800 hover:justify-between"
               href="/auth/register"
             >
               <p className='hover:mr-5'>Add your Agency</p>

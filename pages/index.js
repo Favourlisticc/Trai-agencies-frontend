@@ -115,13 +115,13 @@ export default function Home() {
         </div>
 
 
-        <div className="t text-center mt-16 mb-10">
+        {/* <div className="t text-center mt-16 mb-10">
             <p className="text-2xl mb-5 font-semibold">PHASE 1: UK</p>
 
              <h1 className="text-5xl mb-5 text-orange-500 font-semibold">{count}</h1>
 
             <p className="t text-3xl font-semibold ">AGENCIES</p>
-        </div>
+        </div> */}
 
 
 
