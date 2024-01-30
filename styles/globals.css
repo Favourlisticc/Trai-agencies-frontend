@@ -61,6 +61,18 @@ body {
   border-bottom-right-radius: 80% 70%;
 }
 
+.leaflet-popup-content {
+
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.leaflet-popup-content p {
+
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 #customers {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;

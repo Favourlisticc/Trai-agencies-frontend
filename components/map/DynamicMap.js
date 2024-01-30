@@ -46,12 +46,13 @@ const MapComponent = ({ onMarkerClick }) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex" style={{marginleft: "0px"}}>
       <MapContainer
         style={{
           height: '100vh',
           width: '100%',
           borderRadius: '15px',
+          marginleft: "0px",
         }}
         center={[51.53, -0.1]}
         zoom={10}
@@ -79,31 +80,34 @@ const MapComponent = ({ onMarkerClick }) => {
                 shadowSize: [51, 45],
               })
             }
+
             eventHandlers={{ click: () => handleMarkerClick(marker) }}
           >
-          <Popup>
-  <div className='flex'>
-    <div className='flex' style={{width: "100%"}}>
-      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-lg w-20 h-10'/>
+          <Popup className='ml-0'>
+  <div className='flex' style={{marginleft: "0px !important"}}>
+    <div >
+      <Image src={marker.Logo} alt="Company-logo" width={5} height={20} className=' bg-black border-2 rounded-lg w-32 h-32'/>
 
     </div>
 
    <div>
-      <h3 className='mt-5 ml-5 font-semibold' style={{marginLeft: "5%"}}>{marker.name}</h3>
+      <h3 className=' font-semibold'>{marker.name}</h3>
 
 
 
-          <p className='text-blue-500 font-bold'>{marker.section}</p>
-          <p>{marker.Address}</p>
+      <p className='text-blue-500 font-bold'>{marker.section}</p>
+      <p>{marker.Address}</p>
 
 
-      <a href={marker.Website}  className='underline font-semibold ' style={{color: "red", marginBottom: "20px"}}>
-         <Image src={globalweb} alt=''/>
-      </a><br/>
+     <div className='flex'>
+      <a href={marker.Website}  className=''>
+          <Image src={globalweb} alt=''/>
+        </a><br/>
 
-      <a href={marker.contactemail} target="_blank"  className='underline font-semibold' style={{color: "red"}}>
-            <Image src={emailsms} alt=''/>
-      </a>
+        <a href={marker.contactemail} target="_blank"  className=''>
+              <Image src={emailsms} alt=''/>
+        </a>
+     </div>
 
 
 
