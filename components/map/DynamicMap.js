@@ -11,6 +11,8 @@ import instagram from "../../public/icon/instagram.png"
 import youtube from "../../public/icon/youTube.png"
 import Linkedin from "../../public/icon/linedinl.png"
 import checked from "../../public/icon/checked.png"
+import globalweb from "../../public/icon/global-search.png"
+import emailsms from "../../public/icon/directbox-send.png"
 
 import oramgemapicon from "../../public/icon/orange-map-icon.png"
 
@@ -88,7 +90,7 @@ const MapComponent = ({ onMarkerClick }) => {
 
    <div>
       <h3 className='mt-5 ml-5 font-semibold' style={{marginLeft: "5%"}}>{marker.name}</h3>
-        
+
 
 
           <p className='text-blue-500 font-bold'>{marker.section}</p>
@@ -96,11 +98,11 @@ const MapComponent = ({ onMarkerClick }) => {
 
 
       <a href={marker.Website}  className='underline font-semibold ' style={{color: "red", marginBottom: "20px"}}>
-            Website
+         <Image src={globalweb} alt=''/>
       </a><br/>
 
       <a href={marker.contactemail} target="_blank"  className='underline font-semibold' style={{color: "red"}}>
-            Email.com
+            <Image src={emailsms} alt=''/>
       </a>
 
 
