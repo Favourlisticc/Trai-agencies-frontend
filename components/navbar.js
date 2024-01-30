@@ -126,7 +126,7 @@ export default function Navbar() {
 
           <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
             <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
-              <Image src={logo2} alt="Hazmick" style={{ marginLeft: "-10px", marginTop: "8px" }} />
+              <Image src={logo2} alt="Hazmick" style={{ marginLeft: "230px", marginTop: "8px" }} />
             </Link>
 
             <div onClick={showHide} className="block xl:hidden">
