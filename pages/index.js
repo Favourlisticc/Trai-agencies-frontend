@@ -217,16 +217,20 @@ export default function Home() {
 
 
         <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
-        {/* <MapComponent
-        onMarkerClick={handleMarkerClick}
-        /> */}
+         <h1>Who`s the Index For?</h1>
 
+         <div>
+            <div>
+              <h2>Hiring Companies</h2>
+              <h2>Job Seekers</h2>
+              <h2>Recruitment Agencies</h2>
+            </div>
 
-            {/* <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button> */}
-
-
-
-          </div>
+            <div>
+                
+            </div>
+         </div>
+       </div>
 
 
       </div>
