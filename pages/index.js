@@ -2,10 +2,16 @@
 // import { Inter } from "next/font/google"
 import Head from "next/head"
 import { Link } from "react-scroll";
+import Image from "next/image";
 
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import MapComponent from "@/components/map/map"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapLocationDot } from '@fortawesome/free-solid-svg-icons';
+
+import Data from "../Data"
+
 
 import React, { useState, useEffect } from 'react';
 
@@ -111,7 +117,73 @@ export default function Home() {
             <span class="icon">
               <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </span>
+
           </div>
+        </div>
+
+        <div className="flex justify-center">
+          <Link to="/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
+             <h1 className="mt-2">CHECK AVAILABLE AGENCIES NEAR YOU</h1>
+             <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7" /> </Link>
+        </div>
+
+        <div className="bg-yellow-300">
+            <h2>Featured Agencies</h2>
+            <div>
+             <div className='flex '>
+                <div className='w-96'>
+                  <Image src={marker.Logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32'/>
+
+                </div>
+
+                <div className='ml-3'>
+                    <h3 className='font-semibold text-2xl text-nowrap'>{marker.agency_name}</h3>
+
+
+
+                    <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{marker.section}</p>
+                    {/* <p>{marker.Address}</p> */}
+
+
+                  <div className='flex mt-3'>
+                    <a href={marker.Website}  className=''>
+                        <Image src={globalweb} alt=''/>
+                      </a><br/>
+
+                      <a href={marker.contactemail} target="_blank"  className=''>
+                            <Image src={emailsms} alt=''/>
+                      </a>
+                  </div>
+
+
+
+              <div className='flex mt-3'>
+
+                    <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
+                    <Image src={Linkedin} alt="" className="h-5 w-5 mr-2"/>
+                    </a>
+
+                    <a href={marker.facebook} target="_blank" rel="noopener noreferrer">
+                    <Image src={facebook} alt="" className="h-5 w-5 mr-2"/>
+                    </a>
+
+                    {/* <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
+                    <Image src={youtube} alt="" className="h-5 w-5"/>
+                    </a> */}
+
+                    {/* <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
+                    <Image src={instagram} alt="" className="h-5 w-5"/>
+                    </a> */}
+
+                    <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
+                    <Image src={twitter} alt="" className="h-5 w-5 mr-2"/>
+                    </a>
+              </div>
+          </div>
+
+
+  </div>
+            </div>
         </div>
 
 
@@ -130,9 +202,9 @@ export default function Home() {
 
 
         <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
-        <MapComponent
+        {/* <MapComponent
         onMarkerClick={handleMarkerClick}
-        />
+        /> */}
 
 
             {/* <button className="bg-blue-600 text-white mt-36 rounded-lg px-5 py-2">View the Index</button> */}

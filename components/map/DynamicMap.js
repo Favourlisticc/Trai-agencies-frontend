@@ -1,9 +1,11 @@
 // MapComponent.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { london, Lagos } from "../../Data";  // Import your data arrays
+
+import axios from 'axios'; // Import axios for making HTTP requests
 
 import facebook from "../../public/icon/facebook.png"
 import twitter from "../../public/icon/twitter.png"
@@ -19,27 +21,44 @@ import oramgemapicon from "../../public/icon/orange-map-icon.png"
 import Image from 'next/image';
 
 const MapComponent = ({ onMarkerClick }) => {
-  const markers = [
-    ...london.map(location => ({
-      id: location.id,
-      name: location.companyName,
-      lat: location.Latitude,
-      lon: location.Longitude,
+  const [markers, setMarkers] = useState([]);
 
-      Logo: location.logo,
-      Address: location.Address,
-      Website: location.Website,
-      contactemail: location.contactemail,
-      section: location.section,
-      linkedin: location.linkedin,
-      youtube: location.youtube,
-      facebook: location.facebook,
-      instagram: location.instagram,
-      twitter : location.twitter,
+  useEffect(() => {
+    // Fetch data from the API when the component mounts
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://trai-agencies-api.onrender.com/api/v1/');
+        setMarkers(response.data); // Assuming the API response is an array of markers
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
 
-    }))
-  ];
+  // const markers = [
+  //   ...london.map(location => ({
+  //     id: location.id,
+  //     name: location.companyName,
+  //     lat: location.Latitude,
+  //     lon: location.Longitude,
+
+  //     Logo: location.logo,
+  //     Address: location.Address,
+  //     Website: location.Website,
+  //     contactemail: location.contactemail,
+  //     section: location.section,
+  //     linkedin: location.linkedin,
+  //     youtube: location.youtube,
+  //     facebook: location.facebook,
+  //     instagram: location.instagram,
+  //     twitter : location.twitter,
+
+
+  //   }))
+  // ];
 
   const handleMarkerClick = (marker) => {
     onMarkerClick(marker);
@@ -91,7 +110,7 @@ const MapComponent = ({ onMarkerClick }) => {
     </div>
 
    <div className='ml-3'>
-      <h3 className='font-semibold text-2xl text-nowrap'>{marker.name}</h3>
+      <h3 className='font-semibold text-2xl text-nowrap'>{marker.agency_name}</h3>
 
 
 

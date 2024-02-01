@@ -17,7 +17,7 @@
     "@nextui-org/react": "^2.2.9",
     "@react-google-maps/api": "^2.19.2",
     "@tomtom-international/web-sdk-maps": "^6.25.0",
-    "axios": "^1.6.5",
+    "axios": "^1.6.7",
     "framer-motion": "^11.0.3",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
