@@ -15,6 +15,16 @@ import Data from "../Data"
 
 import React, { useState, useEffect } from 'react';
 
+// ICONS
+import facebook from "../public/icon/facebook.png"
+import twitter from "../public/icon/twitter.png"
+import instagram from "../public/icon/instagram.png"
+import youtube from "../public/icon/youTube.png"
+import Linkedin from "../public/icon/linedinl.png"
+import checked from "../public/icon/checked.png"
+import globalweb from "../public/icon/global-search.png"
+import emailsms from "../public/icon/directbox-send.png"
+
 
 
 
@@ -74,6 +84,8 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [count]);
 
+  const selectedData = Data.slice(0, 2);
+
 
 
 
@@ -127,21 +139,22 @@ export default function Home() {
              <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7" /> </Link>
         </div>
 
-        <div className="bg-yellow-300">
-            <h2>Featured Agencies</h2>
-            <div>
+        <div className="bg-yellow-300 mt-10 text-black container pt-5">
+            <h2 className="text-3xl font-bold text-center underline mb-10 ">Featured Agencies</h2>
+            {selectedData.map((marker) => (
+            <div key={marker.id}>
              <div className='flex '>
-                <div className='w-96'>
-                  <Image src={marker.Logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32'/>
+                <div className='w-full'>
+                  <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-32'/>
 
                 </div>
 
                 <div className='ml-3'>
-                    <h3 className='font-semibold text-2xl text-nowrap'>{marker.agency_name}</h3>
+                    <h3 className='font-semibold text-2xl text-nowrap'>{marker.companyName}</h3>
 
 
 
-                    <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{marker.section}</p>
+                    <p className="font-bold bg-orange-600 text-white rounded px-1 py-1 mt-3">{marker.section}</p>
                     {/* <p>{marker.Address}</p> */}
 
 
@@ -184,6 +197,8 @@ export default function Home() {
 
   </div>
             </div>
+
+            ))}
         </div>
 
 
