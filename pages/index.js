@@ -139,17 +139,17 @@ export default function Home() {
              <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7" /> </Link>
         </div>
 
-        <div className="bg-yellow-300 mt-10 text-black container pt-5">
+        <div className="bg-yellow-300 mt-10 text-black container pt-5 pb-5 rounded-md">
             <h2 className="text-3xl font-bold text-center underline mb-10 ">Featured Agencies</h2>
             {selectedData.map((marker) => (
             <div key={marker.id}>
-             <div className='flex '>
-                <div className='w-full'>
-                  <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-32'/>
+             <div className='flex mt-7'>
+                <div>
+                  <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-44'/>
 
                 </div>
 
-                <div className='ml-3'>
+                <div className='ml-5'>
                     <h3 className='font-semibold text-2xl text-nowrap'>{marker.companyName}</h3>
 
 
@@ -158,7 +158,7 @@ export default function Home() {
                     {/* <p>{marker.Address}</p> */}
 
 
-                  <div className='flex mt-3'>
+                  <div className='flex mt-5'>
                     <a href={marker.Website}  className=''>
                         <Image src={globalweb} alt=''/>
                       </a><br/>
@@ -170,7 +170,7 @@ export default function Home() {
 
 
 
-              <div className='flex mt-3'>
+              <div className='flex mt-5'>
 
                     <a href={marker.linkedin} target="_blank" rel="noopener noreferrer">
                     <Image src={Linkedin} alt="" className="h-5 w-5 mr-2"/>
