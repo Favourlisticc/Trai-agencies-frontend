@@ -97,6 +97,7 @@ export default function Home() {
       isIndexFor1(!isIndex1);
     // Hide paragraph 2 when showing paragraph 1
     isIndexFor2(false);
+    isIndexFor3(false);
   };
 
   // Function to toggle visibility of paragraph 2
@@ -104,6 +105,7 @@ export default function Home() {
       isIndexFor2(!isIndex2);
     // Hide paragraph 1 when showing paragraph 2
     isIndexFor1(false);
+    isIndexFor3(false);
   };
 
   const toggleParagraph3Visibility = () => {
@@ -246,25 +248,26 @@ export default function Home() {
          <h1 className="text-5xl font-bold text-center">Who`s the Index For?</h1>
 
          <div className="flex justify-center mt-5 ">
-         <div className="mt-5 bg-orange-500 flex w-1/2 h-60 rounded-lg">
-            <div className="flex-row border-r-2">
-              <h2 className="border- border-b-2 px-10 py-7 " onClick={toggleParagraph1Visibility}>Hiring Companies</h2>
-              <h2 className="border- border-b-2 px-10 py-7" onClick={toggleParagraph2Visibility}>Job Seekers</h2>
+         <div className="mt-5 bg-orange-500 flex w-1/2 h-full rounded-lg">
+            <div className="flex-row border-r-2 w-32">
+              <h2 className="border-b-2 px-10 py-7 " onClick={toggleParagraph1Visibility}>Hiring Companies</h2>
+              <h2 className="border-b-2 px-10 py-7" onClick={toggleParagraph2Visibility}>Job Seekers</h2>
               <h2 className="px-10 py-6" onClick={toggleParagraph3Visibility}>Recruitment Agencies</h2>
             </div>
 
-            {isIndex1 && (
-               <div className="mt-7">
-                 <ul style={{listStyleType: "disc"}}>
-                      <li>Browse Through every Recruiter in your industry</li>
-                      <li>Find Agencies local to your projects</li>
-                      <li>Leading tech company specializing in AI solutions.</li>
-                      <li>Global e-commerce giant with a focus on sustainability. </li>
-                      <li>Innovative startup disrupting the healthcare industry.</li>
-                      <li>Renowned financial institution providing cutting-edge services.</li>
-                  </ul>
-              </div>
-              )}
+           <div className="ml-10">
+              {isIndex1 && (
+                  <div className="mt-7">
+                    <ul style={{listStyleType: "disc"}}>
+                          <li>Browse Through every Recruiter in your industry</li>
+                          <li>Find Agencies local to your projects</li>
+                          <li>Leading tech company specializing in AI solutions.</li>
+                          <li>Global e-commerce giant with a focus on sustainability. </li>
+                          <li>Innovative startup disrupting the healthcare industry.</li>
+                          <li>Renowned financial institution providing cutting-edge services.</li>
+                      </ul>
+                  </div>
+                  )}
 
             {isIndex2 && (
                <div className="mt-7">
@@ -279,7 +282,7 @@ export default function Home() {
               </div>
               )}
 
-            {isIndex3 && (
+         {isIndex3 && (
                <div className="mt-7">
                 <div className="mt-7">
                  <ul style={{listStyleType: "disc"}}>
@@ -291,6 +294,11 @@ export default function Home() {
               </div>
               </div>
               )}
+           </div>
+
+
+
+
 
 
          </div>
