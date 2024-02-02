@@ -86,7 +86,7 @@ export default function Home() {
 
   const selectedData = Data.slice(0, 2);
 
-  const selectedActivity = explorecategorylist[1];
+
 
     const [isIndex1, isIndexFor1] = useState(true);
     const [isIndex2, isIndexFor2] = useState(false);
@@ -255,19 +255,40 @@ export default function Home() {
 
             {isIndex1 && (
                <div className="mt-7">
-                 
+                 <ul style={{listStyleType: "disc"}}>
+                      <li>Browse Through every Recruiter in your industry</li>
+                      <li>Find Agencies local to your projects</li>
+                      <li>Leading tech company specializing in AI solutions.</li>
+                      <li>Global e-commerce giant with a focus on sustainability. </li>
+                      <li>Innovative startup disrupting the healthcare industry.</li>
+                      <li>Renowned financial institution providing cutting-edge services.</li>
+                  </ul>
               </div>
               )}
 
             {isIndex2 && (
                <div className="mt-7">
-
+                <div className="mt-7">
+                 <ul style={{listStyleType: "disc"}}>
+                      <li>Software engineer passionate about web development.</li>
+                      <li>Marketing professional with expertise in digital strategy.</li>
+                      <li>Experienced project manager skilled in agile methodologies.</li>
+                      <li>Graphic designer with a flair for creative branding.</li>
+                  </ul>
+              </div>
               </div>
               )}
 
             {isIndex3 && (
                <div className="mt-7">
-
+                <div className="mt-7">
+                 <ul style={{listStyleType: "disc"}}>
+                      <li>Specializing in tech recruitment for startups and enterprises.</li>
+                      <li>Global HR consultancy offering strategic workforce solutions.</li>
+                      <li>Boutique agency focusing on executive search and placement.</li>
+                      <li>Industry-specific recruitment firm connecting talent with opportunities.</li>
+                  </ul>
+              </div>
               </div>
               )}
 
