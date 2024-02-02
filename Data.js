@@ -33,7 +33,7 @@ export const london = [
         contactemail: "london.office@danielowen.co.uk",
         Latitude: "51.5125431435153",
         Longitude: "-0.0988261302993947",
-        section: "Construction, Engineering, Property Services, Design & consultancy"
+        section: "Construction & Design"
     },
 
     {

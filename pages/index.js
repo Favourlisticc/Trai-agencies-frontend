@@ -163,8 +163,8 @@ export default function Home() {
 
         <div className="flex justify-center">
           <Link to="/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
-             <h1 className="mt-2">CHECK AVAILABLE AGENCIES NEAR YOU</h1>
-             <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7 max-sm:ml-1" /> </Link>
+             <h1 className="mt-2">CHECK AGENCIES NEAR YOU</h1>
+             <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7 max-sm:ml-5" /> </Link>
         </div>
 
         <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md">
@@ -173,7 +173,7 @@ export default function Home() {
             <div key={marker.id}>
              <div className='flex mt-7 container'>
                 <div>
-                  <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-44'/>
+                  <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-44 max-sm:w-32'/>
 
                 </div>
 
@@ -182,7 +182,7 @@ export default function Home() {
 
 
 
-                    <p className="font-bold bg-orange-600 text-white rounded px-1 py-1 mt-3">{marker.section}</p>
+                    <p className="font-bold bg-orange-600 text-white rounded px-1 py-1 mt-3 text-wrap">{marker.section}</p>
                     {/* <p>{marker.Address}</p> */}
 
 
@@ -245,7 +245,7 @@ export default function Home() {
 
 
         <div className="container px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
-         <h1 className="text-5xl font-bold text-center">Who`s the Index For?</h1>
+         <h1 className="text-5xl font-bold text-center max-sm:text-3xl underline">Who`s the Index For?</h1>
 
          <div className="flex justify-center mt-5 ">
          <div className="mt-5 bg-orange-500 flex w-1/2 h-full rounded-lg max-sm:w-full">
@@ -255,16 +255,16 @@ export default function Home() {
               <h2 className="px-10 py-6" onClick={toggleParagraph3Visibility}>Recruitment Agencies</h2>
             </div>
 
-           <div className="ml-10">
+           <div className="ml-10 mb-5 max-sm:ml-6">
               {isIndex1 && (
                   <div className="mt-7">
                     <ul style={{listStyleType: "disc"}}>
-                          <li>Browse Through every Recruiter in your industry</li>
-                          <li>Find Agencies local to your projects</li>
-                          <li>Leading tech company specializing in AI solutions.</li>
-                          <li>Global e-commerce giant with a focus on sustainability. </li>
-                          <li>Innovative startup disrupting the healthcare industry.</li>
-                          <li>Renowned financial institution providing cutting-edge services.</li>
+                          <li className="pb-1">Browse Through every Recruiter in your industry</li>
+                          <li className="pb-1" >Find Agencies local to your projects</li>
+                          <li className="pb-1">Leading tech company specializing in AI solutions.</li>
+                          <li className="pb-1">Global e-commerce giant with a focus on sustainability. </li>
+                          <li className="pb-1">Innovative startup disrupting the healthcare industry.</li>
+                          <li className="pb-1">Renowned financial institution providing cutting-edge services.</li>
                       </ul>
                   </div>
                   )}
