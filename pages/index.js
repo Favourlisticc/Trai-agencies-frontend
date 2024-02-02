@@ -164,7 +164,7 @@ export default function Home() {
         <div className="flex justify-center">
           <Link to="/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
              <h1 className="mt-2">CHECK AVAILABLE AGENCIES NEAR YOU</h1>
-             <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7" /> </Link>
+             <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7 max-sm:ml-1" /> </Link>
         </div>
 
         <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md">
