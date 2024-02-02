@@ -86,6 +86,32 @@ export default function Home() {
 
   const selectedData = Data.slice(0, 2);
 
+  const selectedActivity = explorecategorylist[1];
+
+    const [isIndex1, isIndexFor1] = useState(true);
+    const [isIndex2, isIndexFor2] = useState(false);
+    const [isIndex3, isIndexFor3] = useState(false);
+
+    // Function to toggle visibility of paragraph 1
+    const toggleParagraph1Visibility = () => {
+      isIndexFor1(!isIndex1);
+    // Hide paragraph 2 when showing paragraph 1
+    isIndexFor2(false);
+  };
+
+  // Function to toggle visibility of paragraph 2
+     const toggleParagraph2Visibility = () => {
+      isIndexFor2(!isIndex2);
+    // Hide paragraph 1 when showing paragraph 2
+    isIndex1(false);
+  };
+
+  const toggleParagraph3Visibility = () => {
+    isIndexFor3(!isIndex3);
+    // Hide paragraph 1 when showing paragraph 2
+    isIndexFor2(false);
+    isIndexFor1(false);
+  };
 
 
 
@@ -139,11 +165,11 @@ export default function Home() {
              <FontAwesomeIcon icon={faMapLocationDot} width={37} className="ml-7" /> </Link>
         </div>
 
-        <div className="bg-yellow-300 mt-10 text-black container pt-5 pb-5 rounded-md">
+        <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md">
             <h2 className="text-3xl font-bold text-center underline mb-10 ">Featured Agencies</h2>
             {selectedData.map((marker) => (
             <div key={marker.id}>
-             <div className='flex mt-7'>
+             <div className='flex mt-7 container'>
                 <div>
                   <Image src={marker.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-96 h-44'/>
 
@@ -216,19 +242,21 @@ export default function Home() {
 
 
 
-        <div className="container border-2 px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
-         <h1>Who`s the Index For?</h1>
+        <div className="container px-1 py-1 rounded-2xl max-sm:w-full max-sm:mx-0 max-sm:mr-0 mt-10">
+         <h1 className="text-5xl font-bold text-center">Who`s the Index For?</h1>
 
-         <div>
-            <div>
-              <h2>Hiring Companies</h2>
-              <h2>Job Seekers</h2>
-              <h2>Recruitment Agencies</h2>
+         <div className="flex justify-center mt-5 ">
+         <div className="mt-5 bg-orange-500 flex w-1/2 h-60 rounded-lg">
+            <div className="flex-row border-r-2">
+              <h2 className="border- border-b-2 px-10 py-7 ">Hiring Companies</h2>
+              <h2 className="border- border-b-2 px-10 py-7">Job Seekers</h2>
+              <h2 className="px-10 py-6">Recruitment Agencies</h2>
             </div>
 
             <div>
-                
+               <p>sgcwjhvkdjh,qwed</p>
             </div>
+         </div>
          </div>
        </div>
 
