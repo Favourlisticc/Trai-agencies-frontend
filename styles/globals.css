@@ -13,7 +13,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --orange-500: #ff9800;
+  --blue-500: #2196f3;
+  --slate-50 :rgb(248 250 252);
+  --border-r-0: #ff9800;
+  /* Add other colors as needed */
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

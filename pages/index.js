@@ -87,6 +87,12 @@ export default function Home() {
   const selectedData = Data.slice(0, 2);
 
 
+  const [backgroundColors, setBackgroundColors] = useState({
+    h21: 'orange-500', // Initial color for Hiring Companies
+    h22: 'orange-500', // Initial color for Job Seekers
+    h23: 'orange-500', // Initial color for Recruitment Agencies
+    p: 'border-r-5'
+  });
 
     const [isIndex1, isIndexFor1] = useState(true);
     const [isIndex2, isIndexFor2] = useState(false);
@@ -94,26 +100,53 @@ export default function Home() {
 
     // Function to toggle visibility of paragraph 1
     const toggleParagraph1Visibility = () => {
+
+      setBackgroundColors({
+        ...backgroundColors,
+        h21: 'slate-50', // Or any desired color
+        h22: 'orange-500', // Reset other colors
+        h23: 'orange-500',
+        p: 'border-r-0'
+      });
+
       isIndexFor1(!isIndex1);
     // Hide paragraph 2 when showing paragraph 1
     isIndexFor2(false);
     isIndexFor3(false);
+
+
   };
 
   // Function to toggle visibility of paragraph 2
      const toggleParagraph2Visibility = () => {
+      setBackgroundColors({
+        ...backgroundColors,
+        h21: 'orange-500', // Or any desired color
+        h22: 'slate-50', // Reset other colors
+        h23: 'orange-500',
+        p: 'border-r-0'
+      });
       isIndexFor2(!isIndex2);
     // Hide paragraph 1 when showing paragraph 2
     isIndexFor1(false);
     isIndexFor3(false);
+
+
   };
 
   const toggleParagraph3Visibility = () => {
+    setBackgroundColors({
+      ...backgroundColors,
+      h21: 'orange-500', // Or any desired color
+      h22: 'orange-500', // Reset other colors
+      h23: 'slate-50',
+      p: 'border-r-0'
+    });
     isIndexFor3(!isIndex3);
     // Hide paragraph 1 when showing paragraph 2
     isIndexFor2(false);
     isIndexFor1(false);
-  };
+};
 
 
 
@@ -249,11 +282,42 @@ export default function Home() {
 
          <div className="flex justify-center mt-5 ">
          <div className="mt-5 bg-orange-500 flex w-1/2 h-full rounded-lg max-sm:w-full">
-            <div className="flex-row border-r-2 w-32">
-              <h2 className="border-b-2 px-10 py-7 " onClick={toggleParagraph1Visibility}>Hiring Companies</h2>
-              <h2 className="border-b-2 px-10 py-7" onClick={toggleParagraph2Visibility}>Job Seekers</h2>
-              <h2 className="px-10 py-6" onClick={toggleParagraph3Visibility}>Recruitment Agencies</h2>
+            <div className="flex-row w-32">
+
+                 <h2
+                    className="border-b-2 pl-7 py-7 border-r-5"
+                    onClick={toggleParagraph1Visibility}
+                    style={{
+                      backgroundColor: `var(--${backgroundColors.h21})`,
+                      borderRight: `${backgroundColors.p}`,
+                    }}
+                  >
+                    Hiring Companies
+                  </h2>
+
+                  <h2
+                    className="border-b-2 pl-5 py-7 border-r-5 text-wrap"
+                    onClick={toggleParagraph2Visibility}
+                    style={{
+                      backgroundColor: `var(--${backgroundColors.h22})`,
+                      borderRight: `${backgroundColors.p}`,
+                    }}
+                  >
+                    Job Seekers
+                  </h2>
+
+                  <h2
+                    className="pl-5 py-7 border-r-5"
+                    onClick={toggleParagraph3Visibility}
+                    style={{
+                      backgroundColor: `var(--${backgroundColors.h23})`,
+                      borderRight: `${backgroundColors.p}`,
+                    }}
+                  >
+                    Recruitment Agencies
+                  </h2>
             </div>
+
 
            <div className="ml-10 mb-5 max-sm:ml-6">
               {isIndex1 && (
@@ -262,8 +326,6 @@ export default function Home() {
                           <li className="pb-1">Browse Through every Recruiter in your industry</li>
                           <li className="pb-1" >Find Agencies local to your projects</li>
                           <li className="pb-1">Leading tech company specializing in AI solutions.</li>
-                          <li className="pb-1">Global e-commerce giant with a focus on sustainability. </li>
-                          <li className="pb-1">Innovative startup disrupting the healthcare industry.</li>
                           <li className="pb-1">Renowned financial institution providing cutting-edge services.</li>
                       </ul>
                   </div>
