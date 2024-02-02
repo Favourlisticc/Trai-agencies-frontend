@@ -248,7 +248,7 @@ export default function Home() {
          <h1 className="text-5xl font-bold text-center">Who`s the Index For?</h1>
 
          <div className="flex justify-center mt-5 ">
-         <div className="mt-5 bg-orange-500 flex w-1/2 h-full rounded-lg">
+         <div className="mt-5 bg-orange-500 flex w-1/2 h-full rounded-lg max-sm:w-full">
             <div className="flex-row border-r-2 w-32">
               <h2 className="border-b-2 px-10 py-7 " onClick={toggleParagraph1Visibility}>Hiring Companies</h2>
               <h2 className="border-b-2 px-10 py-7" onClick={toggleParagraph2Visibility}>Job Seekers</h2>
