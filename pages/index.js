@@ -103,7 +103,7 @@ export default function Home() {
      const toggleParagraph2Visibility = () => {
       isIndexFor2(!isIndex2);
     // Hide paragraph 1 when showing paragraph 2
-    isIndex1(false);
+    isIndexFor1(false);
   };
 
   const toggleParagraph3Visibility = () => {
@@ -248,14 +248,30 @@ export default function Home() {
          <div className="flex justify-center mt-5 ">
          <div className="mt-5 bg-orange-500 flex w-1/2 h-60 rounded-lg">
             <div className="flex-row border-r-2">
-              <h2 className="border- border-b-2 px-10 py-7 ">Hiring Companies</h2>
-              <h2 className="border- border-b-2 px-10 py-7">Job Seekers</h2>
-              <h2 className="px-10 py-6">Recruitment Agencies</h2>
+              <h2 className="border- border-b-2 px-10 py-7 " onClick={toggleParagraph1Visibility}>Hiring Companies</h2>
+              <h2 className="border- border-b-2 px-10 py-7" onClick={toggleParagraph2Visibility}>Job Seekers</h2>
+              <h2 className="px-10 py-6" onClick={toggleParagraph3Visibility}>Recruitment Agencies</h2>
             </div>
 
-            <div>
-               <p>sgcwjhvkdjh,qwed</p>
-            </div>
+            {isIndex1 && (
+               <div className="mt-7">
+                 
+              </div>
+              )}
+
+            {isIndex2 && (
+               <div className="mt-7">
+
+              </div>
+              )}
+
+            {isIndex3 && (
+               <div className="mt-7">
+
+              </div>
+              )}
+
+
          </div>
          </div>
        </div>
