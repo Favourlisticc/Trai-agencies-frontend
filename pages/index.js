@@ -103,7 +103,7 @@ export default function Home() {
 
       setBackgroundColors({
         ...backgroundColors,
-        h21: 'slate-50', // Or any desired color
+        h21: 'slate-800', // Or any desired color
         h22: 'orange-500', // Reset other colors
         h23: 'orange-500',
         p: 'border-r-0'
@@ -122,7 +122,7 @@ export default function Home() {
       setBackgroundColors({
         ...backgroundColors,
         h21: 'orange-500', // Or any desired color
-        h22: 'slate-50', // Reset other colors
+        h22: 'slate-800', // Reset other colors
         h23: 'orange-500',
         p: 'border-r-0'
       });
@@ -139,7 +139,7 @@ export default function Home() {
       ...backgroundColors,
       h21: 'orange-500', // Or any desired color
       h22: 'orange-500', // Reset other colors
-      h23: 'slate-50',
+      h23: 'slate-800',
       p: 'border-r-0'
     });
     isIndexFor3(!isIndex3);
