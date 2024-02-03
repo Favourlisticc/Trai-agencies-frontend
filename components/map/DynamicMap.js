@@ -20,45 +20,37 @@ import oramgemapicon from "../../public/icon/orange-map-icon.png"
 
 import Image from 'next/image';
 
-const MapComponent = ({ onMarkerClick }) => {
-  const [markers, setMarkers] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from the API when the component mounts
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://trai-agencies-api.onrender.com/api/v1/');
-        setMarkers(response.data); // Assuming the API response is an array of markers
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+import getAgencies from "../../lib/getAgencies"
 
 
-  // const markers = [
-  //   ...london.map(location => ({
-  //     id: location.id,
-  //     name: location.companyName,
-  //     lat: location.Latitude,
-  //     lon: location.Longitude,
 
-  //     Logo: location.logo,
-  //     Address: location.Address,
-  //     Website: location.Website,
-  //     contactemail: location.contactemail,
-  //     section: location.section,
-  //     linkedin: location.linkedin,
-  //     youtube: location.youtube,
-  //     facebook: location.facebook,
-  //     instagram: location.instagram,
-  //     twitter : location.twitter,
+export default function  MapComponent({data}){
+
+  console.log(data)
 
 
-  //   }))
-  // ];
+
+  const markers = [
+    ...london.map(location => ({
+      id: location.id,
+      name: location.companyName,
+      lat: location.Latitude,
+      lon: location.Longitude,
+
+      Logo: location.logo,
+      Address: location.Address,
+      Website: location.Website,
+      contactemail: location.contactemail,
+      section: location.section,
+      linkedin: location.linkedin,
+      youtube: location.youtube,
+      facebook: location.facebook,
+      instagram: location.instagram,
+      twitter : location.twitter,
+
+
+    }))
+  ];
 
   const handleMarkerClick = (marker) => {
     onMarkerClick(marker);
@@ -166,4 +158,12 @@ const MapComponent = ({ onMarkerClick }) => {
   );
 };
 
-export default MapComponent;
+export async function getStaticProps() {
+  const response = await fetch("https://trai-agencies-api.onrender.com/api/v1/get_agencies");
+  const data = await response.json();
+  return {
+    props: {
+      data: data
+    },
+  }
+}
