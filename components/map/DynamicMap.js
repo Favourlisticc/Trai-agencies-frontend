@@ -24,9 +24,9 @@ import getAgencies from "../../lib/getAgencies"
 
 
 
-export default function  MapComponent({data}){
+export default function  MapComponent(){
 
-  console.log(data)
+
 
 
 
@@ -158,12 +158,4 @@ export default function  MapComponent({data}){
   );
 };
 
-export async function getStaticProps() {
-  const response = await fetch("https://trai-agencies-api.onrender.com/api/v1/get_agencies");
-  const data = await response.json();
-  return {
-    props: {
-      data: data
-    },
-  }
-}
+

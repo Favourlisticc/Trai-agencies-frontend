@@ -56,7 +56,7 @@ export const metadata = {
 
 
 export default function Home({ ninjas }) {
-  
+
 
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [count, setCount] = useState(0);
@@ -197,7 +197,7 @@ export default function Home({ ninjas }) {
         </div>
 
         <div className="flex justify-center">
-          <Link href="/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
+          <Link href="/mapp/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
              CHECK AGENCIES NEAR YOU
              <FontAwesomeIcon icon={faMapLocationDot} width={26} className="ml-7 max-sm:ml-5" /> </Link>
         </div>

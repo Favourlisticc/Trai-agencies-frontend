@@ -5,10 +5,28 @@ import { Link } from "react-scroll"
 import Image from "next/image"
 import { useState } from "react"
 
-import arrowleft from "../public/icon/arrow-left.png"
+import arrowleft from "../../public/icon/arrow-left.png"
+
+export const getStaticProps = async () => {
+  const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/get_agencies');
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
 
 
-export default function Map({ninjas}) {
+export default function Map({ data }) {
+
+  console.log(data)
   const [selectedMarker, setSelectedMarker] = useState(null);
 
 
