@@ -1,32 +1,16 @@
-import MapComponent from "@/components/map/map"
+import MapComponent from "../pages/map/map"
 import Navbar from "@/components/navbar"
 import Head from "next/head"
 import { Link } from "react-scroll"
 import Image from "next/image"
 import { useState } from "react"
 
-import arrowleft from "../../public/icon/arrow-left.png"
-
-export const getStaticProps = async () => {
-  const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/get_agencies');
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  const data = await response.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-};
+import arrowleft from "../public/icon/arrow-left.png"
 
 
-export default function Map({ data }) {
+export default function Map() {
 
-  console.log(data)
+
   const [selectedMarker, setSelectedMarker] = useState(null);
 
 
