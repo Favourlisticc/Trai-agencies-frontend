@@ -43,7 +43,7 @@ export default async function  MapComponent(){
       lat: location.Latitude,
       lon: location.Longitude,
 
-     
+      Logo: location.logo,
       Address: location.Address,
       Website: location.Website,
       contactemail: location.contactemail,
