@@ -1,5 +1,5 @@
 // MapComponent.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -24,26 +24,15 @@ import getAgencies from "../../lib/getAgencies"
 
 
 
-export const getStaticProps = async () => {
-  const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/get_agencies');
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  const data = await response.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-};
+// async function getCharacters() {
+// 	return await (await fetch("https://rickandmortyapi.com/api/character", { cache: "no-store" })).json();
+// }
 
 
-export default function  MapComponent({ data }){
-console.log(data)
 
+export default async function  MapComponent(){
+  const staticData = await fetch(`https://trai-agencies-api.onrender.com/api/v1/get_agencies`, { cache: 'force-cache' })
+ console.log(staticData)
 
 
 
@@ -54,7 +43,7 @@ console.log(data)
       lat: location.Latitude,
       lon: location.Longitude,
 
-      Logo: location.logo,
+     
       Address: location.Address,
       Website: location.Website,
       contactemail: location.contactemail,
