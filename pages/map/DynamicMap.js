@@ -36,27 +36,6 @@ export default async function  MapComponent(){
 
 
 
-  const markers = [
-    ...london.map(location => ({
-      id: location.id,
-      name: location.companyName,
-      lat: location.Latitude,
-      lon: location.Longitude,
-
-      Logo: location.logo,
-      Address: location.Address,
-      Website: location.Website,
-      contactemail: location.contactemail,
-      section: location.section,
-      linkedin: location.linkedin,
-      youtube: location.youtube,
-      facebook: location.facebook,
-      instagram: location.instagram,
-      twitter : location.twitter,
-
-
-    }))
-  ];
 
   const handleMarkerClick = (marker) => {
     onMarkerClick(marker);
