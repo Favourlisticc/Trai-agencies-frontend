@@ -186,7 +186,7 @@ export default function Home({ ninjas }) {
          <h1 className="text-center text-4xl ml-10 mt-5 font-semibold max-sm:ml-0 max-sm:text-2xl">The Recruitment Agency Index</h1>
         <p className="text-center text-orange-500 font-semibold py-3 text-xl">Every Recruitment Agency in the UK at your fingertips</p>
 
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <div class="input-container">
             <input type="text" name="text" class="input w-80" placeholder="search..."/>
             <span class="icon">
@@ -194,12 +194,22 @@ export default function Home({ ninjas }) {
             </span>
 
           </div>
-        </div>
+        </div> */}
 
         <div className="flex justify-center">
-          <Link href="/map" className="mt-10 px-2 py-2 bg-blue-600 rounded flex">
+          <Link href="/map" className="mt-10 px-2 py-2 bg-white text-slate-950 rounded flex">
              CHECK AGENCIES NEAR YOU
              <FontAwesomeIcon icon={faMapLocationDot} width={26} className="ml-7 max-sm:ml-5" /> </Link>
+        </div>
+
+        <div className="container">
+            <h1>Add Your Agency</h1>
+            <p>Dont see your Agency on our list?</p>
+            <p>Send us your details and we`ll be in touch ASAP</p>
+            <input type="text"/>
+            <input type="text"/>
+            <input type="text"/>
+            <button>Submit</button>
         </div>
 
         <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md">

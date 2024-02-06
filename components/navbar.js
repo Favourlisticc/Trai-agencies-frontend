@@ -166,7 +166,7 @@ export default function Navbar() {
             </div>
           </div>
 
-        <div id="smald" className="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
+        {/* <div id="smald" className="hidden xl:flex flex-col xl:flex-row items-center overflow-hidden font-medium tracking-wide">
 
         <Link href="/" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 underline font-semibold">Index</Link>
             <Link href="/features" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500  underline font-semibold">Pricing</Link>
@@ -175,7 +175,7 @@ export default function Navbar() {
             <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline " > Story</Link>
             <Link href="/prices" className="px-5 py-5 xl:py-6 cursor-pointer hover:text-orange-500 font-semibold underline" > Contact</Link>
 
-        </div>
+        </div> */}
 
 
 {/* login and signuo */}
