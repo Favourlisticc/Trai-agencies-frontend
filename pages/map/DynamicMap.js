@@ -28,9 +28,9 @@ import Image from 'next/image';
 
 
 
-export default async function  MapComponent(){
-  const staticData = await fetch(`https://trai-agencies-api.onrender.com/api/v1/get_agencies`, { cache: 'force-cache' })
- console.log(staticData)
+export default function  MapComponent(){
+//   const staticData = await fetch(`https://trai-agencies-api.onrender.com/api/v1/get_agencies`, { cache: 'force-cache' })
+//  console.log(staticData)
 
 
 
