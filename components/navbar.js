@@ -122,14 +122,14 @@ export default function Navbar() {
 
 
 {/* mobile dropdown */}
-        <div id="small-screen" style={{ zIndex: 99999 }} className=" flex lg:hidden flex-col bg-black xl:flex-row justify-between pl-4 pr-5 xl:px-20">
+        <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col bg-black xl:flex-row justify-between pl-4 pr-5 xl:px-20">
 
           <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
             <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
               <Image src={logo2} alt="Hazmick" style={{ marginLeft: "230px", marginTop: "8px" }} />
             </Link>
 
-            <div onClick={showHide} className="block xl:hidden">
+            <div onClick={showHide} className="block xl:hidden absolute top-40 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 text-blue-600 w-7"
