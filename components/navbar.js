@@ -133,7 +133,7 @@ export default function Navbar() {
               <Image src={logo2} alt="Hazmick" style={{ marginLeft: "230px", marginTop: "8px" }} />
             </Link>
 
-            <div onClick={showHide} className=" xl:hidden absolute top-96 flex mt-40 bg-white w-72 justify-center rounded-2xl px-2 py-2 ml-10">
+            <div onClick={showHide} className=" xl:hidden absolute top-96 flex mt-48 bg-white w-72 justify-center rounded-2xl px-2 py-2 ml-10">
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 text-blue-600 w-7"

@@ -207,13 +207,13 @@ export default function Home({ ninjas }) {
             <p className="text-black text-center text-xl font-medium">Dont see your Agency on our list?</p>
             <p className="text-black text-center text-xl font-medium">Send us your details and we`ll be in touch ASAP</p>
 
-           <div className=" flex justify-center mt-5">
-           <input type="text" placeholder="Your Name" className="bg-yellow-300 mr-8 w-52 h-10 px-2 rounded-md placeholder:text-black placeholder:font-semibold" />
-            <input type="text"  placeholder="Your Agency Name" className="bg-yellow-300 mr-8 w-52 h-10 px-2 rounded-md placeholder:text-black placeholder:font-semibold"/>
+           <div className=" flex justify-center mt-5 max-sm:flex-col max-sm:ml-12">
+           <input type="text" placeholder="Your Name" className="bg-yellow-300 mr-8 max-sm:mr-0 max-sm:mb-5 w-52 max-sm:w-64 h-10 px-2 rounded-md placeholder:text-black placeholder:font-semibold" />
+            <input type="text"  placeholder="Your Agency Name" className="bg-yellow-300 mr-8 w-52 max-sm:w-64 h-10 px-2 rounded-md placeholder:text-black placeholder:font-semibold"/>
            </div>
 
-           <div className="flex">
-            <input type="email"  placeholder="Your Email" className="bg-yellow-300 w-56 h-10 px-2 rounded-md mt-5 text-white placeholder:text-black placeholder:font-semibold" style={{marginLeft: "344px"}}/>
+           <div className="flex justify-center">
+            <input type="email"  placeholder="Your Email" className="bg-yellow-300 w-56 max-sm:w-64 h-10 px-2 rounded-md mt-5 text-white placeholder:text-black placeholder:font-semibold max-sm:ml-2"/>
 
            </div>
             <div className="flex justify-center mt-5">
