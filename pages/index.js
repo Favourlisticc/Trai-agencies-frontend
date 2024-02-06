@@ -202,14 +202,24 @@ export default function Home({ ninjas }) {
              <FontAwesomeIcon icon={faMapLocationDot} width={26} className="ml-7 max-sm:ml-5" /> </Link>
         </div>
 
-        <div className="container">
-            <h1>Add Your Agency</h1>
-            <p>Dont see your Agency on our list?</p>
-            <p>Send us your details and we`ll be in touch ASAP</p>
-            <input type="text"/>
-            <input type="text"/>
-            <input type="text"/>
-            <button>Submit</button>
+        <div className=" container max-sm:container bg-white mt-5 ">
+            <h1 className="text-black text-center text-3xl font-semibold px-3 py-3">Add Your Agency</h1>
+            <p className="text-black text-center text-xl font-medium">Dont see your Agency on our list?</p>
+            <p className="text-black text-center text-xl font-medium">Send us your details and we`ll be in touch ASAP</p>
+
+           <div className=" flex justify-center mt-5">
+           <input type="text" placeholder="Your Name" className="bg-yellow-300 mr-8 w-52 h-10 px-2 rounded-md" />
+            <input type="text"  placeholder="Your Name" className="bg-yellow-300 mr-8 w-52 h-10 px-2 rounded-md placeholder:text-white placeholder:font-semibold"/>
+           </div>
+
+           <div className="flex">
+            <input type="text"  placeholder="Your Name" className="bg-yellow-300 w-56 h-10 px-2 rounded-md mt-5 text-white placeholder:text-white placeholder:font-semibold" style={{marginLeft: "344px"}}/>
+
+           </div>
+            <div>
+               <button className="bg-black text-white rounded-md">Submit</button>
+
+            </div>
         </div>
 
         <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md">
