@@ -20,8 +20,6 @@ import oramgemapicon from "../../public/icon/orange-map-icon.png"
 
 import Image from 'next/image';
 
-import getAgencies from "../../lib/getAgencies"
-
 
 
 // async function getCharacters() {
