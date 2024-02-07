@@ -1,4 +1,4 @@
-import MapComponent from "../pages/map/map"
+import MapComponent from "../components/map/map"
 import Navbar from "@/components/navbar"
 import Head from "next/head"
 import { Link } from "react-scroll"

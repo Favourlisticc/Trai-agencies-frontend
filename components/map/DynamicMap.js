@@ -1,11 +1,9 @@
 // MapComponent.js
-import React, { useState, useEffect, use } from 'react';
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { london, Lagos } from "../../Data";  // Import your data arrays
-
-import axios from 'axios'; // Import axios for making HTTP requests
 
 import facebook from "../../public/icon/facebook.png"
 import twitter from "../../public/icon/twitter.png"
@@ -20,20 +18,28 @@ import oramgemapicon from "../../public/icon/orange-map-icon.png"
 
 import Image from 'next/image';
 
+const MapComponent = ({ onMarkerClick }) => {
+  const markers = [
+    ...london.map(location => ({
+      id: location.id,
+      name: location.companyName,
+      lat: location.Latitude,
+      lon: location.Longitude,
+
+      Logo: location.logo,
+      Address: location.Address,
+      Website: location.Website,
+      contactemail: location.contactemail,
+      section: location.section,
+      linkedin: location.linkedin,
+      youtube: location.youtube,
+      facebook: location.facebook,
+      instagram: location.instagram,
+      twitter : location.twitter,
 
 
-// async function getCharacters() {
-// 	return await (await fetch("https://rickandmortyapi.com/api/character", { cache: "no-store" })).json();
-// }
-
-
-
-export default function  MapComponent(){
-//   const staticData = await fetch(`https://trai-agencies-api.onrender.com/api/v1/get_agencies`, { cache: 'force-cache' })
-//  console.log(staticData)
-
-
-
+    }))
+  ];
 
   const handleMarkerClick = (marker) => {
     onMarkerClick(marker);
@@ -85,7 +91,7 @@ export default function  MapComponent(){
     </div>
 
    <div className='ml-3'>
-      <h3 className='font-semibold text-2xl text-nowrap'>{marker.agency_name}</h3>
+      <h3 className='font-semibold text-2xl text-nowrap'>{marker.name}</h3>
 
 
 
@@ -141,4 +147,4 @@ export default function  MapComponent(){
   );
 };
 
-
+export default MapComponent;
