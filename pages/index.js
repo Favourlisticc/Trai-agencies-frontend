@@ -222,7 +222,7 @@ export default function Home({ ninjas }) {
             </div>
         </div>
 
-        <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md container">
+        {/* <div className="bg-yellow-300 mt-10 text-black pt-5 pb-5 rounded-md container">
             <h2 className="text-3xl font-bold text-center underline mb-10 ">Featured Agencies</h2>
             {selectedData.map((marker) => (
             <div key={marker.id}>
@@ -238,7 +238,7 @@ export default function Home({ ninjas }) {
 
 
                     <p className="font-bold bg-orange-600 text-white rounded px-1 py-1 mt-3 text-wrap">{marker.section}</p>
-                    {/* <p>{marker.Address}</p> */}
+                    <p>{marker.Address}</p>
 
 
                   <div className='flex mt-5'>
@@ -263,13 +263,13 @@ export default function Home({ ninjas }) {
                     <Image src={facebook} alt="" className="h-5 w-5 mr-2"/>
                     </a>
 
-                    {/* <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
+                    <a href={marker.youtube} target="_blank" rel="noopener noreferrer">
                     <Image src={youtube} alt="" className="h-5 w-5"/>
-                    </a> */}
+                    </a>
 
-                    {/* <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
+                    <a href={marker.instagram} target="_blank" rel="noopener noreferrer">
                     <Image src={instagram} alt="" className="h-5 w-5"/>
-                    </a> */}
+                    </a>
 
                     <a href={marker.twitter} target="_blank" rel="noopener noreferrer">
                     <Image src={twitter} alt="" className="h-5 w-5 mr-2"/>
@@ -282,7 +282,7 @@ export default function Home({ ninjas }) {
             </div>
 
             ))}
-        </div>
+        </div> */}
 
 
         {/* <div className="t text-center mt-16 mb-10">

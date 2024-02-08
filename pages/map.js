@@ -56,15 +56,7 @@ export default function Map() {
 
       </Head>
 
-        <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
-
-           <div id="head-nav" className="fixed bg-white left-0 right-0 w-full top-0 h-16 ">
-            <Link href="/" className="text-black flex w-52">
-               <Image src={arrowleft} width={20} height={20} alt="" className="w-10 ml-5 mt-5"/>
-              <h2 className="mt-6 ml-9 font-semibold"> Go Back</h2>
-            </Link>
-           </div>
-        </div>
+        <Navbar />
          <div className="mt-20">
          <MapComponent
         //  ninjas={ninjas}
