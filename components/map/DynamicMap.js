@@ -14,6 +14,7 @@ import emailsms from "../../public/icon/directbox-send.png"
 
 const MapComponent = () => {
   const [agencies, setAgencies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAgencies = async () => {
@@ -26,6 +27,8 @@ const MapComponent = () => {
         setAgencies(data);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false); // Set loading state to false when data fetching is complete
       }
     };
 
@@ -35,78 +38,88 @@ const MapComponent = () => {
   console.log(agencies)
 
   return (
-    <div className="flex" style={{ marginLeft: "0px" }}>
-      <MapContainer
-        style={{
-          height: '100vh',
-          width: '100%',
-          borderRadius: '15px',
-          marginLeft: "0px",
-        }}
-        center={[51.53, -0.1]}
-        zoom={10}
-        scrollWheelZoom={false}
-        doubleClickZoom={false}
-        zoomControl={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+    <div>
 
-        {agencies.map(agency => (
-          <Marker
-            key={agency._id}
-            position={[agency.latitude, agency.longitude]}
-            icon={
-              new L.Icon({
-                iconUrl: oramgemapicon,
-                iconRetinaUrl: oramgemapicon,
-                iconSize: [25, 41],
-                iconAnchor: [12.5, 41],
-                popupAnchor: [0, -41],
-                shadowUrl: '/icon/maker-shadow.png',
-                shadowSize: [51, 45],
-              })
-            }
+      <div className="flex" style={{ marginLeft: "0px" }}>
+        {loading ? ( // Render loading indicator if loading state is true
+          <div>Loading map.......🔻</div>
+        ) : (
+          <MapContainer
+            style={{
+              height: '100vh',
+              width: '100%',
+              marginLeft: "0px",
+            }}
+            center={[51.53, -0.1]}
+            zoom={10}
+            scrollWheelZoom={false}
+            doubleClickZoom={false}
+            zoomControl={true}
           >
-            <Popup>
-              <div className='flex'>
-                <div className='w-96'>
-                  <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32' />
-                </div>
-                <div className='ml-3'>
-                  <h3 className='font-semibold text-2xl text-nowrap'>{agency.agency_name}</h3>
-                  <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{agency.sector.join(', ')}</p>
-                  <div className='flex mt-3'>
-                    <a href={agency.website}>
-                      <Image src={globalweb} alt='' />
-                    </a><br />
-                    <a href={`mailto:${agency.contact[0]}`}>
-                      <Image src={emailsms} alt='' />
-                    </a>
+
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+
+            {agencies.map(agency => (
+              <Marker
+                key={agency._id}
+                position={[agency.latitude, agency.longitude]}
+                icon={
+                  new L.Icon({
+                    iconUrl: "/icon/map-iicon.png",
+                    iconRetinaUrl: "/icon/map-iicon.png",
+                    iconSize: [15, 15],
+                    iconAnchor: [12.5, 41],
+                    popupAnchor: [0, -41],
+                    shadowUrl: '/icon/maker-shadow.png',
+                    shadowSize: [51, 20],
+                  })
+                }
+              >
+      <input type="text" placeholder="Search..." className="w-full p-2 mb-4" />
+
+                <Popup>
+                  <div className='flex'>
+                    <div className='w-96'>
+                      <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32' />
+                    </div>
+                    <div className='ml-3'>
+                      <h3 className='font-semibold text-2xl text-nowrap'>{agency.agency_name}</h3>
+                      <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{agency.sector.join(', ')}</p>
+                      <div className='flex mt-3'>
+                        <a href={agency.website}>
+                          <Image src={globalweb} alt='' />
+                        </a><br />
+                        <a href={`mailto:${agency.contact[0]}`}>
+                          <Image src={emailsms} alt='' />
+                        </a>
+                      </div>
+                      <div className='flex mt-3'>
+                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                          <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
+                        </a>
+                        {agency.socials.Facebook && (
+                          <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                            <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
+                          </a>
+                        )}
+                        {agency.socials.Twitter && (
+                          <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                            <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <div className='flex mt-3'>
-                    <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                      <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
-                    </a>
-                    {agency.socials.Facebook && (
-                      <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                        <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
-                      </a>
-                    )}
-                    {agency.socials.Twitter && (
-                      <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                        <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+                </Popup>
+              </Marker>
+            ))}
+          </MapContainer>
+        )}
+      </div>
     </div>
   );
 };

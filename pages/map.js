@@ -4,6 +4,7 @@ import Head from "next/head"
 import { Link } from "react-scroll"
 import Image from "next/image"
 import { useState } from "react"
+import Mapnav from "@/components/map-nav"
 
 import arrowleft from "../public/icon/arrow-left.png"
 
@@ -56,8 +57,8 @@ export default function Map() {
 
       </Head>
 
-        <Navbar />
-         <div className="mt-20">
+         <div className="">
+          <Mapnav/>
          <MapComponent
         //  ninjas={ninjas}
          />
