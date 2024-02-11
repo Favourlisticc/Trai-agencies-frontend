@@ -133,7 +133,7 @@ export default function Navbar() {
 
             <div
             // onClick={showHide}
-            className=" xl:hidden absolute top-96 flex mt-52 bg-white w-72 justify-center rounded-2xl px-2 py-2 ml-10">
+            className=" xl:hidden absolute top-96 flex mt-52 bg-white w-72 justify-center rounded-2xl px-2 py-2 ml-10 shadow-2xl">
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 text-blue-600 w-7"

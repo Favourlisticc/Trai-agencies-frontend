@@ -15,6 +15,8 @@ import emailsms from "../../public/icon/directbox-send.png"
 const MapComponent = () => {
   const [agencies, setAgencies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedIndustry, setSelectedIndustry] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchAgencies = async () => {
@@ -35,10 +37,20 @@ const MapComponent = () => {
     fetchAgencies();
   }, []);
 
+  const filteredAgencies = agencies.filter(agency => {
+    if (!selectedIndustry) {
+      return true;
+    }
+    return agency.sector.includes(selectedIndustry);
+  }).filter(agency => {
+    return agency.agency_name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   console.log(agencies)
 
   return (
     <div>
+
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
@@ -46,7 +58,7 @@ const MapComponent = () => {
         ) : (
           <MapContainer
             style={{
-              height: '100vh',
+              height: '1000px', // Adjust height to accommodate search elements
               width: '100%',
               marginLeft: "0px",
             }}
@@ -56,14 +68,24 @@ const MapComponent = () => {
             doubleClickZoom={false}
             zoomControl={true}
           >
-
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
+<div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+          <option value="">Select Industry</option>
+          <option value="Education">Education</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Construction">Construction</option>
+          {/* Add more options as needed */}
 
-            {agencies.map(agency => (
+        </select>
+        <button type="submit">Go</button>
+      </div>
+
+            {filteredAgencies.map(agency => (
               <Marker
                 key={agency._id}
                 position={[agency.latitude, agency.longitude]}
@@ -75,12 +97,10 @@ const MapComponent = () => {
                     iconAnchor: [12.5, 41],
                     popupAnchor: [0, -41],
                     shadowUrl: '/icon/maker-shadow.png',
-                    shadowSize: [51, 20],
+                    shadowSize: [51, 45],
                   })
                 }
               >
-      <input type="text" placeholder="Search..." className="w-full p-2 mb-4" />
-
                 <Popup>
                   <div className='flex'>
                     <div className='w-96'>
