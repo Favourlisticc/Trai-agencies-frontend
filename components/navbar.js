@@ -16,9 +16,9 @@ import logo2 from "../public/icon/trai-logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonWalkingArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-
 export default function Navbar() {
 
+  
   // const showHide = () => {
   //   if(typeof window !== 'undefined') {
 

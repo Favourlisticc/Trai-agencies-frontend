@@ -24,8 +24,7 @@ import Linkedin from "../public/icon/linedinl.png"
 import checked from "../public/icon/checked.png"
 import globalweb from "../public/icon/global-search.png"
 import emailsms from "../public/icon/directbox-send.png"
-
-
+import axios from "axios";
 
 
 export const metadata = {
@@ -54,9 +53,18 @@ export const metadata = {
 
 // const inter = Inter({ subsets: ["latin"] })
 
+// export async function getServerSideProps() {
+//   try {
+//     const response = await axios.get('https://trai-agencies-api.onrender.com/api/v1/agencies');
+//     return { props: { data: response.data } };
+//   } catch (error) {
+//     console.error('Error fetching data:', error);
+//     return { notFound: true };
+//   }
+// }
 
-export default function Home({ ninjas }) {
-
+export default function Home() {
+// console.log(data)
 
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [count, setCount] = useState(0);
@@ -67,7 +75,7 @@ export default function Home({ ninjas }) {
   };
 
   const handleClose = () => {
-    // Your logic to handle closing the details
+    //logic to handle closing the details
     setSelectedMarker(null); // Assuming selectedMarker is a state variable
   };
 
