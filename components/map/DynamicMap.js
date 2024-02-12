@@ -23,18 +23,11 @@ const MapComponent = () => {
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const [isMapActive, setIsMapActive] = useState(false);
+  const [isMapActive, setIsMapActive] = useState(true);
   const [isListActive, setIsListActive] = useState(false);
+  const [isListModalOpen, setIsListModalOpen] = useState(false);
 
-  const handleMapClick = () => {
-    setIsMapActive(!isMapActive);
-    setIsListActive(false); // Ensure only one icon is active at a time
-  };
-
-  const handleListClick = () => {
-    setIsListActive(!isListActive);
-    setIsMapActive(false); // Ensure only one icon is active at a time
-  };
+  const sectorColors = ["bg-blue-600", "bg-green-600", "bg-yellow-600", "bg-red-600", "bg-purple-600", "bg-indigo-600"];
 
   useEffect(() => {
     const fetchAgencies = async () => {
@@ -64,10 +57,33 @@ const MapComponent = () => {
     return agency.agency_name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+
+  const handleMapClick = () => {
+    setIsMapActive(true);
+    setIsListActive(false);
+  };
+
+  // Function to handle clicks on the list icon
+  const handleListClick = () => {
+    setIsMapActive(false);
+    setIsListActive(true);
+  };
+
+  const handleListIconClick = () => {
+    setIsListModalOpen(!isListModalOpen);
+  };
+
+  const playhandleModalClose = () => {
+    setIsListActive(false);
+  };
+
+
+
   console.log(agencies)
 
   return (
     <div>
+
 
 
       <div className="flex" style={{ marginLeft: "0px" }}>
@@ -91,48 +107,27 @@ const MapComponent = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-              <div className="flex flex-col items-center search mt-20 ml-8" style={{ zIndex: "999" }}>
-                <select 
-                  value={selectedIndustry} 
-                  onChange={(e) => setSelectedIndustry(Array.from(e.target.selectedOptions, option => option.value))} 
-                  className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl"
-                  multiple
-                >
-                  <option value="">Select Industry</option>
-                  <option value="Education">Education</option>
-                  <option value="Healthcare">Healthcare</option>
-                  <option value="Construction">Construction</option>
-                  {/* Add more options as needed */}
-                </select>
-                <button type="submit">Search</button>
-              </div>
+            <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+                    <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+                      <option value="">Select Industry</option>
+                      <option value="Education">Education</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Construction">Construction</option>
+                      {/* Add more options as needed */}
 
-              <div>
-      <div
-        onClick={handleMapClick}
-        style={{
-          zIndex: "999",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: isMapActive ? "white" : "",
-        }}
-        className={`relative mt-16 text-red bg-yellow-500 mr-3 rounded-3xl ml-72 py-3 ${isMapActive ? 'active' : ''}`}
-      >
-        <FontAwesomeIcon icon={faMapLocationDot} className='w-20 text-3xl mb-2 text-black'/>
-      </div>
+                    </select>
+                    <button type="submit">Search</button>
+                  </div>
 
-      <div
-        onClick={handleListClick}
-        style={{
-          zIndex: "999",
-          display: "flex",
-          flexDirection: "column",
-          backgroundColor: isListActive ? "white" : "",
-        }}
-        className={`relative mt-16 text-red bg-yellow-500 mr-3 rounded-3xl ml-72 py-3 ${isListActive ? 'active' : ''}`}
-      >
-        <FontAwesomeIcon icon={faList} className='w-20 text-3xl text-black'/>
-      </div>
+              <div style={{ zIndex: "999", display: "flex", flexDirection: "column", backgroundColor: isMapActive ? "white" : "" }} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-20 rounded-3xl ml-72 py-3 px-3`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`pl-2 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-4xl mb-2 text-black'/>
+                </div>
+
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 pl-2 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-4xl text-black'/>
+
+                </div>
     </div>
 
 
@@ -151,44 +146,110 @@ const MapComponent = () => {
                 }
               >
                 <Popup>
+                {isMapActive && (
                   <div className='flex'>
-                    <div className='w-96'>
-                      <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32' />
+                  <div className='w-96'>
+                    <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-full h-32' />
+                  </div>
+                  <div className='ml-3'>
+                    <h3 className='font-semibold text-2xl text-nowrap'>{agency.agency_name}</h3>
+                    <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{agency.sector.join(', ')}</p>
+                    <div className='flex mt-3'>
+                      <a href={agency.website}>
+                        <Image src={globalweb} alt='' />
+                      </a><br />
+                      <a href={`mailto:${agency.contact[0]}`}>
+                        <Image src={emailsms} alt='' />
+                      </a>
                     </div>
-                    <div className='ml-3'>
-                      <h3 className='font-semibold text-2xl text-nowrap'>{agency.agency_name}</h3>
-                      <p className="font-bold bg-orange-600 text-white rounded w-20 px-1 py-1 mt-3">{agency.sector.join(', ')}</p>
-                      <div className='flex mt-3'>
-                        <a href={agency.website}>
-                          <Image src={globalweb} alt='' />
-                        </a><br />
-                        <a href={`mailto:${agency.contact[0]}`}>
-                          <Image src={emailsms} alt='' />
+                    <div className='flex mt-3'>
+                      <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
+                      </a>
+                      {agency.socials.Facebook && (
+                        <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                          <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
                         </a>
-                      </div>
-                      <div className='flex mt-3'>
-                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                          <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
+                      )}
+                      {agency.socials.Twitter && (
+                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                          <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
                         </a>
-                        {agency.socials.Facebook && (
-                          <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                            <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
-                          </a>
-                        )}
-                        {agency.socials.Twitter && (
-                          <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                            <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
-                          </a>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
+                </div>
+                )}
+
                 </Popup>
               </Marker>
             ))}
           </MapContainer>
         )}
       </div>
+
+      {isListActive && (
+        <div className="fixed top-0 left-0 w-full h-full text-black flex items-center justify-center bg-gray-900 bg pt-16" style={{zIndex: "999"}}>
+
+          <div className=" rounded-lg">
+          <span className="text-3xl float-right" onClick={playhandleModalClose}>&times;</span>
+          <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+          <option value="">Select Industry</option>
+          <option value="Education">Education</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Construction">Construction</option>
+          {/* Add more options as needed */}
+
+        </select>
+        <button type="submit">Search</button>
+      </div>
+            <div className="overflow-y-auto">
+              {/* Render your agencies list here */}
+              {filteredAgencies.map(agency => (
+                 <div key={agency._id} className='flex bg-yellow-300 w-60 mb-5'>
+                  <div className=''>
+                    <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-16 h-16' />
+                  </div>
+                  <div className=''>
+                    <h3 className='font-semibold text-nowrap'>{agency.agency_name}</h3>
+                    <div className="flex flex-wrap ml2">
+                      {agency.sector.map((sector, index) => (
+                        <div key={index} className="flex items-center mr-2 mb-2">
+                          <p className={`text-white h-3 font-light text-xs rounded w-16 mr-1 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className='flex'>
+                    <a href={agency.website}>
+                        <Image src={globalweb} alt='' />
+                      </a><br />
+                      <a href={`mailto:${agency.contact[0]}`}>
+                        <Image src={emailsms} alt='' />
+                      </a>
+                      <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
+                      </a>
+                      {agency.socials.Facebook && (
+                        <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                          <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
+                        </a>
+                      )}
+                      {agency.socials.Twitter && (
+                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                          <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button onClick={handleListIconClick} className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Close</button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
