@@ -12,11 +12,29 @@ import Linkedin from "../../public/icon/linedinl.png"
 import globalweb from "../../public/icon/global-search.png"
 import emailsms from "../../public/icon/directbox-send.png"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { FaMapLocationDot } from 'react-icons/fa6';
+import { faMapLocationDot, faList } from '@fortawesome/free-solid-svg-icons';
+
 const MapComponent = () => {
   const [agencies, setAgencies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedIndustry, setSelectedIndustry] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [isMapActive, setIsMapActive] = useState(false);
+  const [isListActive, setIsListActive] = useState(false);
+
+  const handleMapClick = () => {
+    setIsMapActive(!isMapActive);
+    setIsListActive(false); // Ensure only one icon is active at a time
+  };
+
+  const handleListClick = () => {
+    setIsListActive(!isListActive);
+    setIsMapActive(false); // Ensure only one icon is active at a time
+  };
 
   useEffect(() => {
     const fetchAgencies = async () => {
@@ -73,17 +91,50 @@ const MapComponent = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-<div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
-        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
-          <option value="">Select Industry</option>
-          <option value="Education">Education</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Construction">Construction</option>
-          {/* Add more options as needed */}
+              <div className="flex flex-col items-center search mt-20 ml-8" style={{ zIndex: "999" }}>
+                <select 
+                  value={selectedIndustry} 
+                  onChange={(e) => setSelectedIndustry(Array.from(e.target.selectedOptions, option => option.value))} 
+                  className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl"
+                  multiple
+                >
+                  <option value="">Select Industry</option>
+                  <option value="Education">Education</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Construction">Construction</option>
+                  {/* Add more options as needed */}
+                </select>
+                <button type="submit">Search</button>
+              </div>
 
-        </select>
-        <button type="submit">Go</button>
+              <div>
+      <div
+        onClick={handleMapClick}
+        style={{
+          zIndex: "999",
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: isMapActive ? "white" : "",
+        }}
+        className={`relative mt-16 text-red bg-yellow-500 mr-3 rounded-3xl ml-72 py-3 ${isMapActive ? 'active' : ''}`}
+      >
+        <FontAwesomeIcon icon={faMapLocationDot} className='w-20 text-3xl mb-2 text-black'/>
       </div>
+
+      <div
+        onClick={handleListClick}
+        style={{
+          zIndex: "999",
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: isListActive ? "white" : "",
+        }}
+        className={`relative mt-16 text-red bg-yellow-500 mr-3 rounded-3xl ml-72 py-3 ${isListActive ? 'active' : ''}`}
+      >
+        <FontAwesomeIcon icon={faList} className='w-20 text-3xl text-black'/>
+      </div>
+    </div>
+
 
             {filteredAgencies.map(agency => (
               <Marker
@@ -96,8 +147,6 @@ const MapComponent = () => {
                     iconSize: [15, 15],
                     iconAnchor: [12.5, 41],
                     popupAnchor: [0, -41],
-                    shadowUrl: '/icon/maker-shadow.png',
-                    shadowSize: [51, 45],
                   })
                 }
               >
