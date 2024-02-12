@@ -193,51 +193,41 @@ const MapComponent = () => {
 
           <div className=" rounded-lg">
           <span className="text-3xl float-right" onClick={playhandleModalClose}>&times;</span>
-          <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
-        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
-          <option value="">Select Industry</option>
-          <option value="Education">Education</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Construction">Construction</option>
-          {/* Add more options as needed */}
 
-        </select>
-        <button type="submit">Search</button>
-      </div>
-            <div className="overflow-y-auto">
+            <div className="s scroll-m-64">
               {/* Render your agencies list here */}
               {filteredAgencies.map(agency => (
-                 <div key={agency._id} className='flex bg-yellow-300 w-60 mb-5'>
+                 <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md'>
                   <div className=''>
-                    <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-16 h-16' />
+                    <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-60 h-20' />
                   </div>
                   <div className=''>
-                    <h3 className='font-semibold text-nowrap'>{agency.agency_name}</h3>
-                    <div className="flex flex-wrap ml2">
+                    <h3 className='font-semibold text-nowrap ml-2'>{agency.agency_name}</h3>
+                    <div className="flex flex-wrap ml-2 mt-1">
                       {agency.sector.map((sector, index) => (
                         <div key={index} className="flex items-center mr-2 mb-2">
-                          <p className={`text-white h-3 font-light text-xs rounded w-16 mr-1 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
+                          <p className={`text-white h-3 font-light text-xs rounded pb-4 px-2 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
                         </div>
                       ))}
                     </div>
-                    <div className='flex'>
+                    <div className='flex ml-2'>
                     <a href={agency.website}>
-                        <Image src={globalweb} alt='' />
+                        <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
                       </a><br />
                       <a href={`mailto:${agency.contact[0]}`}>
-                        <Image src={emailsms} alt='' />
+                        <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
                       </a>
                       <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
+                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
                       </a>
                       {agency.socials.Facebook && (
                         <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                          <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
+                          <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
                         </a>
                       )}
                       {agency.socials.Twitter && (
                         <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                          <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
+                          <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
                         </a>
                       )}
                     </div>
