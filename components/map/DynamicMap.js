@@ -119,13 +119,13 @@ const MapComponent = () => {
                     <button type="submit">Search</button>
                   </div>
 
-              <div style={{ zIndex: "999", display: "flex", flexDirection: "column", backgroundColor: isMapActive ? "white" : "" }} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-20 rounded-3xl ml-72 py-3 px-3`}>
-                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`pl-2 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
-                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-4xl mb-2 text-black'/>
+              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-3 px-3`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-2xl mb-2 text-black'/>
                 </div>
 
-                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 pl-2 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
-                <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-4xl text-black'/>
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-3xl text-black'/>
 
                 </div>
 
@@ -190,10 +190,35 @@ const MapComponent = () => {
       </div>
 
       {isListActive && (
-  <div className="fixed mt-44 top-0 left-0 w-64 h-80 text-black flex bg-gray-300" style={{ zIndex: "999", overflowY: "auto" }}>
+
+  <div className="fixed mt- top-0 left-0 w-full h-full text-black flex bg-gray-900" style={{ zIndex: "999" }}>
+
+
     <div className=" rounded-lg">
-      <span className="text-3xl float-right text-white" onClick={playhandleModalClose}>&times;</span>
-      <div className="ml-2">
+    <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+                    <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+                      <option value="">Select Industry</option>
+                      <option value="Education">Education</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Construction">Construction</option>
+                      {/* Add more options as needed */}
+
+                    </select>
+                    <button type="submit">Search</button>
+                  </div>
+
+              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-3 px-3`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-2xl mb-2 text-black'/>
+                </div>
+
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-3xl text-black'/>
+
+                </div>
+
+               </div>
+      <div className="ml-2" style={{ overflowY: "auto" }}>
         {/* Render your agencies list here */}
         {filteredAgencies.map(agency => (
           <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md'>
