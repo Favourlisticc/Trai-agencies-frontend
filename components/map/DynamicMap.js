@@ -128,7 +128,8 @@ const MapComponent = () => {
                 <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-4xl text-black'/>
 
                 </div>
-    </div>
+
+               </div>
 
 
             {filteredAgencies.map(agency => (
@@ -189,56 +190,56 @@ const MapComponent = () => {
       </div>
 
       {isListActive && (
-        <div className="fixed top-0 left-0 w-full h-full text-black flex items-center justify-center bg-gray-900 bg pt-16" style={{zIndex: "999"}}>
-
-          <div className=" rounded-lg">
-          <span className="text-3xl float-right" onClick={playhandleModalClose}>&times;</span>
-
-            <div className="s scroll-m-64">
-              {/* Render your agencies list here */}
-              {filteredAgencies.map(agency => (
-                 <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md'>
-                  <div className=''>
-                    <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-60 h-20' />
-                  </div>
-                  <div className=''>
-                    <h3 className='font-semibold text-nowrap ml-2'>{agency.agency_name}</h3>
-                    <div className="flex flex-wrap ml-2 mt-1">
-                      {agency.sector.map((sector, index) => (
-                        <div key={index} className="flex items-center mr-2 mb-2">
-                          <p className={`text-white h-3 font-light text-xs rounded pb-4 px-2 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className='flex ml-2'>
-                    <a href={agency.website}>
-                        <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
-                      </a><br />
-                      <a href={`mailto:${agency.contact[0]}`}>
-                        <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
-                      </a>
-                      <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
-                      </a>
-                      {agency.socials.Facebook && (
-                        <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                          <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
-                        </a>
-                      )}
-                      {agency.socials.Twitter && (
-                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                          <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
+  <div className="fixed mt-44 top-0 left-0 w-64 h-80 text-black flex bg-gray-300" style={{ zIndex: "999", overflowY: "auto" }}>
+    <div className=" rounded-lg">
+      <span className="text-3xl float-right text-white" onClick={playhandleModalClose}>&times;</span>
+      <div className="ml-2">
+        {/* Render your agencies list here */}
+        {filteredAgencies.map(agency => (
+          <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md'>
+            <div className=''>
+              <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-60 h-20' />
             </div>
-            <button onClick={handleListIconClick} className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Close</button>
+            <div className=''>
+              <h3 className='font-semibold text-nowrap ml-2'>{agency.agency_name}</h3>
+              <div className="flex flex-wrap ml-2 mt-1">
+                {agency.sector.map((sector, index) => (
+                  <div key={index} className="flex items-center mr-2 mb-2">
+                    <p className={`text-white h-3 font-light text-xs rounded pb-4 px-2 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
+                  </div>
+                ))}
+              </div>
+              <div className='flex ml-2'>
+                <a href={agency.website}>
+                  <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
+                </a><br />
+                <a href={`mailto:${agency.contact[0]}`}>
+                  <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
+                </a>
+                <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                  <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
+                </a>
+                {agency.socials.Facebook && (
+                  <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                    <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                  </a>
+                )}
+                {agency.socials.Twitter && (
+                  <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                    <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
+
 
     </div>
   );
