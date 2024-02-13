@@ -119,13 +119,13 @@ const MapComponent = () => {
                     <button type="submit">Search</button>
                   </div>
 
-              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-3 px-3`}>
-                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
-                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-2xl mb-2 text-black'/>
+              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-1 px-1`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                  <FontAwesomeIcon icon={faMapLocationDot} className='w-12 text-3xl mb-2 text-black'/>
                 </div>
 
-                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
-                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-3xl text-black'/>
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-12 text-3xl text-black'/>
 
                 </div>
 
@@ -207,13 +207,13 @@ const MapComponent = () => {
                     <button type="submit">Search</button>
                   </div>
 
-              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-3 px-3`}>
-                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
-                  <FontAwesomeIcon icon={faMapLocationDot} className='w-10 text-2xl mb-2 text-black'/>
+                  <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-1 px-1`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                  <FontAwesomeIcon icon={faMapLocationDot} className='w-12 text-3xl mb-2 text-black'/>
                 </div>
 
-                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
-                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-10 text-3xl text-black'/>
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-12 text-3xl text-black'/>
 
                 </div>
 
