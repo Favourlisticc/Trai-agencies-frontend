@@ -318,16 +318,35 @@ const MapComponent = () => {
                     <h1>Contact</h1>
 
                     <div>
-                      <a href={selectedAgency.website} className='text-xs'>
+                      <a href={selectedAgency.website} className='text-xs flex'>
                         <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
                         {selectedAgency.website}
                       </a>
 
-                      <a href={`mailto:${selectedAgency.contact[1]}`} className='text-xs'>
+                      <a href={`mailto:${selectedAgency.contact[1]}`} className='text-xs flex'>
                        <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
                        {selectedAgency.contact[0]}
                       </a>
 
+
+                    </div>
+
+                    <div>
+
+                      <a href={selectedAgency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
+                      </a>
+
+                      {selectedAgency.socials.Facebook && (
+                        <a href={selectedAgency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                          <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                        </a>
+                      )}
+                      {selectedAgency.socials.Twitter && (
+                        <a href={selectedAgency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                          <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
+                        </a>
+                      )}
 
                     </div>
                   </div>
