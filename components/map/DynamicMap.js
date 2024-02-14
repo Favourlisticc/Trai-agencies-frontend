@@ -279,19 +279,19 @@ const MapComponent = () => {
     )}
 
         {isModalOpen && selectedAgency && (
-          <div className="fixed top-0 left-0 w-full h-full flex justify-center pt-48 pb-32 px-7 bg-gray-300 bg-opacity-50" style={{ zIndex: "999" }}>
+          <div className="fixed top-0 left-0 w-full h-full flex justify-center pt-28 pb-32 px-5 bg-slate-500 bg-opacity-50" style={{ zIndex: "999" }}>
             <div className="bg-gray-200 rounded-lg">
               <span className="text-3xl float-right text-black cursor-pointer" onClick={closeModal}>&times;</span>
 
-              <div className='pt-7'>
-                  <div>
+              <div className='pt-7 pl-3 pr-3'>
+                  <div className='flex'>
 
-                    <Image src={selectedAgency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-60 h-20' />
+                    <Image src={selectedAgency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-28 h-24 ' />
 
                     <div>
-                      <h3 className='font-semibold text-black text-nowrap ml-2'>{selectedAgency.agency_name}</h3>
+                      <h3 className='font-semibold text-black text-nowrap ml-5'>{selectedAgency.agency_name}</h3>
 
-                      <div className="flex flex-wrap ml-2 mt-1">
+                      <div className="flex flex-wrap ml-5 mt-1">
                         {selectedAgency.sector.map((sector, index) => (
                           <div key={index} className="flex items-center mr-2 mb-2">
                             <p className={`text-white h-3 font-light text-xs rounded pb-4 px-2 ${sectorColors[index % sectorColors.length]}`}>{sector}</p>
@@ -302,28 +302,28 @@ const MapComponent = () => {
                     </div>
                   </div>
 
-                  <div>
-                    <div>
-                      <h1>Locations</h1>
-                      <p className='text-black'>{selectedAgency.address}</p>
+                  <div className='flex'>
+                    <div className='bg-black mt-2 rounded-md w-28 p-2'>
+                      <h1 className='text-yellow-400 font-bold'>Locations</h1>
+                      <p className='text-white text-sm'>{selectedAgency.address}</p>
                     </div>
 
-                    <div>
-                        <h1>Summary</h1>
+                    <div className='ml-5 text-black'>
+                        <h1 className='font-bold'>Summary</h1>
                     </div>
 
                   </div>
 
-                  <div>
+                  <div className='bg-white mt-3 rounded-md text-black p-2'>
                     <h1>Contact</h1>
 
                     <div>
-                      <a href={selectedAgency.website}>
+                      <a href={selectedAgency.website} className='text-xs'>
                         <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
                         {selectedAgency.website}
                       </a>
 
-                      <a href={`mailto:${selectedAgency.contact[0]}`}>
+                      <a href={`mailto:${selectedAgency.contact[1]}`} className='text-xs'>
                        <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
                        {selectedAgency.contact[0]}
                       </a>
