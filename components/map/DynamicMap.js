@@ -317,7 +317,8 @@ const MapComponent = () => {
                   <div className='bg-white mt-3 rounded-md text-black p-2'>
                     <h1>Contact</h1>
 
-                    <div>
+                    <div className='flex'>
+                    <div className=''>
                       <a href={selectedAgency.website} className='text-xs flex'>
                         <Image src={globalweb} alt='' className='h-5 w-5 mr-1'/>
                         {selectedAgency.website}
@@ -331,7 +332,7 @@ const MapComponent = () => {
 
                     </div>
 
-                    <div>
+                    <div className='ml-10'>
 
                       <a href={selectedAgency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
                         <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
@@ -347,7 +348,13 @@ const MapComponent = () => {
                           <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
                         </a>
                       )}
+                      {selectedAgency.socials.Instagram && (
+                        <a href={selectedAgency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                          <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
+                        </a>
+                      )}
 
+                    </div>
                     </div>
                   </div>
               </div>
