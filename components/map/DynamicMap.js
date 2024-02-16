@@ -37,21 +37,34 @@ const MapComponent = () => {
   useEffect(() => {
     const fetchAgencies = async () => {
       try {
-        const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/c');
+        const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/agencies');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
-        const { data } = await response.json();
-        setAgencies(data);
+        const data = await response.json();
+        console.log(data); // Log the response data to check its structure
+        // Check if data has the 'agencies' property and if it's an array
+        if (Array.isArray(data.agencies)) {
+          setAgencies(data.agencies); // Update the state with the fetched data
+        } else {
+          throw new Error('Data format is not as expected');
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
-        setLoading(false); // Set loading state to false when data fetching is complete
+        setLoading(false);
       }
     };
 
     fetchAgencies();
   }, []);
+
+  useEffect(() => {
+    console.log(agencies);
+  }, [agencies]);
+
+
+
 
   const filteredAgencies = agencies.filter(agency => {
     if (!selectedIndustry) {
@@ -61,6 +74,7 @@ const MapComponent = () => {
   }).filter(agency => {
     return agency.agency_name.toLowerCase().includes(searchTerm.toLowerCase());
   });
+
 
 
   const handleMapClick = () => {
@@ -88,8 +102,6 @@ const MapComponent = () => {
   };
 
 
-
-  console.log(agencies)
 
   return (
     <div>
