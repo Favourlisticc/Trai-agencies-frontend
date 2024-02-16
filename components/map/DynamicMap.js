@@ -37,7 +37,7 @@ const MapComponent = () => {
   useEffect(() => {
     const fetchAgencies = async () => {
       try {
-        const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/agencies');
+        const response = await fetch('https://trai-agencies-api.onrender.com/api/v1/c');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
