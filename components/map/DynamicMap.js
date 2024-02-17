@@ -41,30 +41,17 @@ const MapComponent = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
-        const data = await response.json();
-        console.log(data); // Log the response data to check its structure
-        // Check if data has the 'agencies' property and if it's an array
-        if (Array.isArray(data.agencies)) {
-          setAgencies(data.agencies); // Update the state with the fetched data
-        } else {
-          throw new Error('Data format is not as expected');
-        }
+        const { data } = await response.json();
+        setAgencies(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
-        setLoading(false);
+        setLoading(false); // Set loading state to false when data fetching is complete
       }
     };
 
     fetchAgencies();
   }, []);
-
-  useEffect(() => {
-    console.log(agencies);
-  }, [agencies]);
-
-
-
 
   const filteredAgencies = agencies.filter(agency => {
     if (!selectedIndustry) {
@@ -74,6 +61,7 @@ const MapComponent = () => {
   }).filter(agency => {
     return agency.agency_name.toLowerCase().includes(searchTerm.toLowerCase());
   });
+
 
 
 
@@ -100,6 +88,11 @@ const MapComponent = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  console.log(agencies)
+  console.log("yo thus the data", filteredAgencies);
+
+  const validAgencies = filteredAgencies.filter(agency => agency.latitude !== undefined && agency.longitude !== undefined);
 
 
 
@@ -154,7 +147,8 @@ const MapComponent = () => {
                </div>
 
 
-            {filteredAgencies.map(agency => (
+            {validAgencies.map(agency => (
+              console.log("Agency coordinates:", agency.latitude, agency.longitude),
               <Marker
                 key={agency._id}
                 position={[agency.latitude, agency.longitude]}
@@ -240,7 +234,7 @@ const MapComponent = () => {
                     </div>
 
                   </div>
-          <div className="ml-2" style={{ overflowY: "auto" }}>
+          <div className="ml-2 h-96" style={{ overflowY: "auto" }}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
               <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md' onClick={() => openModal(agency)}>
