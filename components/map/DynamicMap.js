@@ -135,13 +135,13 @@ const MapComponent = () => {
                     <button type="submit">Search</button>
                   </div>
 
-              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-1 px-1`}>
-                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
-                  <FontAwesomeIcon icon={faMapLocationDot} className='w-12 text-3xl mb-2 text-black'/>
+              <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-2 px-2`}>
+                <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-xl cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                <svg className='w-12 mb-1 mt-1 text-black' xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 24 24" fill="none"><path d="M15.65 21.408c-.43 0-.86-.09-1.21-.26l-5.25-2.63c-.3-.15-.89-.14-1.18.03l-2.36 1.35c-1.02.58-2.07.66-2.86.19-.8-.46-1.25-1.4-1.25-2.58v-9.72c0-.91.6-1.94 1.39-2.39l4.33-2.48c.73-.42 1.84-.45 2.59-.07l5.25 2.63c.3.15.88.13 1.18-.03l2.35-1.34c1.02-.58 2.07-.66 2.86-.19.8.46 1.25 1.4 1.25 2.58v9.73c0 .91-.6 1.94-1.39 2.39l-4.33 2.48c-.38.2-.88.31-1.37.31Zm-7.01-4.49c.43 0 .86.09 1.21.26l5.25 2.63c.3.15.88.13 1.18-.03l4.33-2.48c.32-.18.63-.72.63-1.08v-9.73c0-.63-.18-1.1-.51-1.28-.32-.18-.82-.11-1.36.2l-2.35 1.34c-.73.42-1.84.45-2.59.07l-5.25-2.63c-.3-.15-.88-.13-1.18.03l-4.33 2.48c-.32.18-.63.72-.63 1.09v9.73c0 .63.18 1.1.5 1.28.32.19.82.11 1.37-.2l2.35-1.34c.39-.23.89-.34 1.38-.34Z" fill="#000000"></path><path d="M8.559 17.75c-.41 0-.75-.34-.75-.75V4c0-.41.34-.75.75-.75s.75.34.75.75v13c0 .41-.34.75-.75.75ZM15.73 20.751c-.41 0-.75-.34-.75-.75V6.621c0-.41.34-.75.75-.75s.75.34.75.75v13.38c0 .41-.34.75-.75.75Z" fill="#000000"></path></svg>
                 </div>
 
-                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
-                  <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-12 text-3xl text-black'/>
+                <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                <svg className='w-12 mb-1 mt-1 text-black' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 5.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 10.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 15.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 20.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75Z" fill="#000"></path></svg>
 
                 </div>
 
@@ -233,17 +233,18 @@ const MapComponent = () => {
                         <button type="submit">Search</button>
                       </div>
 
-                      <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-1 px-1`}>
-                    <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
-                      <FontAwesomeIcon icon={faMapLocationDot} className='w-12 text-3xl mb-2 text-black'/>
-                    </div>
+                      <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-2 px-2`}>
+                          <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-xl cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
+                          <svg className='w-12 mb-1 mt-1 text-black' xmlns="http://www.w3.org/2000/svg" width="38" height="37" viewBox="0 0 24 24" fill="none"><path d="M15.65 21.408c-.43 0-.86-.09-1.21-.26l-5.25-2.63c-.3-.15-.89-.14-1.18.03l-2.36 1.35c-1.02.58-2.07.66-2.86.19-.8-.46-1.25-1.4-1.25-2.58v-9.72c0-.91.6-1.94 1.39-2.39l4.33-2.48c.73-.42 1.84-.45 2.59-.07l5.25 2.63c.3.15.88.13 1.18-.03l2.35-1.34c1.02-.58 2.07-.66 2.86-.19.8.46 1.25 1.4 1.25 2.58v9.73c0 .91-.6 1.94-1.39 2.39l-4.33 2.48c-.38.2-.88.31-1.37.31Zm-7.01-4.49c.43 0 .86.09 1.21.26l5.25 2.63c.3.15.88.13 1.18-.03l4.33-2.48c.32-.18.63-.72.63-1.08v-9.73c0-.63-.18-1.1-.51-1.28-.32-.18-.82-.11-1.36.2l-2.35 1.34c-.73.42-1.84.45-2.59.07l-5.25-2.63c-.3-.15-.88-.13-1.18.03l-4.33 2.48c-.32.18-.63.72-.63 1.09v9.73c0 .63.18 1.1.5 1.28.32.19.82.11 1.37-.2l2.35-1.34c.39-.23.89-.34 1.38-.34Z" fill="#000000"></path><path d="M8.559 17.75c-.41 0-.75-.34-.75-.75V4c0-.41.34-.75.75-.75s.75.34.75.75v13c0 .41-.34.75-.75.75ZM15.73 20.751c-.41 0-.75-.34-.75-.75V6.621c0-.41.34-.75.75-.75s.75.34.75.75v13.38c0 .41-.34.75-.75.75Z" fill="#000000"></path></svg>
+                          </div>
 
-                    <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-2 pl-1 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
-                      <FontAwesomeIcon onClick={handleListIconClick} icon={faList} className='w-12 text-3xl text-black'/>
+                          <div style={{ backgroundColor: isListActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-full cursor-pointer ${isListActive ? 'active' : ''}`} onClick={handleListClick}>
+                          <svg className='w-12 mb-1 mt-1 text-black' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 5.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 10.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 15.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75ZM21 20.25H3c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h18c.41 0 .75.34.75.75s-.34.75-.75.75Z" fill="#000"></path></svg>
 
-                    </div>
+                          </div>
 
-                  </div>
+                        </div>
+
           <div className="ml-2 h-96 w-auto" style={{ overflowY: "auto", marginLeft: "11%" }}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
