@@ -136,16 +136,16 @@ export default function Navbar() {
 
 
 {/* mobile dropdown */}
-        <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col  xl:flex-row justify-between pl-0 pr-0 xl:px-20">
+        <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col  xl:flex-row justify-between">
 
-          <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
+          <div className="xl:block flex justify-between items-center">
+            {/* <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
               <Image src={logo2} alt="Hazmick" style={{ marginLeft: "230px", marginTop: "8px" }} />
-            </Link>
+            </Link> */}
 
             <div
             // onClick={showHide}
-            className="shadow-2xl xl:hidden absolute top-96 flex mt-44 bg-white w-72 justify-center rounded-2xl px-2 py-2 ml-7">
+            className="shadow-2xl xl:hidden absolute top-96 flex mt-44 bg-white w-72 justify-center rounded-2xl px-2 py-2" style={{marginLeft: "50%"}}>
               {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 text-blue-600 w-7"

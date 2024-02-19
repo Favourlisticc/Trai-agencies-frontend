@@ -220,7 +220,7 @@ const MapComponent = () => {
       <div className="fixed mt- top-0 left-0 w-full h-full text-black flex bg-gray-900" style={{ zIndex: "999" }}>
 
 
-        <div className=" rounded-lg">
+        <div className=" rounded-lg w-full">
         <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
                         <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
                           <option value="">Select Industry</option>
@@ -244,7 +244,7 @@ const MapComponent = () => {
                     </div>
 
                   </div>
-          <div className="ml-2 h-96" style={{ overflowY: "auto" }}>
+          <div className="ml-2 h-96 w-auto" style={{ overflowY: "auto", marginLeft: "11%" }}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
               <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md' onClick={() => openModal(agency)}>
@@ -358,20 +358,20 @@ const MapComponent = () => {
 
                       
                     {selectedAgency.socials?.LinkedIn && (
-                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                        <a href={selectedAgency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
                             <Image src={Linkedin} alt="" className="h-5 w-5 mr-21" />
                         </a>
                     )}
 
                    {selectedAgency.socials?.Facebook && (
-                            <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                            <a href={selectedAgency.socials.Facebook} target="_blank" rel="noopener noreferrer">
                                 <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
                             </a>
                         )}
 
 
                     {selectedAgency.socials?.Twitter && (
-                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                        <a href={selectedAgency.socials.Twitter} target="_blank" rel="noopener noreferrer">
                             <Image src={twitter} alt="" className="h-5 w-5 mr-21" />
                         </a>
                     )}
