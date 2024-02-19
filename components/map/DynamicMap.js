@@ -94,6 +94,7 @@ const MapComponent = () => {
 
   const validAgencies = filteredAgencies.filter(agency => agency.latitude !== undefined && agency.longitude !== undefined);
 
+  // console.log("Agency coordinates:", agencies.socials.LinkedIn, validAgencies.longitude, validAgencies.latitude)
 
 
   return (
@@ -148,7 +149,7 @@ const MapComponent = () => {
 
 
             {validAgencies.map(agency => (
-              console.log("Agency coordinates:", agency.latitude, agency.longitude),
+
               <Marker
                 key={agency._id}
                 position={[agency.latitude, agency.longitude]}
@@ -180,19 +181,28 @@ const MapComponent = () => {
                       </a>
                     </div>
                     <div className='flex mt-3'>
-                      <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-2" />
-                      </a>
-                      {agency.socials.Facebook && (
-                        <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                          <Image src={facebook} alt="" className="h-5 w-5 mr-2" />
+
+                    {agency.socials?.LinkedIn && (
+                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                            <Image src={Linkedin} alt="" className="h-5 w-5 mr-21" />
                         </a>
-                      )}
-                      {agency.socials.Twitter && (
+                    )}
+
+                   {agency.socials?.Facebook && (
+                            <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                                <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                            </a>
+                        )}
+
+
+                    {agency.socials?.Twitter && (
                         <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                          <Image src={twitter} alt="" className="h-5 w-5 mr-2" />
+                            <Image src={twitter} alt="" className="h-5 w-5 mr-21" />
                         </a>
-                      )}
+                    )}
+
+
+
                     </div>
                   </div>
                 </div>
@@ -261,20 +271,26 @@ const MapComponent = () => {
                       <Image src={emailsms} alt='' className='h-5 w-5 mr-1'/>
                     </a>
 
-                    <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                      <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
-                    </a>
+                    
+                    {agency.socials?.LinkedIn && (
+                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                            <Image src={Linkedin} alt="" className="h-5 w-5 mr-21" />
+                        </a>
+                    )}
 
-                    {agency.socials.Facebook && (
-                      <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                        <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
-                      </a>
+                   {agency.socials?.Facebook && (
+                            <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                                <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                            </a>
+                        )}
+
+
+                    {agency.socials?.Twitter && (
+                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                            <Image src={twitter} alt="" className="h-5 w-5 mr-21" />
+                        </a>
                     )}
-                    {agency.socials.Twitter && (
-                      <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                        <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
-                      </a>
-                    )}
+
                   </div>
                 </div>
               </div>
@@ -285,7 +301,7 @@ const MapComponent = () => {
     )}
 
         {isModalOpen && selectedAgency && (
-          <div className="fixed top-0 left-0 w-full h-full flex justify-center pt-28 pb-32 px-5 bg-slate-500 bg-opacity-50" style={{ zIndex: "999" }}>
+          <div className="fixed top-0 left-0 w-full h-auto flex justify-center pt-28 pb-32 px-5 bg-slate-500 bg-opacity-50" style={{ zIndex: "999" }}>
             <div className="bg-gray-200 rounded-lg">
               <span className="text-3xl float-right text-black cursor-pointer" onClick={closeModal}>&times;</span>
 
@@ -340,21 +356,26 @@ const MapComponent = () => {
 
                     <div className='ml-10'>
 
-                      <a href={selectedAgency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
-                        <Image src={Linkedin} alt="" className="h-5 w-5 mr-1" />
-                      </a>
+                      
+                    {selectedAgency.socials?.LinkedIn && (
+                        <a href={agency.socials.LinkedIn} target="_blank" rel="noopener noreferrer">
+                            <Image src={Linkedin} alt="" className="h-5 w-5 mr-21" />
+                        </a>
+                    )}
 
-                      {selectedAgency.socials.Facebook && (
-                        <a href={selectedAgency.socials.Facebook} target="_blank" rel="noopener noreferrer">
-                          <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                   {selectedAgency.socials?.Facebook && (
+                            <a href={agency.socials.Facebook} target="_blank" rel="noopener noreferrer">
+                                <Image src={facebook} alt="" className="h-5 w-5 mr-21" />
+                            </a>
+                        )}
+
+
+                    {selectedAgency.socials?.Twitter && (
+                        <a href={agency.socials.Twitter} target="_blank" rel="noopener noreferrer">
+                            <Image src={twitter} alt="" className="h-5 w-5 mr-21" />
                         </a>
-                      )}
-                      {selectedAgency.socials.Twitter && (
-                        <a href={selectedAgency.socials.Twitter} target="_blank" rel="noopener noreferrer">
-                          <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
-                        </a>
-                      )}
-                      {selectedAgency.socials.Instagram && (
+                    )}
+                      {selectedAgency.socials?.Instagram && (
                         <a href={selectedAgency.socials.Twitter} target="_blank" rel="noopener noreferrer">
                           <Image src={twitter} alt="" className="h-5 w-5 mr-1" />
                         </a>

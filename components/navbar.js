@@ -64,11 +64,11 @@ export default function Navbar() {
   };
 
   return (
-    <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
+    <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar drop-shadow-2xl" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
 
-    <div id="head-nav" className="fixed bg-white text-black max-sm:left-0 left-10 top-40  right-0 w-24 max-sm:top-0 rounded-xl">
+    <div id="head-nav" className="fixed bg-white text-black max-sm:left-0 left-10 top-40  right-0 w-24 max-sm:top-0 rounded-xl drop-shadow-2xl">
       <div >
-        <div className="hidden lg:flex flex-row xl:flex-row justify-between pr-0 pl-0 max-sm:pr-0 max-sm:pl-0 ">
+        <div className="hidden lg:flex flex-row xl:flex-row justify-between pr-0 pl-0 max-sm:pr-0 max-sm:pl-0 drop-shadow-2xl">
 
 
 
