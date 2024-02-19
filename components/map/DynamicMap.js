@@ -253,7 +253,7 @@ const MapComponent = () => {
             {filteredAgencies.map(agency => (
               <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md' onClick={() => openModal(agency)}>
                 <div className=''>
-                  <Image src={agency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-60 h-20' />
+                  <Image src={agency.logo} alt="Company-logo" width={0} height={0} style={{width: "100%", height: "100%"}} className=' bg-black rounded-lg' />
                 </div>
                 <div className=''>
                   <h3 className='font-semibold text-nowrap ml-2'>{agency.agency_name}</h3>
@@ -310,9 +310,9 @@ const MapComponent = () => {
               <span className="text-3xl float-right text-black cursor-pointer" onClick={closeModal}>&times;</span>
 
               <div className='pt-7 pl-3 pr-3'>
-                  <div className='flex'>
+                  <div className='flex w-full h-full'>
 
-                    <Image src={selectedAgency.logo} alt="Company-logo" width={30} height={20} className=' bg-black rounded-lg w-28 h-24 ' />
+                    <Image src={selectedAgency.logo} alt="Company-logo" width={0} height={0} className=' bg-black rounded-lg w-28 h-24 object-fill ' />
 
                     <div>
                       <h3 className='font-semibold text-black text-nowrap ml-5'>{selectedAgency.agency_name}</h3>
