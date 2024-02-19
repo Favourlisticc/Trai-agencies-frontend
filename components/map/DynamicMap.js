@@ -11,6 +11,7 @@ import twitter from "../../public/icon/twitter.png"
 import Linkedin from "../../public/icon/linedinl.png"
 import globalweb from "../../public/icon/global-search.png"
 import emailsms from "../../public/icon/directbox-send.png"
+import staticmap from "../../public/static map.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -104,7 +105,9 @@ const MapComponent = () => {
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
-          <div>Loading map.......🔻</div>
+          <div className='w-full h-full max-sm:w-full max-sm:h-full'>
+            <Image src={staticmap} width={10} height={10} className='w-full h-full max-sm:w-full max-sm:h-full' alt='' s/>
+          </div>
         ) : (
           <MapContainer
             style={{
