@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import axios from 'axios';
+
 import Image from 'next/image';
 
 import oramgemapicon from "../../public/icon/orange-map-icon.png"
@@ -13,10 +13,7 @@ import globalweb from "../../public/icon/global-search.png"
 import emailsms from "../../public/icon/directbox-send.png"
 import staticmap from "../../public/static map.png"
 import logo from "../../public/icon/trai-logo.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { FaMapLocationDot } from 'react-icons/fa6';
-import { faMapLocationDot, faList } from '@fortawesome/free-solid-svg-icons';
 
 const MapComponent = () => {
   const [agencies, setAgencies] = useState([]);
@@ -30,6 +27,7 @@ const MapComponent = () => {
 
   const [selectedAgency, setSelectedAgency] = useState(null); // State to hold selected agency
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+
 
 
 
@@ -53,6 +51,7 @@ const MapComponent = () => {
 
     fetchAgencies();
   }, []);
+
 
   const filteredAgencies = agencies.filter(agency => {
     if (!selectedIndustry) {
@@ -105,7 +104,7 @@ const MapComponent = () => {
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
-          <div class="flex-col gap-4 w-full bg-gray-300 flex items-center justify-center" style={{height: "700px"}}>
+          <div class="flex-col gap-4 w-full bg-gray-300 flex items-center justify-center" style={{height: "670px"}}>
           <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
 
             <Image class="animate-ping"  src={logo} alt=''/>
@@ -130,7 +129,7 @@ const MapComponent = () => {
             />
 
             <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
-                    <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+                    <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-1 w-48 h-12 text-gray-500 font-light text-xl">
                       <option value="">Select Industry</option>
                       <option value="Education">Education</option>
                       <option value="Healthcare">Healthcare</option>
@@ -227,8 +226,8 @@ const MapComponent = () => {
 
 
         <div className=" rounded-lg w-full">
-        <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
-                        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-2 mb-4 mt-2 w-48 h-16 text-gray-500 font-light text-xl">
+                  <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+                        <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-2 w-48 h-12 text-gray-500 font-light text-xl">
                           <option value="">Select Industry</option>
                           <option value="Education">Education</option>
                           <option value="Healthcare">Healthcare</option>
@@ -237,7 +236,7 @@ const MapComponent = () => {
 
                         </select>
                         <button type="submit">Search</button>
-                      </div>
+                    </div>
 
                       <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-2 px-2`}>
                           <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-xl cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
@@ -251,10 +250,10 @@ const MapComponent = () => {
 
                         </div>
 
-          <div className="ml-2 h-96 w-auto" style={{ overflowY: "auto", marginLeft: "11%" }}>
+          <div className="max-sm:h-96 w-full ml-80 max-sm:ml-0 h-full pb-32 w-for-list " style={{ overflowY: "auto"}}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
-              <div key={agency._id} className='flex bg-white w-60 mb-5 py-1 px-1 rounded-md' onClick={() => openModal(agency)}>
+              <div key={agency._id} className='flex bg-white max-sm:w-80 mb-5 py-1 px-1 rounded-md w-full max-sm:mr-0 mr-20 active:bg-gray-500' onClick={() => openModal(agency)}>
                 <div className=''>
                   <Image src={agency.logo} alt="Company-logo" width={0} height={0} style={{width: "100%", height: "100%"}} className=' bg-black rounded-lg' />
                 </div>
