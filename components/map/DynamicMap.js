@@ -12,7 +12,7 @@ import Linkedin from "../../public/icon/linedinl.png"
 import globalweb from "../../public/icon/global-search.png"
 import emailsms from "../../public/icon/directbox-send.png"
 import staticmap from "../../public/static map.png"
-
+import logo from "../../public/icon/trai-logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { FaMapLocationDot } from 'react-icons/fa6';
@@ -105,9 +105,12 @@ const MapComponent = () => {
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
-          <div className='w-full h-full max-sm:w-full max-sm:h-full'>
-            <Image src={staticmap} width={10} height={10} className='w-full h-full max-sm:w-full max-sm:h-full' alt='' s/>
+          <div class="flex-col gap-4 w-full bg-gray-300 flex items-center justify-center" style={{height: "700px"}}>
+          <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+
+            <Image class="animate-ping"  src={logo} alt=''/>
           </div>
+        </div>
         ) : (
           <MapContainer
             style={{
