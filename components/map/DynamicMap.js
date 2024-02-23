@@ -104,7 +104,7 @@ const MapComponent = () => {
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
-          <div class="flex-col gap-4 w-full bg-gray-300 flex items-center justify-center" style={{height: "670px"}}>
+          <div class="flex-col gap-4 w-full bg-gray-100 flex items-center justify-center" style={{height: "670px"}}>
           <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
 
             <Image class="animate-ping"  src={logo} alt=''/>
@@ -253,9 +253,9 @@ const MapComponent = () => {
           <div className="max-sm:h-96 w-full ml-80 max-sm:ml-0 h-full pb-32 w-for-list " style={{ overflowY: "auto"}}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
-              <div key={agency._id} className='flex bg-white max-sm:w-80 mb-5 py-1 px-1 rounded-md w-full max-sm:mr-0 mr-20 active:bg-gray-500' onClick={() => openModal(agency)}>
+              <div key={agency._id} className='flex bg-white max-sm:w-5/6 mb-5 py-1 px-1 rounded-md w-full max-sm:mr-0 mr-20 active:bg-gray-500' onClick={() => openModal(agency)}>
                 <div className=''>
-                  <Image src={agency.logo} alt="Company-logo" width={0} height={0} style={{width: "100%", height: "100%"}} className=' bg-black rounded-lg' />
+                  <Image src={agency.logo} alt="Company-logo" width={0} height={0} className=' bg-black rounded-lg w-h-static' />
                 </div>
                 <div className=''>
                   <h3 className='font-semibold text-nowrap ml-2'>{agency.agency_name}</h3>
