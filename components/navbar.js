@@ -64,9 +64,9 @@ export default function Navbar() {
   };
 
   return (
-    <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0 dark-navbar drop-shadow-2xl" style={{backgroundColor: "rgba(26,26,26, .5)", zIndex: "999999"}}>
+    <div id="popup" className="w-0 h-10 justify-center items-center flex-col flex fixed top-0 left-0 right-0" style={{zIndex: "999999"}}>
 
-    <div id="head-nav" className="fixed bg-white text-black max-sm:left-0 left-10 top-40  right-0 w-24 max-sm:top-0 rounded-xl drop-shadow-2xl">
+    <div id="head-nav" className="fixed bg-white text-black max-sm:left-0 left-10 top-40  right-0 w-24 max-sm:w-0 ml-12 max-sm:top-0 rounded-xl drop-shadow-2xl">
       <div >
         <div className="hidden lg:flex flex-row xl:flex-row justify-between pr-0 pl-0 max-sm:pr-0 max-sm:pl-0 drop-shadow-2xl">
 
@@ -134,11 +134,11 @@ export default function Navbar() {
 
 
 {/* mobile dropdown */}
-        <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col bg-black xl:flex-row justify-between pl-4 pr-5 xl:px-20">
+        <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col bg-black xl:flex-row justify-between">
 
           <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center">
-              <Image src={logo2} alt="Hazmick" style={{ marginLeft: "230px", marginTop: "8px" }} />
+            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center ml-5">
+              <Image src={logo2} alt="logo" style={{ marginLeft: "230px", marginTop: "8px" }} />
             </Link>
 
             <div
