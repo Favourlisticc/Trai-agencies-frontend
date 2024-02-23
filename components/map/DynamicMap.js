@@ -128,7 +128,7 @@ const MapComponent = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+            <div className="flex flex-col items-center search mt-20 ml-40 max-sm:ml-6" style={{zIndex: "999"}}>
                     <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-1 w-48 h-12 text-gray-500 font-light text-xl">
                       <option value="">Select Industry</option>
                       <option value="Education">Education</option>
@@ -226,7 +226,7 @@ const MapComponent = () => {
 
 
         <div className=" rounded-lg w-full">
-                  <div className="flex flex-col items-center search mt-20 ml-8" style={{zIndex: "999"}}>
+                  <div className="flex flex-col items-center search mt-20 ml-40 max-sm:ml-6" style={{zIndex: "999"}}>
                         <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-2 w-48 h-12 text-gray-500 font-light text-xl">
                           <option value="">Select Industry</option>
                           <option value="Education">Education</option>

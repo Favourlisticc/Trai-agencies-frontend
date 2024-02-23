@@ -137,8 +137,8 @@ export default function Navbar() {
         <div id="small-screen" style={{ zIndex: 99999 }} className="flex lg:hidden flex-col bg-black xl:flex-row justify-between">
 
           <div className="xl:py-6 py-5 xl:block flex justify-between items-center">
-            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center ml-5">
-              <Image src={logo2} alt="logo" style={{ marginLeft: "230px", marginTop: "8px" }} />
+            <Link href="/" id="had-img" className="xl:w-72 w-28 h-10 flex justify-center items-center ml-0">
+              <Image src={logo2} alt="logo" style={{ marginLeft: "170px", marginTop: "8px" }} />
             </Link>
 
             <div
