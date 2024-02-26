@@ -254,7 +254,7 @@ const MapComponent = () => {
 
                         </div>
 
-          <div className="max-sm:h-96 w-full ml-80 max-sm:ml-0 h-full pb-32 w-for-list " style={{ overflowY: "auto"}}>
+          <div className="max-sm:h-96 w-full ml-80 max-sm:ml-0 h-full pb-32 w-for-list no-scrollbar " style={{ overflowY: "auto"}}>
             {/* Render your agencies list here */}
             {filteredAgencies.map(agency => (
               <div key={agency._id} className='flex bg-white max-sm:w-5/6 mb-5 py-1 px-1 rounded-md w-full max-sm:mr-0 mr-20 active:bg-gray-500' onClick={() => openModal(agency)}>
