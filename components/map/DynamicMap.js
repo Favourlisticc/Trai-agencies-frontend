@@ -128,17 +128,19 @@ const MapComponent = () => {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <div className="flex flex-col items-center search mt-20 ml-40 max-sm:ml-6" style={{zIndex: "999"}}>
-                    <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-1 w-48 h-12 text-gray-500 font-light text-xl">
-                      <option value="">Select Industry</option>
-                      <option value="Education">Education</option>
-                      <option value="Healthcare">Healthcare</option>
-                      <option value="Construction">Construction</option>
-                      {/* Add more options as needed */}
+           <div className='flex justify-center'>
+                <div className="flex flex-col items-center search mt-20" style={{zIndex: "999"}}>
+                          <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-1 w-48 h-12 text-gray-500 font-light text-xl">
+                            <option value="">Select Industry</option>
+                            <option value="Education">Education</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Construction">Construction</option>
+                            {/* Add more options as needed */}
 
-                    </select>
-                    <button type="submit">Search</button>
-                  </div>
+                          </select>
+                          <button type="submit">Search</button>
+                        </div>
+           </div>
 
               <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-2 px-2`}>
                 <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-xl cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
@@ -226,7 +228,8 @@ const MapComponent = () => {
 
 
         <div className=" rounded-lg w-full">
-                  <div className="flex flex-col items-center search mt-20 ml-40 max-sm:ml-6" style={{zIndex: "999"}}>
+                 <div className='flex justify-center'>
+                 <div className="flex flex-col items-center search mt-20" style={{zIndex: "999"}}>
                         <select value={selectedIndustry} onChange={(e) => setSelectedIndustry(e.target.value)} className="p-0 mb-4 mt-2 w-48 h-12 text-gray-500 font-light text-xl">
                           <option value="">Select Industry</option>
                           <option value="Education">Education</option>
@@ -237,6 +240,7 @@ const MapComponent = () => {
                         </select>
                         <button type="submit">Search</button>
                     </div>
+                 </div>
 
                       <div style={{ zIndex: "999", display: "flex", flexDirection: "column"}} className={`relative mt-16 text-red bg-yellow-500 mr-3 w-16 rounded-3xl float-right py-2 px-2`}>
                           <div style={{ backgroundColor: isMapActive ? "white" : "" }} className={`bg-yellow-500 py-0.5 pl-0 rounded-xl cursor-pointer ${isMapActive ? 'active' : ''}`} onClick={handleMapClick}>
