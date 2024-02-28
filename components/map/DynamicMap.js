@@ -94,6 +94,8 @@ const MapComponent = () => {
 
   const validAgencies = filteredAgencies.filter(agency => agency.latitude !== undefined && agency.longitude !== undefined);
 
+  const londonBounds = L.latLngBounds([51.28, -0.49], [51.69, 0.23]); // Define bounds for London
+
   // console.log("Agency coordinates:", agencies.socials.LinkedIn, validAgencies.longitude, validAgencies.latitude)
 
 
@@ -104,12 +106,15 @@ const MapComponent = () => {
 
       <div className="flex" style={{ marginLeft: "0px" }}>
         {loading ? ( // Render loading indicator if loading state is true
-          <div class="flex-col gap-4 w-full bg-gray-100 flex items-center justify-center" style={{height: "670px"}}>
-          <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+        //   <div class="flex-col gap-4 w-full bg-gray-100 flex items-center justify-center" style={{height: "670px"}}>
+        //   <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
 
-            <Image class="animate-ping"  src={logo} alt=''/>
-          </div>
-        </div>
+        //     <Image class="animate-ping"  src={logo} alt=''/>
+        //   </div>
+        // </div>
+           <div className='w-full' style={{height: "670px"}}>
+               <Image  src={staticmap} width={0} height={0} alt='' className='w-full h-full'/>
+           </div>
         ) : (
           <MapContainer
             style={{
@@ -117,11 +122,12 @@ const MapComponent = () => {
               width: '100%',
               marginLeft: "0px",
             }}
-            center={[51.53, -0.1]}
+            center={[51.509865, -0.1180]}
             zoom={10}
             scrollWheelZoom={false}
             doubleClickZoom={false}
             zoomControl={true}
+            maxBounds={londonBounds}
           >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright"></a> '
